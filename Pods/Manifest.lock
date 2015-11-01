@@ -1,0 +1,13 @@
+PODS:
+  - CurrencyRequest (0.1.0)
+  - DistanceGetter (0.1.1)
+
+DEPENDENCIES:
+  - CurrencyRequest (~> 0.1)
+  - DistanceGetter (~> 0.1)
+
+SPEC CHECKSUMS:
+  CurrencyRequest: a82e37b3a1a7480164db50790ccd9583ee3aa954
+  DistanceGetter: cd224fae834fa5385ae7093edff7f3dcab226a38
+
+COCOAPODS: 0.38.2
