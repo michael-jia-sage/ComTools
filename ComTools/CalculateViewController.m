@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  SecondViewController.m
 //  ComTools
 //
 //  Created by Zonggao Jia on 2015-10-31.
 //  Copyright © 2015 Zonggao Jia. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "CalculateViewController.h"
 
-@interface FirstViewController ()
+@interface CalculateViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation CalculateViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
