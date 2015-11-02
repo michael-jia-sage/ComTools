@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "constants.h"
+#include "utilities.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

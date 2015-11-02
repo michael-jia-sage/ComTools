@@ -14,6 +14,7 @@
 		0E6AC6D21BE5E57D00DA0FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AC6D01BE5E57D00DA0FA6 /* Main.storyboard */; };
 		0E6AC6D41BE5E57D00DA0FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AC6D31BE5E57D00DA0FA6 /* Assets.xcassets */; };
 		0E6AC6D71BE5E57D00DA0FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AC6D51BE5E57D00DA0FA6 /* LaunchScreen.storyboard */; };
+		0E6B9AE91BE6F65400B49D2E /* utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B9AE81BE6F65400B49D2E /* utilities.m */; settings = {ASSET_TAGS = (); }; };
 		6352A4AA54147B79D5C7C0CA /* libPods-ComTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A26ECE346AF94A221965592 /* libPods-ComTools.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,9 @@
 		0E6AC6D31BE5E57D00DA0FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E6AC6D61BE5E57D00DA0FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E6AC6D81BE5E57D00DA0FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E6B9AE71BE6F4EC00B49D2E /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
+		0E6B9AE81BE6F65400B49D2E /* utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = utilities.m; sourceTree = "<group>"; };
+		0E6B9AEA1BE6F6DB00B49D2E /* utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utilities.h; sourceTree = "<group>"; };
 		2AB651D4273D0599964E31D3 /* Pods-ComTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComTools/Pods-ComTools.debug.xcconfig"; sourceTree = "<group>"; };
 		7A26ECE346AF94A221965592 /* libPods-ComTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD40618E57BC80F51BA0B75A /* Pods-ComTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComTools/Pods-ComTools.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +91,9 @@
 			isa = PBXGroup;
 			children = (
 				0E6AC6C51BE5E57D00DA0FA6 /* main.m */,
+				0E6B9AE71BE6F4EC00B49D2E /* constants.h */,
+				0E6B9AE81BE6F65400B49D2E /* utilities.m */,
+				0E6B9AEA1BE6F6DB00B49D2E /* utilities.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -216,6 +223,7 @@
 				0E6AC6CF1BE5E57D00DA0FA6 /* SecondViewController.m in Sources */,
 				0E6AC6C91BE5E57D00DA0FA6 /* AppDelegate.m in Sources */,
 				0E6AC6CC1BE5E57D00DA0FA6 /* FirstViewController.m in Sources */,
+				0E6B9AE91BE6F65400B49D2E /* utilities.m in Sources */,
 				0E6AC6C61BE5E57D00DA0FA6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
