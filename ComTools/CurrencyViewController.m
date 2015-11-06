@@ -7,31 +7,52 @@
 //
 
 #import "CurrencyViewController.h"
+#import "CurrencyRequest/CRCurrencyRequest.h"
+#import "CurrencyRequest/CRCurrencyResults.h"
 
-@interface CurrencyViewController ()
+@interface CurrencyViewController () <CRCurrencyRequestDelegate>
+@property (nonatomic) CRCurrencyRequest *req;
+@property (weak, nonatomic) IBOutlet UITextField *inputField;
+@property (weak, nonatomic) IBOutlet UIButton *convertButton;
+@property (weak, nonatomic) IBOutlet UILabel *currencyA;
+@property (weak, nonatomic) IBOutlet UILabel *currencyB;
+@property (weak, nonatomic) IBOutlet UILabel *currencyC;
+
 
 @end
 
 @implementation CurrencyViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    if (![[touch view] isKindOfClass:[UITextField class]]) {
+        [self.view endEditing:YES];
+    }
+    [super touchesBegan:touches withEvent:event];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)buttonTapped:(id)sender {
+    self.convertButton.enabled = NO;
+    
+    self.req = [[CRCurrencyRequest alloc] init];
+    self.req.delegate = self;
+    [self.req start];
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)currencyRequest:(CRCurrencyRequest *)req
+    retrievedCurrencies:(CRCurrencyResults *)currencies {
+    
+    double inputValue = [self.inputField.text floatValue];
+    double euroValue = inputValue * currencies.EUR;
+    double yenValue = inputValue * currencies.JPY;
+    double gbpValue = inputValue * currencies.GBP;
+    
+    
+    self.currencyA.text = [NSString stringWithFormat:@"%.2f", euroValue];
+    self.currencyB.text = [NSString stringWithFormat:@"%.2f", yenValue];
+    self.currencyC.text = [NSString stringWithFormat:@"%.2f", gbpValue];
+    self.convertButton.enabled = YES;
 }
-*/
 
 @end

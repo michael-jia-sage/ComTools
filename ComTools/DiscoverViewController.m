@@ -21,6 +21,15 @@
 @end
 
 @implementation DiscoverViewController
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    if (![[touch view] isKindOfClass:[UITextField class]]) {
+        [self.view endEditing:YES];
+    }
+    [super touchesBegan:touches withEvent:event];
+}
+
 - (IBAction)calBtnTapped:(id)sender {
     self.calBtn.enabled = NO;
     self.req = [DGDistanceRequest alloc];
