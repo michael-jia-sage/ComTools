@@ -80,10 +80,46 @@
     return rateAgainstEuro / usdAgainstEuro;
 }
 
++ (NSString *)_nameForCurrency:(NSString *)currency {
+    if ([currency isEqualToString:@"CAD"])
+        return @"Canadian Dollar";
+    else if ([currency isEqualToString:@"CNY"])
+        return @"China Yuan RMB";
+    else if ([currency isEqualToString:@"EUR"])
+        return @"Euro";
+    else if ([currency isEqualToString:@"JPY"])
+        return @"Japan Yen";
+    else if ([currency isEqualToString:@"BGN"])
+        return @"Bulgaria Lev";
+    else if ([currency isEqualToString:@"CZK"])
+        return @"Czech Republic Koruna";
+    else if ([currency isEqualToString:@"DKK"])
+        return @"Denmark Krone";
+    else if ([currency isEqualToString:@"GBP"])
+        return @"United Kingdom Pound";
+    else if ([currency isEqualToString:@"HUF"])
+        return @"Hungary Forint";
+    else if ([currency isEqualToString:@"PLN"])
+        return @"Poland Zloty";
+    else if ([currency isEqualToString:@"RON"])
+        return @"Romania New Leu";
+    else if ([currency isEqualToString:@"SEK"])
+        return @"Sweden Krona";
+    else if ([currency isEqualToString:@"CHF"])
+        return @"Switzerland Franc";
+    else if ([currency isEqualToString:@"INR"])
+        return @"India Rupee";
+    else if ([currency isEqualToString:@"MXN"])
+        return @"Mexico Peso";
+    else
+        return @"US Dollar";
+}
 
 # pragma mark - Dynamically resolved public methods
 
 @dynamic USD;
+@dynamic CAD;
+@dynamic CNY;
 @dynamic EUR;
 @dynamic JPY;
 @dynamic BGN;
@@ -138,7 +174,7 @@ double rateGetter(id self, SEL _cmd) {
 # pragma mark - Currencies
 
 + (NSSet *)supportedCurrencies {
-    return [NSSet setWithObjects:@"USD", @"EUR", @"JPY", @"BGN", @"CZK", @"DKK",
+    return [NSSet setWithObjects:@"USD", @"CAD", @"CNY", @"EUR", @"JPY", @"BGN", @"CZK", @"DKK",
             @"GBP", @"HUF", @"PLN", @"RON", @"SEK", @"CHF", @"INR", @"MXN", nil];
 }
 

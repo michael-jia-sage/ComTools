@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -247,7 +247,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60E-p2-0Q8">
-                                <rect key="frame" x="75" y="95" width="170" height="30"/>
+                                <rect key="frame" x="75" y="109" width="170" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Convert"/>
                                 <connections>
@@ -290,12 +290,19 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Krh-w2-DhU" id="8YU-2j-DEP"/>
+                                    <outlet property="delegate" destination="Krh-w2-DhU" id="jsw-Gi-4XV"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="US Dollar:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6D-zJ-4Xq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="US Dollar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6D-zJ-4Xq">
                                 <rect key="frame" x="22" y="49" width="92" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="USD:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1c-0C-tLs">
+                                <rect key="frame" x="164" y="80" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -308,14 +315,18 @@
                             <constraint firstItem="60E-p2-0Q8" firstAttribute="top" secondItem="svl-js-lNK" secondAttribute="bottom" constant="20" id="Rwg-IV-cJr"/>
                             <constraint firstItem="G6D-zJ-4Xq" firstAttribute="leading" secondItem="FgL-Tv-aNU" secondAttribute="leadingMargin" constant="2" id="WuY-BX-11y"/>
                             <constraint firstItem="xxG-TE-gwz" firstAttribute="top" secondItem="Z1G-yX-blO" secondAttribute="bottom" constant="21" id="g8G-5i-jXq"/>
+                            <constraint firstItem="U1c-0C-tLs" firstAttribute="top" secondItem="svl-js-lNK" secondAttribute="bottom" constant="5" id="m3s-Qt-Wed"/>
                             <constraint firstItem="Z1G-yX-blO" firstAttribute="centerX" secondItem="FgL-Tv-aNU" secondAttribute="centerX" id="qyA-Dp-ESd"/>
                             <constraint firstItem="svl-js-lNK" firstAttribute="top" secondItem="L92-jq-Jpl" secondAttribute="bottom" constant="25" id="sgY-4F-rEU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="U1c-0C-tLs" secondAttribute="trailing" constant="26" id="tRO-18-GyG"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Currency" image="currency-tab-active" id="ozA-Ds-lfX"/>
                     <connections>
                         <outlet property="convertButton" destination="60E-p2-0Q8" id="XId-Kx-Yuu"/>
                         <outlet property="inputField" destination="svl-js-lNK" id="xXi-qr-dO2"/>
+                        <outlet property="lblCurrencyName" destination="G6D-zJ-4Xq" id="Vpj-dh-LtW"/>
+                        <outlet property="lblUSD" destination="U1c-0C-tLs" id="jlp-Sa-KMb"/>
                         <outlet property="lstCurrency" destination="Z1G-yX-blO" id="wtM-W2-JLG"/>
                     </connections>
                 </viewController>

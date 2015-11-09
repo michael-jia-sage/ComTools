@@ -14,6 +14,8 @@
 @interface CRCurrencyResults : NSObject
 
 @property (readonly, nonatomic) double USD;
+@property (readonly, nonatomic) double CAD;
+@property (readonly, nonatomic) double CNY;
 @property (readonly, nonatomic) double EUR;
 @property (readonly, nonatomic) double JPY;
 @property (readonly, nonatomic) double BGN;
@@ -29,6 +31,9 @@
 @property (readonly, nonatomic) double MXN;
 @property (readonly, nonatomic) double ISK;
 
+- (double)_rateForCurrency:(NSString *)currency;
+
++ (NSString *)_nameForCurrency:(NSString *)currency;
 + (NSSet *)supportedCurrencies;
 
 @end
