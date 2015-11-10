@@ -9,6 +9,7 @@
 #import "CurrencyViewController.h"
 #import "CurrencyRequest/CRCurrencyRequest.h"
 #import "CurrencyRequest/CRCurrencyResults.h"
+#import "currency.h"
 
 @interface CurrencyViewController () <CRCurrencyRequestDelegate>
 @property (nonatomic) CRCurrencyRequest *req;
@@ -21,6 +22,7 @@
 @end
 
 @implementation CurrencyViewController
+//NSMutableArray *currencies = [[NSMutableArray alloc] initWithObjects: [currency new]];
 CRCurrencyResults *res;
 double usdValue = 0;
 double curRate = 1.00;
