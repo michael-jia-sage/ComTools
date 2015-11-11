@@ -15,6 +15,6 @@
 @property double rate;
 
 - (id)initWithName:(NSString *)aName code:(NSString *)aCode sortOrder:(int)aSortOrder;
-- (id)initWithName:(NSString *)aName code:(NSString *)aCode sortOrder:(int)aSortOrder rate:(double)rate;
+- (id)initWithName:(NSString *)aName code:(NSString *)aCode sortOrder:(int)aSortOrder rate:(double)aRate;
 
 @end

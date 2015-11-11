@@ -10,6 +10,7 @@
 #import "CurrencyRequest/CRCurrencyRequest.h"
 #import "CurrencyRequest/CRCurrencyResults.h"
 #import "currency.h"
+#import "utilities.h"
 
 @interface CurrencyViewController () <CRCurrencyRequestDelegate>
 @property (nonatomic) CRCurrencyRequest *req;
@@ -26,6 +27,7 @@ CRCurrencyResults *res;
 double usdValue = 0;
 double curRate = 1.00;
 NSMutableArray *supportedCurrencies;
+NSNumberFormatter *formatter;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [supportedCurrencies count];
@@ -33,13 +35,16 @@ NSMutableArray *supportedCurrencies;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-//    NSString *cur = [[[CRCurrencyResults supportedCurrencies] allObjects] objectAtIndex:indexPath.row];
-//    cell.textLabel.text = [CRCurrencyResults _nameForCurrency:cur];
     currency *cur = [supportedCurrencies objectAtIndex: indexPath.row];
     cell.textLabel.text = cur.name;
-    
-    double curValue = usdValue * [res _rateForCurrency:cur.code];
+    cur.rate = [res _rateForCurrency:cur.code];
+    double curValue = usdValue * cur.rate;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", curValue];
+    
+    UILabel *lblRate = [[UILabel alloc] init];// :CGRectMake(20,40,50,20)];
+    lblRate.text =  [NSString stringWithFormat: @"1 USD = %.2f", cur.rate];
+    lblRate.font=[UIFont fontWithName:@"AppleGothic" size:12];
+    [cell.contentView addSubview:lblRate];
     
     return cell;
 }
@@ -49,31 +54,28 @@ NSMutableArray *supportedCurrencies;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cur = [[[CRCurrencyResults supportedCurrencies] allObjects] objectAtIndex:indexPath.row];
-    curRate = [res _rateForCurrency:cur];
+    currency *cur = [supportedCurrencies objectAtIndex: indexPath.row];
+    curRate = cur.rate;
 
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     self.lblCurrencyName.text = cell.textLabel.text;
     self.inputField.text = cell.detailTextLabel.text;
+    self.lblUSD.text = [NSString stringWithFormat:@"Rate: %.2f   USD: %@", curRate, [formatter stringFromNumber: [NSNumber numberWithFloat: usdValue]]];
     self.lblUSD.hidden = [cell.textLabel.text isEqualToString:@"US Dollar"];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     self.lblUSD.hidden = YES;
     
     //load supported currencies
-    supportedCurrencies = [[NSMutableArray alloc] initWithObjects:
-                           [[currency alloc] initWithName:@"US Dollar" code:@"USD" sortOrder:1]
-                           ,[[currency alloc] initWithName:@"Canada Dollar" code:@"CAD" sortOrder:2]
-                           ,[[currency alloc] initWithName:@"China Yuan RMB" code:@"CNY" sortOrder:3]
-                           ,[[currency alloc] initWithName:@"Euro" code:@"EUR" sortOrder:4]
-                           ,[[currency alloc] initWithName:@"United Kingdom Pound" code:@"GBP" sortOrder:5]
-                           ,[[currency alloc] initWithName:@"Japan Yen" code:@"JPY" sortOrder:6]
-                           , nil];
-    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"sortOrder" ascending:YES];
-    [supportedCurrencies sortUsingDescriptors:@[sort]];
+    supportedCurrencies = [Utilities initCurrencies];
+    
+    self.inputField.text = @"100";
+    [self buttonTapped:[self convertButton]];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -90,9 +92,7 @@ NSMutableArray *supportedCurrencies;
     if (curRate != 1.00) {
         usdValue = usdValue / curRate;
     }
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    self.lblUSD.text = [NSString stringWithFormat:@"USD: %@", [formatter stringFromNumber: [NSNumber numberWithFloat: usdValue]]];
+    self.lblUSD.text = [NSString stringWithFormat:@"Rate: %.2f   USD: %@", curRate, [formatter stringFromNumber: [NSNumber numberWithFloat: usdValue]]];
     self.req = [[CRCurrencyRequest alloc] init];
     
     self.req.delegate = self;

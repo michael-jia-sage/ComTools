@@ -12,5 +12,7 @@
 @interface Utilities : NSObject {}
 
 + (UIColor *)colorFromHexString:(NSString *)hexString;
++ (NSMutableArray *)initUnits;
++ (NSMutableArray *)initCurrencies;
 
 @end

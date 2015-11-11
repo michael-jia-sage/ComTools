@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0E54F85F1BF1AE700059E277 /* currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E54F85E1BF1AE700059E277 /* currency.m */; };
+		0E57822F1BF303B500935AFC /* unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E57822E1BF303B500935AFC /* unit.m */; };
 		0E6AC6C61BE5E57D00DA0FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AC6C51BE5E57D00DA0FA6 /* main.m */; };
 		0E6AC6C91BE5E57D00DA0FA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AC6C81BE5E57D00DA0FA6 /* AppDelegate.m */; };
 		0E6AC6CC1BE5E57D00DA0FA6 /* ConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AC6CB1BE5E57D00DA0FA6 /* ConvertViewController.m */; };
@@ -24,6 +25,8 @@
 /* Begin PBXFileReference section */
 		0E54F85D1BF1AE700059E277 /* currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = currency.h; sourceTree = "<group>"; };
 		0E54F85E1BF1AE700059E277 /* currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = currency.m; sourceTree = "<group>"; };
+		0E57822D1BF303B500935AFC /* unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unit.h; sourceTree = "<group>"; };
+		0E57822E1BF303B500935AFC /* unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = unit.m; sourceTree = "<group>"; };
 		0E6AC6C11BE5E57D00DA0FA6 /* ComTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E6AC6C51BE5E57D00DA0FA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0E6AC6C71BE5E57D00DA0FA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 				0E6B9AEA1BE6F6DB00B49D2E /* utilities.h */,
 				0E54F85D1BF1AE700059E277 /* currency.h */,
 				0E54F85E1BF1AE700059E277 /* currency.m */,
+				0E57822D1BF303B500935AFC /* unit.h */,
+				0E57822E1BF303B500935AFC /* unit.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 			files = (
 				0E54F85F1BF1AE700059E277 /* currency.m in Sources */,
 				0E6AC6CF1BE5E57D00DA0FA6 /* CalculateViewController.m in Sources */,
+				0E57822F1BF303B500935AFC /* unit.m in Sources */,
 				0EAA74101BE737E4009D951C /* DiscoverViewController.m in Sources */,
 				0E6AC6C91BE5E57D00DA0FA6 /* AppDelegate.m in Sources */,
 				0EAA74131BE7381C009D951C /* CurrencyViewController.m in Sources */,

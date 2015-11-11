@@ -7,12 +7,16 @@
 //
 
 #import "ConvertViewController.h"
+#import "unit.h"
 
 @interface ConvertViewController ()
 
 @end
 
 @implementation ConvertViewController
+
+NSMutableArray *units;
+
 - (IBAction)convertBtnTapped:(id)sender {
 }
 
