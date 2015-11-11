@@ -11,6 +11,10 @@
 @interface currency : NSObject
 @property NSString *name;
 @property NSString *code;
-@property (readonly) int sortOrder;
+@property int sortOrder;
 @property double rate;
+
+- (id)initWithName:(NSString *)aName code:(NSString *)aCode sortOrder:(int)aSortOrder;
+- (id)initWithName:(NSString *)aName code:(NSString *)aCode sortOrder:(int)aSortOrder rate:(double)rate;
+
 @end

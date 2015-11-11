@@ -22,21 +22,23 @@
 @end
 
 @implementation CurrencyViewController
-//NSMutableArray *currencies = [[NSMutableArray alloc] initWithObjects: [currency new]];
 CRCurrencyResults *res;
 double usdValue = 0;
 double curRate = 1.00;
+NSMutableArray *supportedCurrencies;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[CRCurrencyResults supportedCurrencies] count];
+    return [supportedCurrencies count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    NSString *cur = [[[CRCurrencyResults supportedCurrencies] allObjects] objectAtIndex:indexPath.row];
-    cell.textLabel.text = [CRCurrencyResults _nameForCurrency:cur];
+//    NSString *cur = [[[CRCurrencyResults supportedCurrencies] allObjects] objectAtIndex:indexPath.row];
+//    cell.textLabel.text = [CRCurrencyResults _nameForCurrency:cur];
+    currency *cur = [supportedCurrencies objectAtIndex: indexPath.row];
+    cell.textLabel.text = cur.name;
     
-    double curValue = usdValue * [res _rateForCurrency:cur];
+    double curValue = usdValue * [res _rateForCurrency:cur.code];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", curValue];
     
     return cell;
@@ -60,6 +62,18 @@ double curRate = 1.00;
     [super viewDidLoad];
     
     self.lblUSD.hidden = YES;
+    
+    //load supported currencies
+    supportedCurrencies = [[NSMutableArray alloc] initWithObjects:
+                           [[currency alloc] initWithName:@"US Dollar" code:@"USD" sortOrder:1]
+                           ,[[currency alloc] initWithName:@"Canada Dollar" code:@"CAD" sortOrder:2]
+                           ,[[currency alloc] initWithName:@"China Yuan RMB" code:@"CNY" sortOrder:3]
+                           ,[[currency alloc] initWithName:@"Euro" code:@"EUR" sortOrder:4]
+                           ,[[currency alloc] initWithName:@"United Kingdom Pound" code:@"GBP" sortOrder:5]
+                           ,[[currency alloc] initWithName:@"Japan Yen" code:@"JPY" sortOrder:6]
+                           , nil];
+    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"sortOrder" ascending:YES];
+    [supportedCurrencies sortUsingDescriptors:@[sort]];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
