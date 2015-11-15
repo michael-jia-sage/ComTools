@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ConvertViewController : UIViewController
+@interface ConvertViewController : UIViewController<UIPickerViewDelegate, UIPickerViewDataSource>
 
 
 @end

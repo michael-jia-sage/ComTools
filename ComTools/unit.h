@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    Length,
-    Weight,
-    Area,
-    Volumn,
-    Time,
-    Other
+    Length = 0,
+    Weight = 1,
+    Area = 2,
+    Volumn = 3,
+    Time = 4,
+    Other = 5
 } UnitCategory;
 
 @interface unit : NSObject
@@ -24,7 +24,8 @@ typedef enum {
 @property NSString *abbr;
 @property int sortOrder;
 @property double rate;
+@property int selectedAs; //0 -- not selected; 1 -- as unit1; 2 -- as unit2
 
-- (id)initWithName:(NSString *)aName category:(UnitCategory)aCategory abbr:(NSString *)aAbbr sortOrder:(int)aSortOrder rate:(double)aRate;
+- (id)initWithName:(NSString *)aName category:(UnitCategory)aCategory abbr:(NSString *)aAbbr sortOrder:(int)aSortOrder rate:(double)aRate selectedAs:(int)aSelectedAs;
 
 @end

@@ -10,13 +10,14 @@
 
 @implementation unit
 
-- (id)initWithName:(NSString *)aName category:(UnitCategory)aCategory abbr:(NSString *)aAbbr sortOrder:(int)aSortOrder rate:(double)aRate {
+- (id)initWithName:(NSString *)aName category:(UnitCategory)aCategory abbr:(NSString *)aAbbr sortOrder:(int)aSortOrder rate:(double)aRate selectedAs:(int)aSelectedAs {
     unit *u = [[unit alloc] init];
     u.name = aName;
     u.category = aCategory;
     u.abbr = aAbbr;
     u.sortOrder = aSortOrder;
     u.rate  = aRate;
+    u.selectedAs = aSelectedAs;
     return u;
 }
 
