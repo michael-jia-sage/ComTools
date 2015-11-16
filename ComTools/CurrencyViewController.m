@@ -11,23 +11,24 @@
 #import "CurrencyRequest/CRCurrencyResults.h"
 #import "currency.h"
 #import "utilities.h"
+#import "constants.h"
 
 @interface CurrencyViewController () <CRCurrencyRequestDelegate>
 @property (nonatomic) CRCurrencyRequest *req;
 @property (weak, nonatomic) IBOutlet UITextField *inputField;
-@property (weak, nonatomic) IBOutlet UIButton *convertButton;
 @property (weak, nonatomic) IBOutlet UITableView *lstCurrency;
 @property (weak, nonatomic) IBOutlet UILabel *lblCurrencyName;
 @property (weak, nonatomic) IBOutlet UILabel *lblUSD;
+@property (weak, nonatomic) IBOutlet UIButton *btnReset;
 
 @end
 
 @implementation CurrencyViewController
 CRCurrencyResults *res;
 double usdValue = 0;
-double curRate = 1.00;
 NSMutableArray *supportedCurrencies;
-NSNumberFormatter *formatter;
+currency *selCurrency;
+NSNumberFormatter *curFormatter;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [supportedCurrencies count];
@@ -41,71 +42,107 @@ NSNumberFormatter *formatter;
     double curValue = usdValue * cur.rate;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", curValue];
     
-    UILabel *lblRate = [[UILabel alloc] init];// :CGRectMake(20,40,50,20)];
-    lblRate.text =  [NSString stringWithFormat: @"1 USD = %.2f", cur.rate];
-    lblRate.font=[UIFont fontWithName:@"AppleGothic" size:12];
-    [cell.contentView addSubview:lblRate];
-    
     return cell;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Tab to select";
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    currency *cur = [supportedCurrencies objectAtIndex: indexPath.row];
-    curRate = cur.rate;
+    selCurrency = [supportedCurrencies objectAtIndex: indexPath.row];
 
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     self.lblCurrencyName.text = cell.textLabel.text;
-    self.inputField.text = cell.detailTextLabel.text;
-    self.lblUSD.text = [NSString stringWithFormat:@"Rate: %.2f   USD: %@", curRate, [formatter stringFromNumber: [NSNumber numberWithFloat: usdValue]]];
     self.lblUSD.hidden = [cell.textLabel.text isEqualToString:@"US Dollar"];
+    
+    [self doCalCurrencies];
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.inputField.editing) {
+        [self.inputField endEditing:YES];
+        return nil;
+    }
+    return indexPath;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 22)];
+    [sectionView setBackgroundColor:[Utilities colorFromHexString:themeColor]];
+    UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(15,0,300,22)];
+//    tempLabel.shadowColor = [UIColor blackColor];
+//    tempLabel.shadowOffset = CGSizeMake(0,2);
+    tempLabel.textColor = [UIColor whiteColor];
+    tempLabel.font = [UIFont boldSystemFontOfSize:16];
+    tempLabel.text=@"Tap to change";
+    
+    [sectionView addSubview:tempLabel];
+    return sectionView;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    formatter = [[NSNumberFormatter alloc] init];
-    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    curFormatter = [[NSNumberFormatter alloc] init];
+    [curFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     self.lblUSD.hidden = YES;
+    self.btnReset.hidden = YES;
+    
+    //button styles
+    self.btnReset.layer.cornerRadius = 10;
+    self.btnReset.clipsToBounds = YES;
+    self.btnReset.backgroundColor = [Utilities colorFromHexString:themeColor];
     
     //load supported currencies
     supportedCurrencies = [Utilities initCurrencies];
+    selCurrency = [supportedCurrencies objectAtIndex:0];
     
     self.inputField.text = @"100";
-    [self buttonTapped:[self convertButton]];
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [[event allTouches] anyObject];
-    if (![[touch view] isKindOfClass:[UITextField class]]) {
-        [self.view endEditing:YES];
-    }
-    [super touchesBegan:touches withEvent:event];
-}
-
-- (IBAction)buttonTapped:(id)sender {
-    self.convertButton.enabled = NO;
-    usdValue = [self.inputField.text floatValue];
-    if (curRate != 1.00) {
-        usdValue = usdValue / curRate;
-    }
-    self.lblUSD.text = [NSString stringWithFormat:@"Rate: %.2f   USD: %@", curRate, [formatter stringFromNumber: [NSNumber numberWithFloat: usdValue]]];
+    usdValue = 100;
     self.req = [[CRCurrencyRequest alloc] init];
     
     self.req.delegate = self;
     [self.req start];
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [[event allTouches] anyObject];
+    if (self.inputField.editing && ![[touch view] isKindOfClass:[UITextField class]]) {
+        [self.view endEditing:YES];
+        return;
+    }
+    [super touchesBegan:touches withEvent:event];
+}
+
+- (IBAction)inputValueChanged:(id)sender {
+    self.btnReset.hidden = ([self.inputField.text floatValue] == 100);
+    [self doCalCurrencies];
+}
+
+- (IBAction)btnResetTapped:(id)sender {
+    self.inputField.text = @"100";
+    [self doCalCurrencies];
+}
+
+- (IBAction)inputEnter:(id)sender {
+    [self.inputField selectAll:nil];
+}
+
+- (void)doCalCurrencies {
+    usdValue = [self.inputField.text floatValue];
+    if (![selCurrency.name isEqualToString:@"US Dollar"]) {
+        usdValue = usdValue / selCurrency.rate;
+        self.lblUSD.text = [NSString stringWithFormat:@"Rate: 1 USD = %.2f %@", selCurrency.rate, selCurrency.code];
+    }
+    
+    NSIndexPath *selIndex = self.lstCurrency.indexPathForSelectedRow;
+    [self.lstCurrency reloadData];
+    if (selIndex != nil) {
+        [self.lstCurrency selectRowAtIndexPath:selIndex animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+    }
+}
+
 - (void)currencyRequest:(CRCurrencyRequest *)req
     retrievedCurrencies:(CRCurrencyResults *)currencies {
     res = currencies;
-    
     [self.lstCurrency reloadData];
-    [self.inputField endEditing:YES];
-    self.convertButton.enabled = YES;
 }
 
 @end
