@@ -85,6 +85,9 @@ NSNumberFormatter *curFormatter;
     self.lblUSD.hidden = YES;
     self.btnReset.hidden = YES;
     
+    //background
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+    
     //button styles
     self.btnReset.layer.cornerRadius = 10;
     self.btnReset.clipsToBounds = YES;

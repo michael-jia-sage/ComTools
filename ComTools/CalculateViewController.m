@@ -123,6 +123,9 @@ NSNumberFormatter *calFormatter;
     calFormatter = [[NSNumberFormatter alloc] init];
     [calFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     
+    //background
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+    
     //set styles
     self.btnTip1.layer.cornerRadius =
     self.btnTip2.layer.cornerRadius =

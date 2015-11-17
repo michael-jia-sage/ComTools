@@ -73,6 +73,10 @@ NSSortDescriptor *sort;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //background
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+
     allUnits = [Utilities initUnits];
     self.segCategory.selectedSegmentIndex = 0;
     self.pickerUnits.hidden = YES;
