@@ -92,6 +92,13 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="aun-9z-ppr"/>
                                 </connections>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWP-EL-m67">
+                                <rect key="frame" x="20" y="172" width="48" height="36"/>
+                                <state key="normal" image="arrow-right"/>
+                                <connections>
+                                    <action selector="btnSwitchTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="w7A-fC-kaY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -625,6 +632,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow-right" width="22" height="30"/>
         <image name="calculate-tab-active" width="22" height="28"/>
         <image name="convert-tab-active" width="34" height="24"/>
         <image name="currency-tab-active" width="22" height="30"/>

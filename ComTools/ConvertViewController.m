@@ -29,6 +29,7 @@ NSArray *allUnits;
 NSMutableArray *units;
 unit *unit1, *unit2;
 int activeUnit;
+bool reverseCal;
 float convertRate;
 NSSortDescriptor *sort;
 
@@ -62,13 +63,13 @@ NSSortDescriptor *sort;
 }
 
 - (IBAction)inputUnit1Changed:(id)sender {
-    activeUnit = 1;
     [self doCalculate];
 }
 
 - (IBAction)inputUnit2Changed:(id)sender {
-    activeUnit = 2;
+    reverseCal = true;
     [self doCalculate];
+    reverseCal = false;
 }
 
 - (void)viewDidLoad {
@@ -80,6 +81,7 @@ NSSortDescriptor *sort;
     allUnits = [Utilities initUnits];
     self.segCategory.selectedSegmentIndex = 0;
     self.pickerUnits.hidden = YES;
+    reverseCal = false;
     sort = [NSSortDescriptor sortDescriptorWithKey:@"sortOrder" ascending:YES];
     [self.segCategory sendActionsForControlEvents:UIControlEventValueChanged];
 }
@@ -97,10 +99,10 @@ NSSortDescriptor *sort;
 }
 
 - (void)doCalculate {
-    if (activeUnit == 1) {
+    if (!reverseCal) {
         float amount1 = [self.inputUnit1.text floatValue];
         self.inputUnit2.text = [NSString stringWithFormat:@"%g", amount1 * convertRate];
-    } else if (activeUnit == 2) {
+    } else {
         float amount2 = [self.inputUnit2.text floatValue];
         self.inputUnit1.text = [NSString stringWithFormat:@"%g", amount2 / convertRate];
     }
@@ -151,6 +153,16 @@ NSSortDescriptor *sort;
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     unit *unit = [units objectAtIndex: row];
     return unit.name;
+}
+
+- (IBAction)btnSwitchTapped:(id)sender {
+    unit *tmpUnit = unit1;
+    unit1 = unit2;
+    unit2 = tmpUnit;
+    [self doRefresh];
+    NSString *tmpStr = self.inputUnit1.text;
+    self.inputUnit1.text = self.inputUnit2.text;
+    self.inputUnit2.text = tmpStr;
 }
 
 @end
