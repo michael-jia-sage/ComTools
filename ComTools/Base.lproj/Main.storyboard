@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -92,26 +92,57 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="aun-9z-ppr"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWP-EL-m67">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yWP-EL-m67">
                                 <rect key="frame" x="20" y="172" width="48" height="36"/>
                                 <state key="normal" image="arrow-right"/>
                                 <connections>
                                     <action selector="btnSwitchTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="w7A-fC-kaY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeN-eo-diL">
+                                <rect key="frame" x="20" y="136" width="48" height="31"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="=&gt; 1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnResetTapped:" destination="Krh-w2-DhU" eventType="touchUpInside" id="bXp-Pa-O8e"/>
+                                    <action selector="btnResetUnit1Tapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="0wA-xQ-b2s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8B-1q-WBN">
+                                <rect key="frame" x="20" y="221" width="48" height="31"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="=&gt; 1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnResetTapped:" destination="Krh-w2-DhU" eventType="touchUpInside" id="URe-Ye-0Dk"/>
+                                    <action selector="btnResetUnit2Tapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="EMb-Pr-x8l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yWP-EL-m67" firstAttribute="top" secondItem="yeN-eo-diL" secondAttribute="bottom" constant="10" id="30R-hw-bf6"/>
                             <constraint firstAttribute="leadingMargin" secondItem="nPa-YM-sy8" secondAttribute="leading" id="3lb-3v-qKf"/>
                             <constraint firstItem="GEs-th-S6y" firstAttribute="top" secondItem="IDd-23-DY0" secondAttribute="bottom" constant="8" id="4HG-b2-5eD"/>
                             <constraint firstAttribute="leadingMargin" secondItem="IDd-23-DY0" secondAttribute="leading" id="4j2-CZ-clf"/>
                             <constraint firstAttribute="leadingMargin" secondItem="IT4-UN-RIg" secondAttribute="leading" id="53Z-oS-oFy"/>
                             <constraint firstItem="GEs-th-S6y" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="CQC-7b-0a9"/>
+                            <constraint firstItem="yeN-eo-diL" firstAttribute="top" secondItem="IT4-UN-RIg" secondAttribute="bottom" constant="7" id="Chy-hi-ayG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nPa-YM-sy8" secondAttribute="trailing" id="ETo-h3-tgV"/>
                             <constraint firstItem="weB-zN-Qht" firstAttribute="leading" secondItem="LPU-lm-Qst" secondAttribute="trailing" constant="8" id="KFc-uy-9kp"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="q8B-1q-WBN" secondAttribute="leading" id="KNc-bB-jT0"/>
                             <constraint firstItem="IT4-UN-RIg" firstAttribute="top" secondItem="SNt-d8-I3W" secondAttribute="bottom" constant="35" id="MN3-1I-wJT"/>
                             <constraint firstItem="weB-zN-Qht" firstAttribute="top" secondItem="IT4-UN-RIg" secondAttribute="bottom" constant="12" id="Mxs-KY-wAd"/>
                             <constraint firstItem="LPU-lm-Qst" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="NVF-kP-4op"/>
+                            <constraint firstItem="LPU-lm-Qst" firstAttribute="leading" secondItem="yeN-eo-diL" secondAttribute="trailing" constant="10" id="Nyb-X9-PAd"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="yeN-eo-diL" secondAttribute="leading" id="PW1-2O-GCi"/>
                             <constraint firstItem="GGx-ko-hXg" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Pj2-sw-y96"/>
                             <constraint firstItem="SNt-d8-I3W" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="24" id="Rbv-Gn-v7n"/>
                             <constraint firstItem="nPa-YM-sy8" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Sd8-Je-IkH"/>
@@ -120,11 +151,14 @@
                             <constraint firstItem="LPU-lm-Qst" firstAttribute="top" secondItem="IT4-UN-RIg" secondAttribute="bottom" constant="8" id="a4q-8T-9lc"/>
                             <constraint firstItem="yhe-D5-hc1" firstAttribute="leading" secondItem="GEs-th-S6y" secondAttribute="trailing" constant="6" id="bGe-Ah-r4U"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IDd-23-DY0" secondAttribute="trailing" id="blX-jW-QuB"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="yWP-EL-m67" secondAttribute="leading" id="cEa-kL-tgo"/>
+                            <constraint firstItem="q8B-1q-WBN" firstAttribute="top" secondItem="IDd-23-DY0" secondAttribute="bottom" constant="7" id="d7z-bh-9GI"/>
                             <constraint firstItem="yhe-D5-hc1" firstAttribute="top" secondItem="IDd-23-DY0" secondAttribute="bottom" constant="12" id="eSf-zO-iMc"/>
                             <constraint firstItem="SNt-d8-I3W" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="eqe-Mc-VMa"/>
                             <constraint firstAttribute="leadingMargin" secondItem="SNt-d8-I3W" secondAttribute="leading" id="gJ0-hh-Dfd"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="GGx-ko-hXg" secondAttribute="bottom" id="gK1-bk-Fvv"/>
                             <constraint firstItem="GGx-ko-hXg" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="glg-UX-M5O"/>
+                            <constraint firstItem="GEs-th-S6y" firstAttribute="leading" secondItem="q8B-1q-WBN" secondAttribute="trailing" constant="10" id="iA0-Po-vWC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="weB-zN-Qht" secondAttribute="trailing" id="jwt-sQ-Bw1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yhe-D5-hc1" secondAttribute="trailing" id="klb-ez-kYB"/>
                             <constraint firstItem="IDd-23-DY0" firstAttribute="top" secondItem="LPU-lm-Qst" secondAttribute="bottom" constant="17" id="mWY-6a-BO5"/>
@@ -136,6 +170,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Convert" image="convert-tab-active" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="btnResetUnit1" destination="yeN-eo-diL" id="opv-Mb-EcW"/>
+                        <outlet property="btnResetUnit2" destination="q8B-1q-WBN" id="koD-2D-geI"/>
                         <outlet property="btnUnit1" destination="IT4-UN-RIg" id="AWA-Bk-ACS"/>
                         <outlet property="btnUnit2" destination="IDd-23-DY0" id="sPJ-to-DYE"/>
                         <outlet property="inputUnit1" destination="LPU-lm-Qst" id="pun-QA-kLX"/>

@@ -8,6 +8,7 @@
 
 #import "ConvertViewController.h"
 #import "utilities.h"
+#import "constants.h"
 #import "unit.h"
 
 @interface ConvertViewController ()
@@ -20,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblUnit2;
 @property (weak, nonatomic) IBOutlet UILabel *lblFormat;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerUnits;
+@property (weak, nonatomic) IBOutlet UIButton *btnResetUnit1;
+@property (weak, nonatomic) IBOutlet UIButton *btnResetUnit2;
 
 @end
 
@@ -77,12 +80,18 @@ NSSortDescriptor *sort;
     
     //background
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+    
+    //button styles
+    self.btnResetUnit1.layer.cornerRadius = self.btnResetUnit2.layer.cornerRadius = 10;
+    self.btnResetUnit1.clipsToBounds = self.btnResetUnit2.clipsToBounds = YES;
+    self.btnResetUnit1.backgroundColor = self.btnResetUnit2.backgroundColor = [Utilities colorFromHexString:themeColor];
 
     allUnits = [Utilities initUnits];
     self.segCategory.selectedSegmentIndex = 0;
     self.pickerUnits.hidden = YES;
     reverseCal = false;
     sort = [NSSortDescriptor sortDescriptorWithKey:@"sortOrder" ascending:YES];
+    self.inputUnit1.text = @"1";
     [self.segCategory sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
@@ -164,5 +173,19 @@ NSSortDescriptor *sort;
     self.inputUnit1.text = self.inputUnit2.text;
     self.inputUnit2.text = tmpStr;
 }
+
+- (IBAction)btnResetUnit1Tapped:(id)sender {
+    self.inputUnit1.text = @"1";
+    [self doCalculate];
+}
+
+- (IBAction)btnResetUnit2Tapped:(id)sender {
+    self.inputUnit2.text = @"1";
+    reverseCal = true;
+    [self doCalculate];
+    reverseCal = false;
+}
+
+
 
 @end
