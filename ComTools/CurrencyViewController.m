@@ -41,7 +41,9 @@ NSNumberFormatter *curFormatter;
     cur.rate = [res _rateForCurrency:cur.code];
     double curValue = usdValue * cur.rate;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", curValue];
-    
+    cell.textLabel.font = [UIFont fontWithName:[NSString stringWithFormat:@"%@-Bold",cell.textLabel.font.fontName] size:cell.textLabel.font.pointSize];
+    cell.textLabel.textColor = cell.detailTextLabel.textColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor clearColor];
     return cell;
 }
 
@@ -63,19 +65,19 @@ NSNumberFormatter *curFormatter;
     return indexPath;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 22)];
-    [sectionView setBackgroundColor:[Utilities colorFromHexString:themeColor]];
-    UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(15,0,300,22)];
-//    tempLabel.shadowColor = [UIColor blackColor];
-//    tempLabel.shadowOffset = CGSizeMake(0,2);
-    tempLabel.textColor = [UIColor whiteColor];
-    tempLabel.font = [UIFont boldSystemFontOfSize:16];
-    tempLabel.text=@"Tap to change";
-    
-    [sectionView addSubview:tempLabel];
-    return sectionView;
-}
+//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+//    UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 22)];
+//    [sectionView setBackgroundColor:[Utilities colorFromHexString:themeColor]];
+//    UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(15,0,300,22)];
+////    tempLabel.shadowColor = [UIColor blackColor];
+////    tempLabel.shadowOffset = CGSizeMake(0,2);
+//    tempLabel.textColor = [UIColor whiteColor];
+//    tempLabel.font = [UIFont boldSystemFontOfSize:16];
+//    tempLabel.text=@"Tap to change";
+//    
+//    [sectionView addSubview:tempLabel];
+//    return sectionView;
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -86,7 +88,10 @@ NSNumberFormatter *curFormatter;
     self.btnReset.hidden = YES;
     
     //background
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg"]];
+    bgImageView.frame = self.view.bounds;
+    [self.view addSubview:bgImageView];
+    [self.view sendSubviewToBack:bgImageView];
     
     //button styles
     self.btnReset.layer.cornerRadius = 10;
@@ -121,6 +126,7 @@ NSNumberFormatter *curFormatter;
 
 - (IBAction)btnResetTapped:(id)sender {
     self.inputField.text = @"100";
+    self.btnReset.hidden = YES;
     [self doCalCurrencies];
 }
 

@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnTip3;
 @property (weak, nonatomic) IBOutlet UIButton *btnTip4;
 @property (weak, nonatomic) IBOutlet UIButton *btnTip5;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 
@@ -120,11 +121,18 @@ NSNumberFormatter *calFormatter;
 }
 
 -(void)viewDidLoad {
+    tipRate = 0.1;
+    
     calFormatter = [[NSNumberFormatter alloc] init];
     [calFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     
+    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height*3);
+    
     //background
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg"]];
+    bgImageView.frame = self.view.bounds;
+    [self.view addSubview:bgImageView];
+    [self.view sendSubviewToBack:bgImageView];
     
     //set styles
     self.btnTip1.layer.cornerRadius =

@@ -79,7 +79,10 @@ NSSortDescriptor *sort;
     [super viewDidLoad];
     
     //background
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+    UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg"]];
+    bgImageView.frame = self.view.bounds;
+    [self.view addSubview:bgImageView];
+    [self.view sendSubviewToBack:bgImageView];
     
     //button styles
     self.btnResetUnit1.layer.cornerRadius = self.btnResetUnit2.layer.cornerRadius = 10;
@@ -159,9 +162,10 @@ NSSortDescriptor *sort;
     return 1;
 }
 
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+-(NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
     unit *unit = [units objectAtIndex: row];
-    return unit.name;
+    NSAttributedString *attString = [[NSAttributedString alloc] initWithString:unit.name attributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    return attString;
 }
 
 - (IBAction)btnSwitchTapped:(id)sender {
