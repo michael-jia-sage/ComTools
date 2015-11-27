@@ -38,8 +38,14 @@ NSSortDescriptor *sort;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
-    if (![[touch view] isKindOfClass:[UITextField class]]) {
+    if (!self.pickerUnits.isHidden && ![[touch view] isKindOfClass:[UIPickerView class]]) {
+        self.pickerUnits.hidden = YES;
+        return;
+    }
+
+    if ((self.inputUnit1.editing || self.inputUnit2.editing) && ![[touch view] isKindOfClass:[UITextField class]]) {
         [self.view endEditing:YES];
+        return;
     }
     [super touchesBegan:touches withEvent:event];
 }
@@ -88,7 +94,11 @@ NSSortDescriptor *sort;
     self.btnResetUnit1.layer.cornerRadius = self.btnResetUnit2.layer.cornerRadius = 10;
     self.btnResetUnit1.clipsToBounds = self.btnResetUnit2.clipsToBounds = YES;
     self.btnResetUnit1.backgroundColor = self.btnResetUnit2.backgroundColor = [Utilities colorFromHexString:themeColor];
-
+    
+    //picker view style
+    [self.view bringSubviewToFront:self.pickerUnits];
+    
+    
     allUnits = [Utilities initUnits];
     self.segCategory.selectedSegmentIndex = 0;
     self.pickerUnits.hidden = YES;
