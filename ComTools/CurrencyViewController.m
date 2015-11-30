@@ -131,7 +131,7 @@ NSNumberFormatter *curFormatter;
 }
 
 - (IBAction)inputEnter:(id)sender {
-    [self.inputField selectAll:nil];
+    [sender selectAll:nil];
 }
 
 - (void)doCalCurrencies {

@@ -81,6 +81,10 @@ NSSortDescriptor *sort;
     reverseCal = false;
 }
 
+- (IBAction)inputEnter:(id)sender {
+    [sender selectAll:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

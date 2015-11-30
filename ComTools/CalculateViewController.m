@@ -76,6 +76,10 @@ NSNumberFormatter *calFormatter;
     [self tipChanged:sender];
 }
 
+- (IBAction)inputEnter:(id)sender {
+    [sender selectAll:nil];
+}
+
 - (IBAction)totalChanged:(id)sender {
     total = [self.txtTotal.text floatValue];
     [self calTotalAndTip];
@@ -121,12 +125,11 @@ NSNumberFormatter *calFormatter;
 }
 
 -(void)viewDidLoad {
+    [super viewDidLoad];
     tipRate = 0.1;
     
     calFormatter = [[NSNumberFormatter alloc] init];
     [calFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-    
-    self.scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height*3);
     
     //background
     UIImageView *bgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg"]];
@@ -151,5 +154,9 @@ NSNumberFormatter *calFormatter;
     self.btnTip4.backgroundColor =
     self.btnTip5.backgroundColor = [Utilities colorFromHexString:themeColor];
 
+    if (IS_IPHONE_4) {
+        [self.scrollView setScrollEnabled:YES];
+        [self.scrollView setContentSize: CGSizeMake(320, 640)];
+    }
 }
 @end

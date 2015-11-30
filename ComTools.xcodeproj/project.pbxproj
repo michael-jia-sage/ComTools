@@ -17,7 +17,7 @@
 		0E6AC6D41BE5E57D00DA0FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AC6D31BE5E57D00DA0FA6 /* Assets.xcassets */; };
 		0E6AC6D71BE5E57D00DA0FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AC6D51BE5E57D00DA0FA6 /* LaunchScreen.storyboard */; };
 		0E6B9AE91BE6F65400B49D2E /* utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B9AE81BE6F65400B49D2E /* utilities.m */; };
-		0EAA74101BE737E4009D951C /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAA740F1BE737E4009D951C /* DiscoverViewController.m */; };
+		0EAA74101BE737E4009D951C /* CompareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAA740F1BE737E4009D951C /* CompareViewController.m */; };
 		0EAA74131BE7381C009D951C /* CurrencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAA74121BE7381C009D951C /* CurrencyViewController.m */; };
 		6352A4AA54147B79D5C7C0CA /* libPods-ComTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A26ECE346AF94A221965592 /* libPods-ComTools.a */; };
 /* End PBXBuildFile section */
@@ -42,8 +42,8 @@
 		0E6B9AE71BE6F4EC00B49D2E /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		0E6B9AE81BE6F65400B49D2E /* utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = utilities.m; sourceTree = "<group>"; };
 		0E6B9AEA1BE6F6DB00B49D2E /* utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utilities.h; sourceTree = "<group>"; };
-		0EAA740E1BE737E4009D951C /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoverViewController.h; sourceTree = "<group>"; };
-		0EAA740F1BE737E4009D951C /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscoverViewController.m; sourceTree = "<group>"; };
+		0EAA740E1BE737E4009D951C /* CompareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompareViewController.h; sourceTree = "<group>"; };
+		0EAA740F1BE737E4009D951C /* CompareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareViewController.m; sourceTree = "<group>"; };
 		0EAA74111BE7381C009D951C /* CurrencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrencyViewController.h; sourceTree = "<group>"; };
 		0EAA74121BE7381C009D951C /* CurrencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrencyViewController.m; sourceTree = "<group>"; };
 		2AB651D4273D0599964E31D3 /* Pods-ComTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComTools/Pods-ComTools.debug.xcconfig"; sourceTree = "<group>"; };
@@ -92,8 +92,8 @@
 				0E6AC6CE1BE5E57D00DA0FA6 /* CalculateViewController.m */,
 				0EAA74111BE7381C009D951C /* CurrencyViewController.h */,
 				0EAA74121BE7381C009D951C /* CurrencyViewController.m */,
-				0EAA740E1BE737E4009D951C /* DiscoverViewController.h */,
-				0EAA740F1BE737E4009D951C /* DiscoverViewController.m */,
+				0EAA740E1BE737E4009D951C /* CompareViewController.h */,
+				0EAA740F1BE737E4009D951C /* CompareViewController.m */,
 				0E6AC6D01BE5E57D00DA0FA6 /* Main.storyboard */,
 				0E6AC6D31BE5E57D00DA0FA6 /* Assets.xcassets */,
 				0E6AC6D51BE5E57D00DA0FA6 /* LaunchScreen.storyboard */,
@@ -243,7 +243,7 @@
 				0E54F85F1BF1AE700059E277 /* currency.m in Sources */,
 				0E6AC6CF1BE5E57D00DA0FA6 /* CalculateViewController.m in Sources */,
 				0E57822F1BF303B500935AFC /* unit.m in Sources */,
-				0EAA74101BE737E4009D951C /* DiscoverViewController.m in Sources */,
+				0EAA74101BE737E4009D951C /* CompareViewController.m in Sources */,
 				0E6AC6C91BE5E57D00DA0FA6 /* AppDelegate.m in Sources */,
 				0EAA74131BE7381C009D951C /* CurrencyViewController.m in Sources */,
 				0E6AC6CC1BE5E57D00DA0FA6 /* ConvertViewController.m in Sources */,

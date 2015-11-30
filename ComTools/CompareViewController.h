@@ -1,5 +1,5 @@
 //
-//  DiscoverViewController.h
+//  CompareViewController.h
 //  ComTools
 //
 //  Created by Zonggao Jia on 2015-11-01.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DiscoverViewController : UIViewController
+@interface CompareViewController : UIViewController
 
 @end

@@ -3,73 +3,73 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "appicon-Small@2x-1.png",
+      "filename" : "logo_ctools_58.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "appicon-72@2x.png",
+      "filename" : "logo_ctools_87.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "appicon-Small-40@2x.png",
+      "filename" : "logo_ctools_80-1.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "appicon-Small-40@2x-1.png",
+      "filename" : "logo_ctools_120.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "appicon-Small-50@2x.png",
+      "filename" : "logo_ctools_120-1.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "appicon-Small-50@2x-1.png",
+      "filename" : "logo_ctools_180.png",
       "scale" : "3x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "appicon-Small.png",
+      "filename" : "logo_ctools_29.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "appicon-Small@2x.png",
+      "filename" : "logo_ctools_58-1.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "appicon-Small-40.png",
+      "filename" : "logo_ctools_40.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "appicon-Small-40@2x-2.png",
+      "filename" : "logo_ctools_80.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "appicon-76.png",
+      "filename" : "logo_ctools_76.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "appicon-76@2x.png",
+      "filename" : "logo_ctools_152.png",
       "scale" : "2x"
     }
   ],
