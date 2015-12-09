@@ -14,5 +14,6 @@
 + (UIColor *)colorFromHexString:(NSString *)hexString;
 + (NSMutableArray *)initUnits;
 + (NSMutableArray *)initCurrencies;
++ (BOOL)InternetConnected;
 
 @end

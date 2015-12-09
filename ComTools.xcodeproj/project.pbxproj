@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E132F541C17F2E9005A896F /* reachable.h in Resources */ = {isa = PBXBuildFile; fileRef = 0E132F531C17F2E8005A896F /* reachable.h */; };
+		0E132F561C17F322005A896F /* reachable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132F551C17F322005A896F /* reachable.m */; };
 		0E54F85F1BF1AE700059E277 /* currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E54F85E1BF1AE700059E277 /* currency.m */; };
 		0E57822F1BF303B500935AFC /* unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E57822E1BF303B500935AFC /* unit.m */; };
 		0E6AC6C61BE5E57D00DA0FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AC6C51BE5E57D00DA0FA6 /* main.m */; };
@@ -15,7 +17,6 @@
 		0E6AC6CF1BE5E57D00DA0FA6 /* CalculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AC6CE1BE5E57D00DA0FA6 /* CalculateViewController.m */; };
 		0E6AC6D21BE5E57D00DA0FA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AC6D01BE5E57D00DA0FA6 /* Main.storyboard */; };
 		0E6AC6D41BE5E57D00DA0FA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AC6D31BE5E57D00DA0FA6 /* Assets.xcassets */; };
-		0E6AC6D71BE5E57D00DA0FA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E6AC6D51BE5E57D00DA0FA6 /* LaunchScreen.storyboard */; };
 		0E6B9AE91BE6F65400B49D2E /* utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B9AE81BE6F65400B49D2E /* utilities.m */; };
 		0EAA74101BE737E4009D951C /* CompareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAA740F1BE737E4009D951C /* CompareViewController.m */; };
 		0EAA74131BE7381C009D951C /* CurrencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAA74121BE7381C009D951C /* CurrencyViewController.m */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E132F531C17F2E8005A896F /* reachable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reachable.h; sourceTree = "<group>"; };
+		0E132F551C17F322005A896F /* reachable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reachable.m; sourceTree = "<group>"; };
 		0E54F85D1BF1AE700059E277 /* currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = currency.h; sourceTree = "<group>"; };
 		0E54F85E1BF1AE700059E277 /* currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = currency.m; sourceTree = "<group>"; };
 		0E57822D1BF303B500935AFC /* unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unit.h; sourceTree = "<group>"; };
@@ -37,7 +40,6 @@
 		0E6AC6CE1BE5E57D00DA0FA6 /* CalculateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculateViewController.m; sourceTree = "<group>"; };
 		0E6AC6D11BE5E57D00DA0FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E6AC6D31BE5E57D00DA0FA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0E6AC6D61BE5E57D00DA0FA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E6AC6D81BE5E57D00DA0FA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E6B9AE71BE6F4EC00B49D2E /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		0E6B9AE81BE6F65400B49D2E /* utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = utilities.m; sourceTree = "<group>"; };
@@ -96,7 +98,6 @@
 				0EAA740F1BE737E4009D951C /* CompareViewController.m */,
 				0E6AC6D01BE5E57D00DA0FA6 /* Main.storyboard */,
 				0E6AC6D31BE5E57D00DA0FA6 /* Assets.xcassets */,
-				0E6AC6D51BE5E57D00DA0FA6 /* LaunchScreen.storyboard */,
 				0E6AC6D81BE5E57D00DA0FA6 /* Info.plist */,
 				0E6AC6C41BE5E57D00DA0FA6 /* Supporting Files */,
 			);
@@ -114,6 +115,8 @@
 				0E54F85E1BF1AE700059E277 /* currency.m */,
 				0E57822D1BF303B500935AFC /* unit.h */,
 				0E57822E1BF303B500935AFC /* unit.m */,
+				0E132F531C17F2E8005A896F /* reachable.h */,
+				0E132F551C17F322005A896F /* reachable.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -194,7 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E6AC6D71BE5E57D00DA0FA6 /* LaunchScreen.storyboard in Resources */,
+				0E132F541C17F2E9005A896F /* reachable.h in Resources */,
 				0E6AC6D41BE5E57D00DA0FA6 /* Assets.xcassets in Resources */,
 				0E6AC6D21BE5E57D00DA0FA6 /* Main.storyboard in Resources */,
 			);
@@ -244,6 +247,7 @@
 				0E6AC6CF1BE5E57D00DA0FA6 /* CalculateViewController.m in Sources */,
 				0E57822F1BF303B500935AFC /* unit.m in Sources */,
 				0EAA74101BE737E4009D951C /* CompareViewController.m in Sources */,
+				0E132F561C17F322005A896F /* reachable.m in Sources */,
 				0E6AC6C91BE5E57D00DA0FA6 /* AppDelegate.m in Sources */,
 				0EAA74131BE7381C009D951C /* CurrencyViewController.m in Sources */,
 				0E6AC6CC1BE5E57D00DA0FA6 /* ConvertViewController.m in Sources */,
@@ -261,14 +265,6 @@
 				0E6AC6D11BE5E57D00DA0FA6 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0E6AC6D51BE5E57D00DA0FA6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0E6AC6D61BE5E57D00DA0FA6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -361,10 +357,13 @@
 			baseConfigurationReference = 2AB651D4273D0599964E31D3 /* Pods-ComTools.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = ComTools/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.michaelsoft.ComTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -373,10 +372,13 @@
 			baseConfigurationReference = CD40618E57BC80F51BA0B75A /* Pods-ComTools.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = ComTools/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.michaelsoft.ComTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

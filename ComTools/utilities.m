@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "reachable.h"
 #import "utilities.h"
 #import "currency.h"
 #import "unit.h"
@@ -96,4 +97,10 @@
     return supportedCurrencies;
 }
 
++ (BOOL)InternetConnected
+{
+    reachable *reachability = [reachable reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    return networkStatus != NotReachable;
+}
 @end

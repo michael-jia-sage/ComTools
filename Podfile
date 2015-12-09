@@ -3,7 +3,6 @@
 
 target 'ComTools' do
 
-pod 'DistanceGetter','~> 0.1'
 pod 'CurrencyRequest','~> 0.1'
 
 end

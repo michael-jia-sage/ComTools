@@ -12,12 +12,9 @@
 		2948B6C30B599E95A5C1814D28868CD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 877C58BB5577C92138A98FCEF76667BD /* Foundation.framework */; };
 		2A731794635B49390C1B7F56BCFA0D30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 877C58BB5577C92138A98FCEF76667BD /* Foundation.framework */; };
 		4AA83151CA91624623691A8EAD18044E /* CRCurrencyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D9DDC12B21D50AE65FA5DBAF711F8F /* CRCurrencyRequest.h */; };
-		4B57BD3750F1D35A33FE29C02071655E /* DGDistanceRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 78857F191D082D8156A2522BBDA4A1B8 /* DGDistanceRequest.h */; };
-		8A2CE4E7FD1312B613F9DB362D4AFC39 /* DistanceGetter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74060FE90FFC0EA2E4EFD57D249B9E01 /* DistanceGetter-dummy.m */; };
 		8D2716B8F42DE7E381EA9C04A109AF97 /* CRCurrencyResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 143836BE46053B8212D5102724CCF206 /* CRCurrencyResults.h */; };
 		93EFEC6BCAD00C9A65E54F409F90259F /* CRCurrencyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2C9AC184A5AEDD64110B2F6EEA2965 /* CRCurrencyRequest.m */; };
 		C26B248090070C3888B5479A77587718 /* CRCurrencyRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFE883558933E1E16CA38ECA032E4D /* CRCurrencyRequestDelegate.h */; };
-		CC364F09A72C5A2A3D429CFC1FE86649 /* DGDistanceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B17B6461BA3DBAB9052A6AABCF727D /* DGDistanceRequest.m */; };
 		DF9F0420DE6B3E2321003323BF6A89D5 /* CurrencyRequest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E17659521BA9BFA0A12EAB90D534F349 /* CurrencyRequest-dummy.m */; };
 		E6181E2497EA1305798BEC039EF59E25 /* CRCurrencyResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A996C16B5BD75C30150D8D592C62A /* CRCurrencyResults.m */; };
 		E996F513FD5DF173425F90D78983B98F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 877C58BB5577C92138A98FCEF76667BD /* Foundation.framework */; };
@@ -55,7 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01E783957AEA5984449C01CFEE22C025 /* DistanceGetter-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DistanceGetter-prefix.pch"; sourceTree = "<group>"; };
 		143836BE46053B8212D5102724CCF206 /* CRCurrencyResults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRCurrencyResults.h; path = Pod/Classes/CRCurrencyResults.h; sourceTree = "<group>"; };
 		18BD5F15F1510C4EE506570731C52E7E /* Pods-ComTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ComTools.debug.xcconfig"; sourceTree = "<group>"; };
 		1EF32C1DFF980DD7BA20CDA7F9240051 /* Pods-ComTools-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ComTools-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -69,18 +65,13 @@
 		541A996C16B5BD75C30150D8D592C62A /* CRCurrencyResults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRCurrencyResults.m; path = Pod/Classes/CRCurrencyResults.m; sourceTree = "<group>"; };
 		5ECE0CF73906686D8863205501437F3D /* CurrencyRequest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CurrencyRequest.xcconfig; sourceTree = "<group>"; };
 		70912846147DC07159CDDD3B5F80566E /* libPods-ComTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		74060FE90FFC0EA2E4EFD57D249B9E01 /* DistanceGetter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DistanceGetter-dummy.m"; sourceTree = "<group>"; };
-		78857F191D082D8156A2522BBDA4A1B8 /* DGDistanceRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DGDistanceRequest.h; path = Pod/Classes/DGDistanceRequest.h; sourceTree = "<group>"; };
 		81D9DDC12B21D50AE65FA5DBAF711F8F /* CRCurrencyRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRCurrencyRequest.h; path = Pod/Classes/CRCurrencyRequest.h; sourceTree = "<group>"; };
 		877C58BB5577C92138A98FCEF76667BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		893163B9586EC5FCE58EF4C76009AA4F /* DistanceGetter.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DistanceGetter.xcconfig; sourceTree = "<group>"; };
 		9B12CB7CA545FC6D3658BAACE3460714 /* libCurrencyRequest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCurrencyRequest.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF830FDF3C6BA86CBC23C2EF0E8707DC /* CurrencyRequest-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CurrencyRequest-Private.xcconfig"; sourceTree = "<group>"; };
-		B3B17B6461BA3DBAB9052A6AABCF727D /* DGDistanceRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DGDistanceRequest.m; path = Pod/Classes/DGDistanceRequest.m; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BC705D73F883A6630B710837A2BF71F2 /* CurrencyRequest-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CurrencyRequest-prefix.pch"; sourceTree = "<group>"; };
 		C8D33340D3CB80F162C6AF23161CE16E /* Pods-ComTools-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ComTools-acknowledgements.plist"; sourceTree = "<group>"; };
-		D7C37B8CBECE354781208671DF0300FD /* DistanceGetter-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "DistanceGetter-Private.xcconfig"; sourceTree = "<group>"; };
 		E17659521BA9BFA0A12EAB90D534F349 /* CurrencyRequest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CurrencyRequest-dummy.m"; sourceTree = "<group>"; };
 		E8E00C4F1307D5845AE996B1961402CD /* Pods-ComTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ComTools-dummy.m"; sourceTree = "<group>"; };
 		EB3EAC643887F90B316623DE41BE980E /* Pods-ComTools-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ComTools-resources.sh"; sourceTree = "<group>"; };
@@ -151,18 +142,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		750AD1F3935E5E60FBA626516F37C2EA /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				893163B9586EC5FCE58EF4C76009AA4F /* DistanceGetter.xcconfig */,
-				D7C37B8CBECE354781208671DF0300FD /* DistanceGetter-Private.xcconfig */,
-				74060FE90FFC0EA2E4EFD57D249B9E01 /* DistanceGetter-dummy.m */,
-				01E783957AEA5984449C01CFEE22C025 /* DistanceGetter-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/DistanceGetter";
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
@@ -194,16 +173,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D9C64A11FD0B31699C5A2CDFA6972C8E /* DistanceGetter */ = {
-			isa = PBXGroup;
-			children = (
-				78857F191D082D8156A2522BBDA4A1B8 /* DGDistanceRequest.h */,
-				B3B17B6461BA3DBAB9052A6AABCF727D /* DGDistanceRequest.m */,
-				750AD1F3935E5E60FBA626516F37C2EA /* Support Files */,
-			);
-			path = DistanceGetter;
-			sourceTree = "<group>";
-		};
 		DDEEF4316105A2D3176D738E7CD87C9D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,7 +198,6 @@
 			isa = PBXGroup;
 			children = (
 				FF3EC9329D2A102BBB80EE017A963DE2 /* CurrencyRequest */,
-				D9C64A11FD0B31699C5A2CDFA6972C8E /* DistanceGetter */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -254,7 +222,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B57BD3750F1D35A33FE29C02071655E /* DGDistanceRequest.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,8 +410,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC364F09A72C5A2A3D429CFC1FE86649 /* DGDistanceRequest.m in Sources */,
-				8A2CE4E7FD1312B613F9DB362D4AFC39 /* DistanceGetter-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,7 +477,6 @@
 		};
 		4AA9F20858ED234BE8381E29108E1CF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7C37B8CBECE354781208671DF0300FD /* DistanceGetter-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = DistanceGetter;
@@ -524,7 +488,6 @@
 		};
 		5314FAF5CDB78B4BB20429802272CB24 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7C37B8CBECE354781208671DF0300FD /* DistanceGetter-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = DistanceGetter;
@@ -665,7 +628,6 @@
 		};
 		B4A89CD9EEAB86A76F7471BDF04629C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7C37B8CBECE354781208671DF0300FD /* DistanceGetter-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/DistanceGetter/DistanceGetter-prefix.pch";
@@ -681,7 +643,6 @@
 		};
 		B8A9032F03B356EC41F8DD1C8A17BEEB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7C37B8CBECE354781208671DF0300FD /* DistanceGetter-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/DistanceGetter/DistanceGetter-prefix.pch";

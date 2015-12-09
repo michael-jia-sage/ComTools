@@ -7,10 +7,13 @@
 //
 
 #import "CompareViewController.h"
+#import "CurrencyRequest/CRCurrencyRequest.h"
+#import "CurrencyRequest/CRCurrencyResults.h"
 #import "constants.h"
 #import "utilities.h"
 
-@interface CompareViewController ()
+@interface CompareViewController ()<CRCurrencyRequestDelegate>
+@property (nonatomic) CRCurrencyRequest *cReq;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segOptions;
 @property (weak, nonatomic) IBOutlet UILabel *lblFormat;
 @property (weak, nonatomic) IBOutlet UILabel *lblUnit1;
@@ -26,6 +29,14 @@
 
 int option = 0;
 int inputIndex = 1;
+float usd_rate = 1;
+float convert_rate = 3.78541;
+NSString *format = @"%0.2f";
+bool cadUpdated = NO;
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self UpdateCurrencies];
+}
 
 -(void)viewDidLoad
 {
@@ -36,6 +47,8 @@ int inputIndex = 1;
     [self.view addSubview:bgImageView];
     [self.view sendSubviewToBack:bgImageView];
     
+    [self UpdateCurrencies];
+    [self segValueChanged: nil];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -47,25 +60,59 @@ int inputIndex = 1;
 }
 
 - (IBAction)segValueChanged:(id)sender {
+    inputIndex = 1;
     option = self.segOptions.selectedSegmentIndex;
     if (option == 1) {
+        format = @"%0.1f";
         self.lblFormat.text = temperature_format;
-        self.lblUnit1.text = @"\u00B0C";
-        self.lblUnit2.text = @"\u00B0F";
+        self.lblUnit1.text = @"\u00B0c";
+        self.lblUnit2.text = @"\u00B0f";
+        [self.slideUnit1 setMinimumValue:-20];
+        [self.slideUnit1 setMaximumValue:50];
+        [self.slideUnit2 setMinimumValue:-4];
+        [self.slideUnit2 setMaximumValue:122];
         self.inputUnit1.text = @"0";
+        [self doCompare];
+        [self setSlider];
     } else {
-        self.lblFormat.text = gas_price_format;
+        format = @"%0.2f";
+        self.lblFormat.text = [NSString stringWithFormat: gas_price_format, usd_rate];
+        self.lblUnit1.text = @"ca$/liter";
+        self.lblUnit2.text = @"us$/gal";
+        [self.slideUnit1 setMinimumValue:0];
+        [self.slideUnit1 setMaximumValue:2.00];
+        [self.slideUnit2 setMinimumValue:0];
+        [self.slideUnit2 setMaximumValue:2.00*convert_rate/usd_rate];
+        self.inputUnit1.text = @"1.00";
+        [self doCompare];
+        [self setSlider];
     }
 }
 
 - (IBAction)input1Changed:(id)sender {
     inputIndex = 1;
     [self doCompare];
+    [self setSlider];
 }
 
 - (IBAction)input2Changed:(id)sender {
     inputIndex = 2;
     [self doCompare];
+    [self setSlider];
+}
+
+- (IBAction)slide1Changed:(id)sender {
+    inputIndex = 1;
+    self.inputUnit1.text = [NSString stringWithFormat:format, self.slideUnit1.value];
+    [self doCompare];
+    [self setSlider];
+}
+
+- (IBAction)slide2Changed:(id)sender {
+    inputIndex = 2;
+    self.inputUnit2.text = [NSString stringWithFormat:format, self.slideUnit2.value];
+    [self doCompare];
+    [self setSlider];
 }
 
 - (IBAction)inputEnter:(id)sender {
@@ -78,16 +125,74 @@ int inputIndex = 1;
             //C to F
             float input1 = [self.inputUnit1.text floatValue];
             float input2 = input1 * 1.8 + 32;
-            self.inputUnit2.text = [NSString stringWithFormat:@"%2f", input2];
+            self.inputUnit2.text = [NSString stringWithFormat:format, input2];
         } else {
             //F to C
             float input2 = [self.inputUnit2.text floatValue];
             float input1 = (input2 - 32) * 5 / 9;
-            self.inputUnit1.text = [NSString stringWithFormat:@"%2f", input1];
+            self.inputUnit1.text = [NSString stringWithFormat:format, input1];
         }
     } else {
-        
+        if (inputIndex == 1) {
+            //Cad to Usd
+            float input1 = [self.inputUnit1.text floatValue];
+            float input2 = input1 * convert_rate / usd_rate;
+            self.inputUnit2.text = [NSString stringWithFormat:format, input2];
+        } else {
+            //Usd to Cad
+            float input2 = [self.inputUnit2.text floatValue];
+            float input1 = input2 * usd_rate / convert_rate;
+            self.inputUnit1.text = [NSString stringWithFormat:format, input1];
+        }
     }
         
+}
+
+- (void)setSlider {
+    float input1 = [self.inputUnit1.text floatValue];
+    if (input1 < self.slideUnit1.minimumValue)
+        input1 = self.slideUnit1.minimumValue;
+    else if (input1 > self.slideUnit1.maximumValue)
+        input1 = self.slideUnit1.maximumValue;
+    [self.slideUnit1 setValue:input1];
+    float input2 = [self.inputUnit2.text floatValue];
+    if (input2 < self.slideUnit2.minimumValue)
+        input2 = self.slideUnit2.minimumValue;
+    else if (input2 > self.slideUnit2.maximumValue)
+        input2 = self.slideUnit2.maximumValue;
+    [self.slideUnit2 setValue:input2];
+}
+
+- (void)currencyRequest:(CRCurrencyRequest *)req
+    retrievedCurrencies:(CRCurrencyResults *)currencies {
+    usd_rate = [currencies _rateForCurrency:@"CAD"];
+    cadUpdated = YES;
+    [self segValueChanged: nil];
+}
+
+-(void)UpdateCurrencies {
+    if (cadUpdated)
+        return;
+    
+    if ([Utilities InternetConnected]) {
+        self.cReq = [[CRCurrencyRequest alloc] init];
+        self.cReq.delegate = self;
+        [self.cReq start];
+    } else {
+        cadUpdated = NO;
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"No Internet"
+                                      message:@"No Internet, the CAD currency rate is set to 1"
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                             }];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 @end

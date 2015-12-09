@@ -7,12 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import "CurrencyRequest/CRCurrencyRequest.h"
+#import "CurrencyRequest/CRCurrencyResults.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic) CRCurrencyRequest *req;
 @end
 
 @implementation AppDelegate
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

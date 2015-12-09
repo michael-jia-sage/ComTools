@@ -86,9 +86,12 @@ NSNumberFormatter *calFormatter;
 }
 
 - (IBAction)tipChanged:(id)sender {
-    [self.txtTotal endEditing:YES];
     tipRate = self.sldTipRate.value;
     [self calTotalAndTip];
+}
+
+- (IBAction)endEditing:(id)sender {
+    [self.txtTotal endEditing:YES];
 }
 
 - (void)calTotalAndTip {
@@ -154,9 +157,18 @@ NSNumberFormatter *calFormatter;
     self.btnTip4.backgroundColor =
     self.btnTip5.backgroundColor = [Utilities colorFromHexString:themeColor];
 
+    //scroll view
     if (IS_IPHONE_4) {
         [self.scrollView setScrollEnabled:YES];
         [self.scrollView setContentSize: CGSizeMake(320, 640)];
     }
+    
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewSingleTapGestureCaptured:)];
+    [self.scrollView addGestureRecognizer:singleTap];
+}
+
+- (void)scrollViewSingleTapGestureCaptured:(UITapGestureRecognizer *)gesture
+{
+    [self.view endEditing:YES];
 }
 @end

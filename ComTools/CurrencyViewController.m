@@ -29,6 +29,7 @@ double usdValue = 0;
 NSMutableArray *supportedCurrencies;
 currency *selCurrency;
 NSNumberFormatter *curFormatter;
+bool currencyUpdated = false;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [supportedCurrencies count];
@@ -53,8 +54,10 @@ NSNumberFormatter *curFormatter;
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     self.lblCurrencyName.text = cell.textLabel.text;
     self.lblUSD.hidden = [cell.textLabel.text isEqualToString:@"US Dollar"];
+    self.inputField.text = cell.detailTextLabel.text;
+    self.btnReset.hidden = ([self.inputField.text floatValue] == 100);
     
-    [self doCalCurrencies];
+    //[self doCalCurrencies];
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -78,6 +81,10 @@ NSNumberFormatter *curFormatter;
 //    [sectionView addSubview:tempLabel];
 //    return sectionView;
 //}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self UpdateCurrencies];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -104,10 +111,8 @@ NSNumberFormatter *curFormatter;
     
     self.inputField.text = @"100";
     usdValue = 100;
-    self.req = [[CRCurrencyRequest alloc] init];
     
-    self.req.delegate = self;
-    [self.req start];
+    [self UpdateCurrencies];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -151,7 +156,33 @@ NSNumberFormatter *curFormatter;
 - (void)currencyRequest:(CRCurrencyRequest *)req
     retrievedCurrencies:(CRCurrencyResults *)currencies {
     res = currencies;
+    currencyUpdated = true;
     [self.lstCurrency reloadData];
 }
 
+-(void)UpdateCurrencies {
+    if (currencyUpdated)
+        return;
+    
+    if ([Utilities InternetConnected]) {
+        self.req = [[CRCurrencyRequest alloc] init];
+        self.req.delegate = self;
+        [self.req start];
+    } else {
+        currencyUpdated = false;
+        UIAlertController * alert=   [UIAlertController
+                                      alertControllerWithTitle:@"No Internet"
+                                      message:@"No Internet, cannot get any currency rates. Please check your network connection."
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction * action)
+                             {
+                                 [alert dismissViewControllerAnimated:YES completion:nil];
+                             }];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+}
 @end

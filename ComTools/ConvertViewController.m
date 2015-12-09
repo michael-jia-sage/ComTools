@@ -71,6 +71,10 @@ NSSortDescriptor *sort;
     [self doCalculate];
 }
 
+- (IBAction)editBegin:(id)sender {
+    self.pickerUnits.hidden = YES;
+}
+
 - (IBAction)inputUnit1Changed:(id)sender {
     [self doCalculate];
 }
@@ -101,8 +105,6 @@ NSSortDescriptor *sort;
     
     //picker view style
     [self.view bringSubviewToFront:self.pickerUnits];
-    
-    
     allUnits = [Utilities initUnits];
     self.segCategory.selectedSegmentIndex = 0;
     self.pickerUnits.hidden = YES;
@@ -110,6 +112,11 @@ NSSortDescriptor *sort;
     sort = [NSSortDescriptor sortDescriptorWithKey:@"sortOrder" ascending:YES];
     self.inputUnit1.text = @"1";
     [self.segCategory sendActionsForControlEvents:UIControlEventValueChanged];
+}
+
+-(void)changeUnit:(id)sender
+{
+    [self.pickerUnits resignFirstResponder];
 }
 
 - (void)doRefresh {
@@ -136,11 +143,13 @@ NSSortDescriptor *sort;
 
 - (IBAction)btnUnit1Tapped:(id)sender {
     activeUnit = 1;
+    [self.view endEditing:YES];
     self.pickerUnits.hidden = NO;
 }
 
 - (IBAction)btnUnit2Tapped:(id)sender {
     activeUnit = 2;
+    [self.view endEditing:YES];
     self.pickerUnits.hidden = NO;
 }
 

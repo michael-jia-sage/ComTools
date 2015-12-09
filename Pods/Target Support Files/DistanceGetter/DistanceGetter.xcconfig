@@ -1,1 +1,0 @@
-DISTANCEGETTER_OTHER_LDFLAGS = -framework "MapKit"
