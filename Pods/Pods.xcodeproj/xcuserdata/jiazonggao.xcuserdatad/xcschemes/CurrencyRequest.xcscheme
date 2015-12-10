@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B8041F7D27198DD441352772"
+               BlueprintIdentifier = "2AD10532ECE519E561949A2F"
                BuildableName = "libCurrencyRequest.a"
                BlueprintName = "CurrencyRequest"
                ReferencedContainer = "container:Pods.xcodeproj">

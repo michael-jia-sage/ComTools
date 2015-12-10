@@ -4,6 +4,7 @@
 target 'ComTools' do
 
 pod 'CurrencyRequest','~> 0.1'
+pod 'Google/Analytics'
 
 end
 

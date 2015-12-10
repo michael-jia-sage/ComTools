@@ -7,113 +7,125 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		159108D2AF8E19877D8CC08D6AFDBFE1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BD02C5353E15B5DB8EB2685877BA029 /* MapKit.framework */; };
-		18836E5C9644CBA6FC4FFF26B4602246 /* Pods-ComTools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8E00C4F1307D5845AE996B1961402CD /* Pods-ComTools-dummy.m */; };
-		2948B6C30B599E95A5C1814D28868CD5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 877C58BB5577C92138A98FCEF76667BD /* Foundation.framework */; };
-		2A731794635B49390C1B7F56BCFA0D30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 877C58BB5577C92138A98FCEF76667BD /* Foundation.framework */; };
-		4AA83151CA91624623691A8EAD18044E /* CRCurrencyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 81D9DDC12B21D50AE65FA5DBAF711F8F /* CRCurrencyRequest.h */; };
-		8D2716B8F42DE7E381EA9C04A109AF97 /* CRCurrencyResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 143836BE46053B8212D5102724CCF206 /* CRCurrencyResults.h */; };
-		93EFEC6BCAD00C9A65E54F409F90259F /* CRCurrencyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2C9AC184A5AEDD64110B2F6EEA2965 /* CRCurrencyRequest.m */; };
-		C26B248090070C3888B5479A77587718 /* CRCurrencyRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FAFE883558933E1E16CA38ECA032E4D /* CRCurrencyRequestDelegate.h */; };
-		DF9F0420DE6B3E2321003323BF6A89D5 /* CurrencyRequest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E17659521BA9BFA0A12EAB90D534F349 /* CurrencyRequest-dummy.m */; };
-		E6181E2497EA1305798BEC039EF59E25 /* CRCurrencyResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 541A996C16B5BD75C30150D8D592C62A /* CRCurrencyResults.m */; };
-		E996F513FD5DF173425F90D78983B98F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 877C58BB5577C92138A98FCEF76667BD /* Foundation.framework */; };
+		19ADB3C1C90D66A6B2118A7E44C0BE70 /* CRCurrencyRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CA4C8F33502268449EF059F41D7029F /* CRCurrencyRequestDelegate.h */; };
+		7574DF4EA2B1856991342A503547065E /* CurrencyRequest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F6D0174E229A23CD7E4709041DA0EC6D /* CurrencyRequest-dummy.m */; };
+		90A7E2F74B98D17B6F32E855680386FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C952CD1D95FBB5066B4A921ACFDC1E83 /* Foundation.framework */; };
+		92A031A2BC5B9D4B48AA6F1996AFF74F /* CRCurrencyRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = E9206C3F4CBBDBF38B0A69BAF811DAB7 /* CRCurrencyRequest.h */; };
+		9DC8BF93863B3086F61B7DC1616AF49C /* Pods-ComTools-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2DBD97EC351746F15FC2ED0DC666DC /* Pods-ComTools-dummy.m */; };
+		AF89987A411FC60A091088C3FA4D6542 /* CRCurrencyResults.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AF9D0FD9C0974B5E15CFE2346727E8B /* CRCurrencyResults.h */; };
+		D531043E01BE1CF586FFC6644DEE326F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C952CD1D95FBB5066B4A921ACFDC1E83 /* Foundation.framework */; };
+		D5B8DF59732E9F6914206810174E66D2 /* CRCurrencyRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8733FB60CBE7224BDF2B82F35B1B821E /* CRCurrencyRequest.m */; };
+		F97C044A146822743656DD49FEED1D13 /* CRCurrencyResults.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C8F64BEC8306BF76E9B95BF6189D52 /* CRCurrencyResults.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7E31B01FBBE31B9F111237675DB310D3 /* PBXContainerItemProxy */ = {
+		8B77680B2726EE6CC9F83AFEB2E76431 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 51AAFB3BFC9C86201730F0AD9799ACB2;
-			remoteInfo = "CurrencyRequest-CurrencyRequest";
-		};
-		ABD308CF751F68FDCADD97F77D3F2CF5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1CDB20446FD97D49D5AA2BA4C6E38101;
-			remoteInfo = DistanceGetter;
-		};
-		E86A43A12D92631BCBC1643853DF2EB2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 056B62C685230831476BD0AFA4BF576D;
-			remoteInfo = "DistanceGetter-DistanceGetter";
-		};
-		FC37F9DC65A9F50301BE62264C3FD6E2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E5A2B414578CCFC08BA2CA743C25F498;
+			remoteGlobalIDString = 3B87CCF0F55789B413C9D64138E9B881;
 			remoteInfo = CurrencyRequest;
+		};
+		AF6D0C90D4E57D0326D876B078EE973E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9A167B12AD227D879176276D064519C;
+			remoteInfo = "CurrencyRequest-CurrencyRequest";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		143836BE46053B8212D5102724CCF206 /* CRCurrencyResults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRCurrencyResults.h; path = Pod/Classes/CRCurrencyResults.h; sourceTree = "<group>"; };
-		18BD5F15F1510C4EE506570731C52E7E /* Pods-ComTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ComTools.debug.xcconfig"; sourceTree = "<group>"; };
+		006D9B4397264728084AB75E6C7CBE8D /* Core-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Core-Module.h"; path = "Headers/ModuleHeaders/Core-Module.h"; sourceTree = "<group>"; };
+		018B11F86DAFEB902BA43A391D8DD503 /* GAILogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAILogger.h; path = Headers/Public/GAILogger.h; sourceTree = "<group>"; };
+		02CCFF0844A6F3417BC30D393C8323A7 /* libGTMSessionFetcher_core.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMSessionFetcher_core.a; path = Libraries/libGTMSessionFetcher_core.a; sourceTree = "<group>"; };
+		0A6EF6BE0DD66A1D30114B4B6F5209AB /* Pods-ComTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ComTools.release.xcconfig"; sourceTree = "<group>"; };
+		119E09D0F556D5C2FF717591BEFA6FE8 /* Core.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Core.h; path = Headers/GGLCore/Public/Core.h; sourceTree = "<group>"; };
+		1C72074EFC2DB2DF0831BD977DFAD501 /* libGTMSessionFetcher_full.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMSessionFetcher_full.a; path = Libraries/libGTMSessionFetcher_full.a; sourceTree = "<group>"; };
 		1EF32C1DFF980DD7BA20CDA7F9240051 /* Pods-ComTools-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ComTools-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3FAFE883558933E1E16CA38ECA032E4D /* CRCurrencyRequestDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRCurrencyRequestDelegate.h; path = Pod/Classes/CRCurrencyRequestDelegate.h; sourceTree = "<group>"; };
-		40EC7FDD73B578BFCB88D4D47AEBDAED /* Pods-ComTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ComTools.release.xcconfig"; sourceTree = "<group>"; };
-		40FE8084176E391792336018332703CB /* libDistanceGetter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDistanceGetter.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		48E916B7BFAB0C31D1BD3A2CEB95B863 /* DistanceGetter.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DistanceGetter.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BA2B8509CF6F8D3DBE6928AD06B2CA1 /* CurrencyRequest.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyRequest.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BD02C5353E15B5DB8EB2685877BA029 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
-		4C2C9AC184A5AEDD64110B2F6EEA2965 /* CRCurrencyRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRCurrencyRequest.m; path = Pod/Classes/CRCurrencyRequest.m; sourceTree = "<group>"; };
-		541A996C16B5BD75C30150D8D592C62A /* CRCurrencyResults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRCurrencyResults.m; path = Pod/Classes/CRCurrencyResults.m; sourceTree = "<group>"; };
-		5ECE0CF73906686D8863205501437F3D /* CurrencyRequest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CurrencyRequest.xcconfig; sourceTree = "<group>"; };
-		70912846147DC07159CDDD3B5F80566E /* libPods-ComTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81D9DDC12B21D50AE65FA5DBAF711F8F /* CRCurrencyRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRCurrencyRequest.h; path = Pod/Classes/CRCurrencyRequest.h; sourceTree = "<group>"; };
-		877C58BB5577C92138A98FCEF76667BD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		9B12CB7CA545FC6D3658BAACE3460714 /* libCurrencyRequest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCurrencyRequest.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF830FDF3C6BA86CBC23C2EF0E8707DC /* CurrencyRequest-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CurrencyRequest-Private.xcconfig"; sourceTree = "<group>"; };
+		2209014096F184C745B85683307F58BF /* GGLContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLContext.h; path = Headers/GGLCore/Public/GGLContext.h; sourceTree = "<group>"; };
+		2A79648A2ACE51E447F7B6972FFD30D4 /* GAIEcommerceFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceFields.h; path = Headers/Public/GAIEcommerceFields.h; sourceTree = "<group>"; };
+		30F1DE314DE8B7CA07F8EBCFECD3844E /* libGTM_DebugUtils.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_DebugUtils.a; path = Libraries/libGTM_DebugUtils.a; sourceTree = "<group>"; };
+		39776F8BC21EE6FA57D2727D4760BCCA /* libGGLCore.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLCore.a; path = Libraries/libGGLCore.a; sourceTree = "<group>"; };
+		3CA4C8F33502268449EF059F41D7029F /* CRCurrencyRequestDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRCurrencyRequestDelegate.h; path = Pod/Classes/CRCurrencyRequestDelegate.h; sourceTree = "<group>"; };
+		48C8F64BEC8306BF76E9B95BF6189D52 /* CRCurrencyResults.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRCurrencyResults.m; path = Pod/Classes/CRCurrencyResults.m; sourceTree = "<group>"; };
+		4CA1C602C3F8A863C59E68BE0CBC15D4 /* libGGLAnalytics.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLAnalytics.a; path = Libraries/libGGLAnalytics.a; sourceTree = "<group>"; };
+		511B048721FC6C6012DB8389045C1DCC /* libGTM_KVO.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_KVO.a; path = Libraries/libGTM_KVO.a; sourceTree = "<group>"; };
+		51D59DE07F6E6BB9A8B8496CF231BFD0 /* GGLConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLConfiguration.h; path = Headers/GGLCore/Public/GGLConfiguration.h; sourceTree = "<group>"; };
+		52026E2AE4A7D4A1FF9EAB23558453D1 /* libGTM_UIFont+LineHeight.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_UIFont+LineHeight.a"; path = "Libraries/libGTM_UIFont+LineHeight.a"; sourceTree = "<group>"; };
+		54A8F1C71EAC515553D829CB2D17DEA8 /* CurrencyRequest-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CurrencyRequest-Private.xcconfig"; sourceTree = "<group>"; };
+		565204B1D47CBB907292CEC89A7C51D4 /* SignIn-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SignIn-Module.h"; path = "Headers/ModuleHeaders/SignIn-Module.h"; sourceTree = "<group>"; };
+		5BC32773C65A606797B2FB54C3B6A1E3 /* libGTM_NSData+zlib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_NSData+zlib.a"; path = "Libraries/libGTM_NSData+zlib.a"; sourceTree = "<group>"; };
+		5D64249BC4872698817400B7A270278A /* libGTM_NSScannerJSON.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_NSScannerJSON.a; path = Libraries/libGTM_NSScannerJSON.a; sourceTree = "<group>"; };
+		62C5694230A05DF989E2BE21F5E5FE62 /* CurrencyRequest-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CurrencyRequest-prefix.pch"; sourceTree = "<group>"; };
+		64B754171AF124F3629E3197B883C5B1 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGoogleAnalytics.a; path = Libraries/libGoogleAnalytics.a; sourceTree = "<group>"; };
+		6AF9D0FD9C0974B5E15CFE2346727E8B /* CRCurrencyResults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRCurrencyResults.h; path = Pod/Classes/CRCurrencyResults.h; sourceTree = "<group>"; };
+		71D04EDBC03B72F7D98371F760341FB3 /* libGTM_NSStringHTML.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_NSStringHTML.a; path = Libraries/libGTM_NSStringHTML.a; sourceTree = "<group>"; };
+		7CCA971DEC7980F95DACE85E9E1E13A1 /* libGSDK_Overload.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGSDK_Overload.a; path = Libraries/libGSDK_Overload.a; sourceTree = "<group>"; };
+		7E6A16CF19E791BBA9DC951BB9141643 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIDictionaryBuilder.h; path = Headers/Public/GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		82F79936EFBF0AFB122301C8D1AF48EE /* GAITrackedViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITrackedViewController.h; path = Headers/Public/GAITrackedViewController.h; sourceTree = "<group>"; };
+		84A82924A60BC794D0AC574591284D4D /* GAITracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAITracker.h; path = Headers/Public/GAITracker.h; sourceTree = "<group>"; };
+		866569925EA06299C82435F33541EBF9 /* AppInvite-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AppInvite-Module.h"; path = "Headers/ModuleHeaders/AppInvite-Module.h"; sourceTree = "<group>"; };
+		8733FB60CBE7224BDF2B82F35B1B821E /* CRCurrencyRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CRCurrencyRequest.m; path = Pod/Classes/CRCurrencyRequest.m; sourceTree = "<group>"; };
+		8CE1F4A139E8713DCF550A79B6049D7B /* CurrencyRequest.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CurrencyRequest.xcconfig; sourceTree = "<group>"; };
+		90EAE59E291C5635591F867898CAD1AF /* libGTM_AddressBook.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_AddressBook.a; path = Libraries/libGTM_AddressBook.a; sourceTree = "<group>"; };
+		932DA3FD542B0D71E2C2F47179F7A905 /* libGTM_core.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_core.a; path = Libraries/libGTM_core.a; sourceTree = "<group>"; };
+		962BDCEA48966539E4D382B15CAB07D9 /* libGTM_iPhone.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_iPhone.a; path = Libraries/libGTM_iPhone.a; sourceTree = "<group>"; };
+		99685BF3D7E1ACB38265357B72629206 /* libGTM_GTMURLBuilder.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_GTMURLBuilder.a; path = Libraries/libGTM_GTMURLBuilder.a; sourceTree = "<group>"; };
+		99734FDF14444B45529A99086B386553 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommercePromotion.h; path = Headers/Public/GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		9BA80E653F46CEE3772A219D5EB9D7F8 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = Headers/Public/GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		A5965501CB5CD64FDF2AB95A79EABE77 /* GGLErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLErrorCode.h; path = Headers/GGLCore/Public/GGLErrorCode.h; sourceTree = "<group>"; };
+		A7B0896EB25FF6E3F494D4861257382F /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProduct.h; path = Headers/Public/GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		A7B8BF7507376B7530CF4F684D2E5BBA /* GMRConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMRConfiguration.h; path = Headers/GGLCore/Public/GMRConfiguration.h; sourceTree = "<group>"; };
+		A97AB85CFA8BD5E431F3013C08FD6BEF /* CurrencyRequest.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyRequest.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF2DBD97EC351746F15FC2ED0DC666DC /* Pods-ComTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ComTools-dummy.m"; sourceTree = "<group>"; };
+		AF4745920CBC8DBCAE7F2914D3770446 /* Pods-ComTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ComTools.debug.xcconfig"; sourceTree = "<group>"; };
+		AF89C7093FEF31F274B6CA608C33F61A /* libGTM_RoundedRectPath.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_RoundedRectPath.a; path = Libraries/libGTM_RoundedRectPath.a; sourceTree = "<group>"; };
+		B11F1029B1D5D8ED71FDD5E03D9174A1 /* GAIFields.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAIFields.h; path = Headers/Public/GAIFields.h; sourceTree = "<group>"; };
+		B9B7C185E260751265985ABA306DD10D /* libGTM_StringEncoding.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_StringEncoding.a; path = Libraries/libGTM_StringEncoding.a; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BC705D73F883A6630B710837A2BF71F2 /* CurrencyRequest-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CurrencyRequest-prefix.pch"; sourceTree = "<group>"; };
+		BA6A806A84706F9B2700CB394C7BBF07 /* libCurrencyRequest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCurrencyRequest.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF42482647741FA2DFF1645392229216 /* Analytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Analytics.h; path = Headers/GGLAnalytics/Public/Analytics.h; sourceTree = "<group>"; };
+		BF885A73DBA057821C67D307D4C3A98A /* libPods-ComTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C853465D1CF6D7270D8D9E4EFE018DC6 /* AdMob-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AdMob-Module.h"; path = "Headers/ModuleHeaders/AdMob-Module.h"; sourceTree = "<group>"; };
 		C8D33340D3CB80F162C6AF23161CE16E /* Pods-ComTools-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ComTools-acknowledgements.plist"; sourceTree = "<group>"; };
-		E17659521BA9BFA0A12EAB90D534F349 /* CurrencyRequest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CurrencyRequest-dummy.m"; sourceTree = "<group>"; };
-		E8E00C4F1307D5845AE996B1961402CD /* Pods-ComTools-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ComTools-dummy.m"; sourceTree = "<group>"; };
+		C952CD1D95FBB5066B4A921ACFDC1E83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CC734B3C87403D7FB8513395A3370AEC /* libGTM_Regex.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_Regex.a; path = Libraries/libGTM_Regex.a; sourceTree = "<group>"; };
+		D378869CE87EA1DF31AE3D9CE8F085DD /* libProtocolBuffers.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libProtocolBuffers.a; path = Libraries/libProtocolBuffers.a; sourceTree = "<group>"; };
+		DBE5481F069D798ABF47F13F38D84AF7 /* libGTM_NSStringXML.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_NSStringXML.a; path = Libraries/libGTM_NSStringXML.a; sourceTree = "<group>"; };
+		DBEDFAB1E53B518A6A8328A88B1AEABF /* CloudMessaging-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CloudMessaging-Module.h"; path = "Headers/ModuleHeaders/CloudMessaging-Module.h"; sourceTree = "<group>"; };
+		DF72BAE4A3D22E217081AEC5538071B1 /* GGLContext+Analytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GGLContext+Analytics.h"; path = "Headers/GGLAnalytics/Public/GGLContext+Analytics.h"; sourceTree = "<group>"; };
+		E9206C3F4CBBDBF38B0A69BAF811DAB7 /* CRCurrencyRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CRCurrencyRequest.h; path = Pod/Classes/CRCurrencyRequest.h; sourceTree = "<group>"; };
 		EB3EAC643887F90B316623DE41BE980E /* Pods-ComTools-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ComTools-resources.sh"; sourceTree = "<group>"; };
+		F1AAD5629854A19FF2E35E19F2053268 /* GAI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = Headers/Public/GAI.h; sourceTree = "<group>"; };
+		F231E59713560186CDF0CEC482F3690C /* libGTM_NSDictionary+URLArguments.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_NSDictionary+URLArguments.a"; path = "Libraries/libGTM_NSDictionary+URLArguments.a"; sourceTree = "<group>"; };
+		F425CC88C592A1399DDC6DBB745FE036 /* Analytics-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Analytics-Module.h"; path = "Headers/ModuleHeaders/Analytics-Module.h"; sourceTree = "<group>"; };
+		F6D0174E229A23CD7E4709041DA0EC6D /* CurrencyRequest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CurrencyRequest-dummy.m"; sourceTree = "<group>"; };
+		F928C05C27639DEB257024995EECBAC2 /* libGTMStackTrace.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMStackTrace.a; path = Libraries/libGTMStackTrace.a; sourceTree = "<group>"; };
+		FB5C8D6C6E9B655574740B6178340739 /* libGTM_SystemVersion.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_SystemVersion.a; path = Libraries/libGTM_SystemVersion.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		03572C63918F5C1D20D6C5561EE89DFF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2A731794635B49390C1B7F56BCFA0D30 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0A9CB624D98F30C089AE41B09F11EC66 /* Frameworks */ = {
+		0EF1686C98C097CE8B11E06DD4A80950 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4177D11C9F6F296370AF6EE39A9B1B4F /* Frameworks */ = {
+		A7E08B71479D2DD09A02422EF3CEA538 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2948B6C30B599E95A5C1814D28868CD5 /* Foundation.framework in Frameworks */,
+				D531043E01BE1CF586FFC6644DEE326F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9A022A22ECAE876F880A3D10F0170937 /* Frameworks */ = {
+		C2045F900B5B53D981C3FB673ED85835 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E996F513FD5DF173425F90D78983B98F /* Foundation.framework in Frameworks */,
-				159108D2AF8E19877D8CC08D6AFDBFE1 /* MapKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C1B5C451663EAA0EED3EC1E9F62A16B8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				90A7E2F74B98D17B6F32E855680386FB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,32 +137,178 @@
 			children = (
 				1EF32C1DFF980DD7BA20CDA7F9240051 /* Pods-ComTools-acknowledgements.markdown */,
 				C8D33340D3CB80F162C6AF23161CE16E /* Pods-ComTools-acknowledgements.plist */,
-				E8E00C4F1307D5845AE996B1961402CD /* Pods-ComTools-dummy.m */,
+				AF2DBD97EC351746F15FC2ED0DC666DC /* Pods-ComTools-dummy.m */,
 				EB3EAC643887F90B316623DE41BE980E /* Pods-ComTools-resources.sh */,
-				18BD5F15F1510C4EE506570731C52E7E /* Pods-ComTools.debug.xcconfig */,
-				40EC7FDD73B578BFCB88D4D47AEBDAED /* Pods-ComTools.release.xcconfig */,
+				AF4745920CBC8DBCAE7F2914D3770446 /* Pods-ComTools.debug.xcconfig */,
+				0A6EF6BE0DD66A1D30114B4B6F5209AB /* Pods-ComTools.release.xcconfig */,
 			);
 			name = "Pods-ComTools";
 			path = "Target Support Files/Pods-ComTools";
 			sourceTree = "<group>";
 		};
-		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+		2F22666DC16C5AA05C3444E5925DA247 /* GoogleInterchangeUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				F40288FC14146947F87ED7397F639D5B /* iOS */,
+				BD39559F508C4E54BCC4454EFA9711EA /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		519C07C4A140B99375D145A49BF74F37 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C853465D1CF6D7270D8D9E4EFE018DC6 /* AdMob-Module.h */,
+				F425CC88C592A1399DDC6DBB745FE036 /* Analytics-Module.h */,
+				866569925EA06299C82435F33541EBF9 /* AppInvite-Module.h */,
+				DBEDFAB1E53B518A6A8328A88B1AEABF /* CloudMessaging-Module.h */,
+				119E09D0F556D5C2FF717591BEFA6FE8 /* Core.h */,
+				006D9B4397264728084AB75E6C7CBE8D /* Core-Module.h */,
+				51D59DE07F6E6BB9A8B8496CF231BFD0 /* GGLConfiguration.h */,
+				2209014096F184C745B85683307F58BF /* GGLContext.h */,
+				A5965501CB5CD64FDF2AB95A79EABE77 /* GGLErrorCode.h */,
+				A7B8BF7507376B7530CF4F684D2E5BBA /* GMRConfiguration.h */,
+				565204B1D47CBB907292CEC89A7C51D4 /* SignIn-Module.h */,
+				CA30966CAC4A0CA8F360B8777D3AB26E /* Frameworks */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C952CD1D95FBB5066B4A921ACFDC1E83 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7519A8F93C0E9AB53CEFBF817712E0AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CA1C602C3F8A863C59E68BE0CBC15D4 /* libGGLAnalytics.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		76AA44EB1B2D38482799F6CE061145A6 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				976A61937D2D27A3C185E57691CE5DC4 /* Analytics */,
+				519C07C4A140B99375D145A49BF74F37 /* Core */,
+			);
+			path = Google;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				FDB82CCB3B8FB2F2EFFE2711F6AE64F4 /* Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				95BD3ACBEC975B261AC9B1EE0412F798 /* Pods */,
 				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
 				CBEBE33A8C357FCDFBCFF0D64F071BBB /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		86FB112B2928AACBBF96210E226D4317 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8CE1F4A139E8713DCF550A79B6049D7B /* CurrencyRequest.xcconfig */,
+				54A8F1C71EAC515553D829CB2D17DEA8 /* CurrencyRequest-Private.xcconfig */,
+				F6D0174E229A23CD7E4709041DA0EC6D /* CurrencyRequest-dummy.m */,
+				62C5694230A05DF989E2BE21F5E5FE62 /* CurrencyRequest-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/CurrencyRequest";
+			sourceTree = "<group>";
+		};
+		909ACE46706C0F2791526BF339A817FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64B754171AF124F3629E3197B883C5B1 /* libGoogleAnalytics.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		95BD3ACBEC975B261AC9B1EE0412F798 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D38AF8668ACC6C9714A17011F4BD58E3 /* CurrencyRequest */,
+				76AA44EB1B2D38482799F6CE061145A6 /* Google */,
+				98858B5FF9C7F085351D2771FBB4A9F6 /* GoogleAnalytics */,
+				2F22666DC16C5AA05C3444E5925DA247 /* GoogleInterchangeUtilities */,
+				AA0A101FDC31243A8C9F86FC7A52A983 /* GoogleNetworkingUtilities */,
+				D799E13CFFE8BD944829AB6F5F088557 /* GoogleSymbolUtilities */,
+				BFE112A53FBDABBB81F5B00BCCB645BC /* GoogleUtilities */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		976A61937D2D27A3C185E57691CE5DC4 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				BF42482647741FA2DFF1645392229216 /* Analytics.h */,
+				DF72BAE4A3D22E217081AEC5538071B1 /* GGLContext+Analytics.h */,
+				7519A8F93C0E9AB53CEFBF817712E0AD /* Frameworks */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		98858B5FF9C7F085351D2771FBB4A9F6 /* GoogleAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				F1AAD5629854A19FF2E35E19F2053268 /* GAI.h */,
+				7E6A16CF19E791BBA9DC951BB9141643 /* GAIDictionaryBuilder.h */,
+				2A79648A2ACE51E447F7B6972FFD30D4 /* GAIEcommerceFields.h */,
+				A7B0896EB25FF6E3F494D4861257382F /* GAIEcommerceProduct.h */,
+				9BA80E653F46CEE3772A219D5EB9D7F8 /* GAIEcommerceProductAction.h */,
+				99734FDF14444B45529A99086B386553 /* GAIEcommercePromotion.h */,
+				B11F1029B1D5D8ED71FDD5E03D9174A1 /* GAIFields.h */,
+				018B11F86DAFEB902BA43A391D8DD503 /* GAILogger.h */,
+				82F79936EFBF0AFB122301C8D1AF48EE /* GAITrackedViewController.h */,
+				84A82924A60BC794D0AC574591284D4D /* GAITracker.h */,
+				909ACE46706C0F2791526BF339A817FC /* Frameworks */,
+			);
+			path = GoogleAnalytics;
+			sourceTree = "<group>";
+		};
+		AA0A101FDC31243A8C9F86FC7A52A983 /* GoogleNetworkingUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				DE62F4C6D0160CAD8E7253296642BC06 /* Frameworks */,
+			);
+			path = GoogleNetworkingUtilities;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53F661C0CA7190D2CF05023FB33D61E4 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD39559F508C4E54BCC4454EFA9711EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D378869CE87EA1DF31AE3D9CE8F085DD /* libProtocolBuffers.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFE112A53FBDABBB81F5B00BCCB645BC /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				CC74304FBDF72A64AF17CF66D925041C /* Frameworks */,
+			);
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
+		CA30966CAC4A0CA8F360B8777D3AB26E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39776F8BC21EE6FA57D2727D4760BCCA /* libGGLCore.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CBEBE33A8C357FCDFBCFF0D64F071BBB /* Targets Support Files */ = {
@@ -161,143 +319,136 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		CC74304FBDF72A64AF17CF66D925041C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F928C05C27639DEB257024995EECBAC2 /* libGTMStackTrace.a */,
+				90EAE59E291C5635591F867898CAD1AF /* libGTM_AddressBook.a */,
+				30F1DE314DE8B7CA07F8EBCFECD3844E /* libGTM_DebugUtils.a */,
+				99685BF3D7E1ACB38265357B72629206 /* libGTM_GTMURLBuilder.a */,
+				511B048721FC6C6012DB8389045C1DCC /* libGTM_KVO.a */,
+				5BC32773C65A606797B2FB54C3B6A1E3 /* libGTM_NSData+zlib.a */,
+				F231E59713560186CDF0CEC482F3690C /* libGTM_NSDictionary+URLArguments.a */,
+				5D64249BC4872698817400B7A270278A /* libGTM_NSScannerJSON.a */,
+				71D04EDBC03B72F7D98371F760341FB3 /* libGTM_NSStringHTML.a */,
+				DBE5481F069D798ABF47F13F38D84AF7 /* libGTM_NSStringXML.a */,
+				CC734B3C87403D7FB8513395A3370AEC /* libGTM_Regex.a */,
+				AF89C7093FEF31F274B6CA608C33F61A /* libGTM_RoundedRectPath.a */,
+				B9B7C185E260751265985ABA306DD10D /* libGTM_StringEncoding.a */,
+				FB5C8D6C6E9B655574740B6178340739 /* libGTM_SystemVersion.a */,
+				52026E2AE4A7D4A1FF9EAB23558453D1 /* libGTM_UIFont+LineHeight.a */,
+				932DA3FD542B0D71E2C2F47179F7A905 /* libGTM_core.a */,
+				962BDCEA48966539E4D382B15CAB07D9 /* libGTM_iPhone.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4BA2B8509CF6F8D3DBE6928AD06B2CA1 /* CurrencyRequest.bundle */,
-				48E916B7BFAB0C31D1BD3A2CEB95B863 /* DistanceGetter.bundle */,
-				9B12CB7CA545FC6D3658BAACE3460714 /* libCurrencyRequest.a */,
-				40FE8084176E391792336018332703CB /* libDistanceGetter.a */,
-				70912846147DC07159CDDD3B5F80566E /* libPods-ComTools.a */,
+				A97AB85CFA8BD5E431F3013C08FD6BEF /* CurrencyRequest.bundle */,
+				BA6A806A84706F9B2700CB394C7BBF07 /* libCurrencyRequest.a */,
+				BF885A73DBA057821C67D307D4C3A98A /* libPods-ComTools.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DDEEF4316105A2D3176D738E7CD87C9D /* Support Files */ = {
+		D38AF8668ACC6C9714A17011F4BD58E3 /* CurrencyRequest */ = {
 			isa = PBXGroup;
 			children = (
-				5ECE0CF73906686D8863205501437F3D /* CurrencyRequest.xcconfig */,
-				AF830FDF3C6BA86CBC23C2EF0E8707DC /* CurrencyRequest-Private.xcconfig */,
-				E17659521BA9BFA0A12EAB90D534F349 /* CurrencyRequest-dummy.m */,
-				BC705D73F883A6630B710837A2BF71F2 /* CurrencyRequest-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/CurrencyRequest";
-			sourceTree = "<group>";
-		};
-		F40288FC14146947F87ED7397F639D5B /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				877C58BB5577C92138A98FCEF76667BD /* Foundation.framework */,
-				4BD02C5353E15B5DB8EB2685877BA029 /* MapKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		FDB82CCB3B8FB2F2EFFE2711F6AE64F4 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FF3EC9329D2A102BBB80EE017A963DE2 /* CurrencyRequest */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		FF3EC9329D2A102BBB80EE017A963DE2 /* CurrencyRequest */ = {
-			isa = PBXGroup;
-			children = (
-				81D9DDC12B21D50AE65FA5DBAF711F8F /* CRCurrencyRequest.h */,
-				4C2C9AC184A5AEDD64110B2F6EEA2965 /* CRCurrencyRequest.m */,
-				3FAFE883558933E1E16CA38ECA032E4D /* CRCurrencyRequestDelegate.h */,
-				143836BE46053B8212D5102724CCF206 /* CRCurrencyResults.h */,
-				541A996C16B5BD75C30150D8D592C62A /* CRCurrencyResults.m */,
-				DDEEF4316105A2D3176D738E7CD87C9D /* Support Files */,
+				E9206C3F4CBBDBF38B0A69BAF811DAB7 /* CRCurrencyRequest.h */,
+				8733FB60CBE7224BDF2B82F35B1B821E /* CRCurrencyRequest.m */,
+				3CA4C8F33502268449EF059F41D7029F /* CRCurrencyRequestDelegate.h */,
+				6AF9D0FD9C0974B5E15CFE2346727E8B /* CRCurrencyResults.h */,
+				48C8F64BEC8306BF76E9B95BF6189D52 /* CRCurrencyResults.m */,
+				86FB112B2928AACBBF96210E226D4317 /* Support Files */,
 			);
 			path = CurrencyRequest;
+			sourceTree = "<group>";
+		};
+		D799E13CFFE8BD944829AB6F5F088557 /* GoogleSymbolUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				DA84B3F8185BB7C1BA5DD1AE5DF972A2 /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
+		DA84B3F8185BB7C1BA5DD1AE5DF972A2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CCA971DEC7980F95DACE85E9E1E13A1 /* libGSDK_Overload.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE62F4C6D0160CAD8E7253296642BC06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02CCFF0844A6F3417BC30D393C8323A7 /* libGTMSessionFetcher_core.a */,
+				1C72074EFC2DB2DF0831BD977DFAD501 /* libGTMSessionFetcher_full.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A11DECFB48804A794D6FFD0A4E8D8F49 /* Headers */ = {
+		E95BEFF3682B4E5192FCD3392B1A737D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F876A77E80A7F0F3A9986D0E30271831 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4AA83151CA91624623691A8EAD18044E /* CRCurrencyRequest.h in Headers */,
-				C26B248090070C3888B5479A77587718 /* CRCurrencyRequestDelegate.h in Headers */,
-				8D2716B8F42DE7E381EA9C04A109AF97 /* CRCurrencyResults.h in Headers */,
+				92A031A2BC5B9D4B48AA6F1996AFF74F /* CRCurrencyRequest.h in Headers */,
+				19ADB3C1C90D66A6B2118A7E44C0BE70 /* CRCurrencyRequestDelegate.h in Headers */,
+				AF89987A411FC60A091088C3FA4D6542 /* CRCurrencyResults.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		056B62C685230831476BD0AFA4BF576D /* DistanceGetter-DistanceGetter */ = {
+		3B87CCF0F55789B413C9D64138E9B881 /* CurrencyRequest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DE00580EDCC101C740E28F76E59A3BA1 /* Build configuration list for PBXNativeTarget "DistanceGetter-DistanceGetter" */;
+			buildConfigurationList = ACB296A1E1796668F873CE8BE7F66370 /* Build configuration list for PBXNativeTarget "CurrencyRequest" */;
 			buildPhases = (
-				385E975DA873EA0CFDAAADFFFF20F81F /* Sources */,
-				C1B5C451663EAA0EED3EC1E9F62A16B8 /* Frameworks */,
-				0866B31BA19B96C0D58E605ED3452364 /* Resources */,
+				C595891CE27C839B409BBFEC49772BC4 /* Sources */,
+				A7E08B71479D2DD09A02422EF3CEA538 /* Frameworks */,
+				E95BEFF3682B4E5192FCD3392B1A737D /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				08D2DAC882CB98A3D15A6AB0F285A4FB /* PBXTargetDependency */,
 			);
-			name = "DistanceGetter-DistanceGetter";
-			productName = "DistanceGetter-DistanceGetter";
-			productReference = 48E916B7BFAB0C31D1BD3A2CEB95B863 /* DistanceGetter.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		1CDB20446FD97D49D5AA2BA4C6E38101 /* DistanceGetter */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AD5A7EE0E4E9E263FF375B77D02DB7DB /* Build configuration list for PBXNativeTarget "DistanceGetter" */;
-			buildPhases = (
-				DD7658E802BE9AD71AC9409216FB41A1 /* Sources */,
-				9A022A22ECAE876F880A3D10F0170937 /* Frameworks */,
-				A11DECFB48804A794D6FFD0A4E8D8F49 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				EB72AE015ACB4D2A10EA3AF94A61104D /* PBXTargetDependency */,
-			);
-			name = DistanceGetter;
-			productName = DistanceGetter;
-			productReference = 40FE8084176E391792336018332703CB /* libDistanceGetter.a */;
+			name = CurrencyRequest;
+			productName = CurrencyRequest;
+			productReference = BA6A806A84706F9B2700CB394C7BBF07 /* libCurrencyRequest.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		3E782B5EC4C5B2AF8B087C9043B234F6 /* Pods-ComTools */ = {
+		730199C0B88F258F77666C0442CF50CE /* Pods-ComTools */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EF8B8726A0A7FCDC88AEFA1B4F4DD60A /* Build configuration list for PBXNativeTarget "Pods-ComTools" */;
+			buildConfigurationList = D01D029F910972D7111BBC418B60B907 /* Build configuration list for PBXNativeTarget "Pods-ComTools" */;
 			buildPhases = (
-				A66EF58A5113FEAA6231DEE868B3E20B /* Sources */,
-				4177D11C9F6F296370AF6EE39A9B1B4F /* Frameworks */,
+				BB2CB2DA5EF9EF58631161CFCB556927 /* Sources */,
+				C2045F900B5B53D981C3FB673ED85835 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				BFAC808DADBE2AD14E7F1CCAAF6C6B1C /* PBXTargetDependency */,
-				DCB7CF3933242E199F1F0AA02BE63A07 /* PBXTargetDependency */,
+				43C0BD74D95D4E3DEB700FFBEF32D4F2 /* PBXTargetDependency */,
 			);
 			name = "Pods-ComTools";
 			productName = "Pods-ComTools";
-			productReference = 70912846147DC07159CDDD3B5F80566E /* libPods-ComTools.a */;
+			productReference = BF885A73DBA057821C67D307D4C3A98A /* libPods-ComTools.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		51AAFB3BFC9C86201730F0AD9799ACB2 /* CurrencyRequest-CurrencyRequest */ = {
+		F9A167B12AD227D879176276D064519C /* CurrencyRequest-CurrencyRequest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3DEA93421142FD28818E1AE97E336771 /* Build configuration list for PBXNativeTarget "CurrencyRequest-CurrencyRequest" */;
+			buildConfigurationList = 12C2EC7918B59AF93A94BE579F93B894 /* Build configuration list for PBXNativeTarget "CurrencyRequest-CurrencyRequest" */;
 			buildPhases = (
-				BCD1905183C1E6BF031362200756BB7D /* Sources */,
-				0A9CB624D98F30C089AE41B09F11EC66 /* Frameworks */,
-				69D55BBF2E91515AB5142A18B44CDCE5 /* Resources */,
+				50B31B63090B1F850A4AABE925AC7629 /* Sources */,
+				0EF1686C98C097CE8B11E06DD4A80950 /* Frameworks */,
+				A855DC02F19385C4327B939697460ED1 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -305,26 +456,8 @@
 			);
 			name = "CurrencyRequest-CurrencyRequest";
 			productName = "CurrencyRequest-CurrencyRequest";
-			productReference = 4BA2B8509CF6F8D3DBE6928AD06B2CA1 /* CurrencyRequest.bundle */;
+			productReference = A97AB85CFA8BD5E431F3013C08FD6BEF /* CurrencyRequest.bundle */;
 			productType = "com.apple.product-type.bundle";
-		};
-		E5A2B414578CCFC08BA2CA743C25F498 /* CurrencyRequest */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6DF77A47170E1012B47AC71413C97DB8 /* Build configuration list for PBXNativeTarget "CurrencyRequest" */;
-			buildPhases = (
-				1C9A37CE76AE5C55493CDC61335CEA45 /* Sources */,
-				03572C63918F5C1D20D6C5561EE89DFF /* Frameworks */,
-				F876A77E80A7F0F3A9986D0E30271831 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				13A5AA77CBABAD38427FB7FC93CD3371 /* PBXTargetDependency */,
-			);
-			name = CurrencyRequest;
-			productName = CurrencyRequest;
-			productReference = 9B12CB7CA545FC6D3658BAACE3460714 /* libCurrencyRequest.a */;
-			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -347,24 +480,15 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E5A2B414578CCFC08BA2CA743C25F498 /* CurrencyRequest */,
-				51AAFB3BFC9C86201730F0AD9799ACB2 /* CurrencyRequest-CurrencyRequest */,
-				1CDB20446FD97D49D5AA2BA4C6E38101 /* DistanceGetter */,
-				056B62C685230831476BD0AFA4BF576D /* DistanceGetter-DistanceGetter */,
-				3E782B5EC4C5B2AF8B087C9043B234F6 /* Pods-ComTools */,
+				3B87CCF0F55789B413C9D64138E9B881 /* CurrencyRequest */,
+				F9A167B12AD227D879176276D064519C /* CurrencyRequest-CurrencyRequest */,
+				730199C0B88F258F77666C0442CF50CE /* Pods-ComTools */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0866B31BA19B96C0D58E605ED3452364 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		69D55BBF2E91515AB5142A18B44CDCE5 /* Resources */ = {
+		A855DC02F19385C4327B939697460ED1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -374,148 +498,52 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1C9A37CE76AE5C55493CDC61335CEA45 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				93EFEC6BCAD00C9A65E54F409F90259F /* CRCurrencyRequest.m in Sources */,
-				E6181E2497EA1305798BEC039EF59E25 /* CRCurrencyResults.m in Sources */,
-				DF9F0420DE6B3E2321003323BF6A89D5 /* CurrencyRequest-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		385E975DA873EA0CFDAAADFFFF20F81F /* Sources */ = {
+		50B31B63090B1F850A4AABE925AC7629 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A66EF58A5113FEAA6231DEE868B3E20B /* Sources */ = {
+		BB2CB2DA5EF9EF58631161CFCB556927 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18836E5C9644CBA6FC4FFF26B4602246 /* Pods-ComTools-dummy.m in Sources */,
+				9DC8BF93863B3086F61B7DC1616AF49C /* Pods-ComTools-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BCD1905183C1E6BF031362200756BB7D /* Sources */ = {
+		C595891CE27C839B409BBFEC49772BC4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DD7658E802BE9AD71AC9409216FB41A1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				D5B8DF59732E9F6914206810174E66D2 /* CRCurrencyRequest.m in Sources */,
+				F97C044A146822743656DD49FEED1D13 /* CRCurrencyResults.m in Sources */,
+				7574DF4EA2B1856991342A503547065E /* CurrencyRequest-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		13A5AA77CBABAD38427FB7FC93CD3371 /* PBXTargetDependency */ = {
+		08D2DAC882CB98A3D15A6AB0F285A4FB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "CurrencyRequest-CurrencyRequest";
-			target = 51AAFB3BFC9C86201730F0AD9799ACB2 /* CurrencyRequest-CurrencyRequest */;
-			targetProxy = 7E31B01FBBE31B9F111237675DB310D3 /* PBXContainerItemProxy */;
+			target = F9A167B12AD227D879176276D064519C /* CurrencyRequest-CurrencyRequest */;
+			targetProxy = AF6D0C90D4E57D0326D876B078EE973E /* PBXContainerItemProxy */;
 		};
-		BFAC808DADBE2AD14E7F1CCAAF6C6B1C /* PBXTargetDependency */ = {
+		43C0BD74D95D4E3DEB700FFBEF32D4F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CurrencyRequest;
-			target = E5A2B414578CCFC08BA2CA743C25F498 /* CurrencyRequest */;
-			targetProxy = FC37F9DC65A9F50301BE62264C3FD6E2 /* PBXContainerItemProxy */;
-		};
-		DCB7CF3933242E199F1F0AA02BE63A07 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DistanceGetter;
-			target = 1CDB20446FD97D49D5AA2BA4C6E38101 /* DistanceGetter */;
-			targetProxy = ABD308CF751F68FDCADD97F77D3F2CF5 /* PBXContainerItemProxy */;
-		};
-		EB72AE015ACB4D2A10EA3AF94A61104D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "DistanceGetter-DistanceGetter";
-			target = 056B62C685230831476BD0AFA4BF576D /* DistanceGetter-DistanceGetter */;
-			targetProxy = E86A43A12D92631BCBC1643853DF2EB2 /* PBXContainerItemProxy */;
+			target = 3B87CCF0F55789B413C9D64138E9B881 /* CurrencyRequest */;
+			targetProxy = 8B77680B2726EE6CC9F83AFEB2E76431 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0BFA4D607A4997DBB17898D989210D15 /* Release */ = {
+		16905FF6D5116B4299F0A7757B0DEB7A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40EC7FDD73B578BFCB88D4D47AEBDAED /* Pods-ComTools.release.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		1F67A225BDBE84AC84359690B526AA1A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF830FDF3C6BA86CBC23C2EF0E8707DC /* CurrencyRequest-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/CurrencyRequest/CurrencyRequest-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		4AA9F20858ED234BE8381E29108E1CF7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = DistanceGetter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		5314FAF5CDB78B4BB20429802272CB24 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = DistanceGetter;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		55961844903F445B1195A237D6A40E31 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF830FDF3C6BA86CBC23C2EF0E8707DC /* CurrencyRequest-Private.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/CurrencyRequest/CurrencyRequest-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		5B230B4A169026A1C1DE0D6CA730CB9B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18BD5F15F1510C4EE506570731C52E7E /* Pods-ComTools.debug.xcconfig */;
+			baseConfigurationReference = AF4745920CBC8DBCAE7F2914D3770446 /* Pods-ComTools.debug.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -528,6 +556,34 @@
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
+		};
+		1BA6BC44FCC92EB2376615B306D13C02 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54A8F1C71EAC515553D829CB2D17DEA8 /* CurrencyRequest-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = CurrencyRequest;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		28E603E64A021815F0ECCB27173E9089 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A6EF6BE0DD66A1D30114B4B6F5209AB /* Pods-ComTools.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
 		};
 		5CE5176205D06FF3FFE3DDDA9291E44B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -568,17 +624,21 @@
 			};
 			name = Debug;
 		};
-		6D8F4B5921C929DD0183D276AB073660 /* Debug */ = {
+		70AF0B32794FFE9DCFF9B12E7264C89A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF830FDF3C6BA86CBC23C2EF0E8707DC /* CurrencyRequest-Private.xcconfig */;
+			baseConfigurationReference = 54A8F1C71EAC515553D829CB2D17DEA8 /* CurrencyRequest-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = CurrencyRequest;
+				GCC_PREFIX_HEADER = "Target Support Files/CurrencyRequest/CurrencyRequest-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
 		};
 		74857149DC1E0D599B8A01A78349A926 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -614,9 +674,9 @@
 			};
 			name = Release;
 		};
-		9C70BF9F22693726342F99338F791569 /* Release */ = {
+		A05E205052DA85284D4513F67FB873C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AF830FDF3C6BA86CBC23C2EF0E8707DC /* CurrencyRequest-Private.xcconfig */;
+			baseConfigurationReference = 54A8F1C71EAC515553D829CB2D17DEA8 /* CurrencyRequest-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = CurrencyRequest;
@@ -626,26 +686,12 @@
 			};
 			name = Release;
 		};
-		B4A89CD9EEAB86A76F7471BDF04629C1 /* Release */ = {
+		B4EC35B67793FA38D2BDC0D31F798CCC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54A8F1C71EAC515553D829CB2D17DEA8 /* CurrencyRequest-Private.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DistanceGetter/DistanceGetter-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		B8A9032F03B356EC41F8DD1C8A17BEEB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DistanceGetter/DistanceGetter-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/CurrencyRequest/CurrencyRequest-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -659,6 +705,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		12C2EC7918B59AF93A94BE579F93B894 /* Build configuration list for PBXNativeTarget "CurrencyRequest-CurrencyRequest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BA6BC44FCC92EB2376615B306D13C02 /* Debug */,
+				A05E205052DA85284D4513F67FB873C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -668,47 +723,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3DEA93421142FD28818E1AE97E336771 /* Build configuration list for PBXNativeTarget "CurrencyRequest-CurrencyRequest" */ = {
+		ACB296A1E1796668F873CE8BE7F66370 /* Build configuration list for PBXNativeTarget "CurrencyRequest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6D8F4B5921C929DD0183D276AB073660 /* Debug */,
-				9C70BF9F22693726342F99338F791569 /* Release */,
+				B4EC35B67793FA38D2BDC0D31F798CCC /* Debug */,
+				70AF0B32794FFE9DCFF9B12E7264C89A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6DF77A47170E1012B47AC71413C97DB8 /* Build configuration list for PBXNativeTarget "CurrencyRequest" */ = {
+		D01D029F910972D7111BBC418B60B907 /* Build configuration list for PBXNativeTarget "Pods-ComTools" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1F67A225BDBE84AC84359690B526AA1A /* Debug */,
-				55961844903F445B1195A237D6A40E31 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AD5A7EE0E4E9E263FF375B77D02DB7DB /* Build configuration list for PBXNativeTarget "DistanceGetter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B8A9032F03B356EC41F8DD1C8A17BEEB /* Debug */,
-				B4A89CD9EEAB86A76F7471BDF04629C1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DE00580EDCC101C740E28F76E59A3BA1 /* Build configuration list for PBXNativeTarget "DistanceGetter-DistanceGetter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4AA9F20858ED234BE8381E29108E1CF7 /* Debug */,
-				5314FAF5CDB78B4BB20429802272CB24 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		EF8B8726A0A7FCDC88AEFA1B4F4DD60A /* Build configuration list for PBXNativeTarget "Pods-ComTools" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5B230B4A169026A1C1DE0D6CA730CB9B /* Debug */,
-				0BFA4D607A4997DBB17898D989210D15 /* Release */,
+				16905FF6D5116B4299F0A7757B0DEB7A /* Debug */,
+				28E603E64A021815F0ECCB27173E9089 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
