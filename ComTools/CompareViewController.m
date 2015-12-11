@@ -62,6 +62,9 @@ bool cadUpdated = NO;
 - (IBAction)segValueChanged:(id)sender {
     inputIndex = 1;
     option = self.segOptions.selectedSegmentIndex;
+    
+    [Utilities trackEvent:@"Segment value changed" inCategory:@"Segment" withLabel:@"Compare Segment" withValue:[NSNumber numberWithInteger: option]];
+    
     if (option == 1) {
         format = @"%0.1f";
         self.lblFormat.text = temperature_format;
@@ -90,18 +93,21 @@ bool cadUpdated = NO;
 }
 
 - (IBAction)input1Changed:(id)sender {
+    [Utilities trackEvent:@"Input value changed" inCategory:@"Input Entry" withLabel:@"Compare Input Unit 1" withValue:nil];
     inputIndex = 1;
     [self doCompare];
     [self setSlider];
 }
 
 - (IBAction)input2Changed:(id)sender {
+    [Utilities trackEvent:@"Input value changed" inCategory:@"Input Entry" withLabel:@"Compare Input Unit 2" withValue:nil];
     inputIndex = 2;
     [self doCompare];
     [self setSlider];
 }
 
 - (IBAction)slide1Changed:(id)sender {
+    [Utilities trackEvent:@"Slider changed" inCategory:@"Slider" withLabel:@"Compare Slider Unit 1" withValue:nil];
     inputIndex = 1;
     self.inputUnit1.text = [NSString stringWithFormat:format, self.slideUnit1.value];
     [self doCompare];
@@ -109,6 +115,7 @@ bool cadUpdated = NO;
 }
 
 - (IBAction)slide2Changed:(id)sender {
+    [Utilities trackEvent:@"Slider changed" inCategory:@"Slider" withLabel:@"Compare Slider Unit 2" withValue:nil];
     inputIndex = 2;
     self.inputUnit2.text = [NSString stringWithFormat:format, self.slideUnit2.value];
     [self doCompare];
@@ -194,5 +201,11 @@ bool cadUpdated = NO;
         [alert addAction:ok];
         [self presentViewController:alert animated:YES completion:nil];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Utilities trackScreen:@"Compare Tool"];
 }
 @end

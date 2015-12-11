@@ -15,5 +15,6 @@
 + (NSMutableArray *)initUnits;
 + (NSMutableArray *)initCurrencies;
 + (BOOL)InternetConnected;
-
++ (void)trackScreen:(NSString *)screenName;
++ (void)trackEvent:(NSString *)eventName inCategory:(NSString *)catName withLabel:(NSString *)label withValue:(NSNumber *)value ;
 @end

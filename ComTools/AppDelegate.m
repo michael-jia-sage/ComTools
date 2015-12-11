@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Google/Analytics.h>
 #import "CurrencyRequest/CRCurrencyRequest.h"
 #import "CurrencyRequest/CRCurrencyResults.h"
 
@@ -20,6 +21,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // [START tracker_objc]
+    // Configure tracker from GoogleService-Info.plist.
+    NSError *configureError;
+    [[GGLContext sharedInstance] configureWithError:&configureError];
+    NSAssert(!configureError, @"Error configuring Google services: %@", configureError);
+    
+    // Optional: configure GAI options.
+    GAI *gai = [GAI sharedInstance];
+    gai.trackUncaughtExceptions = YES;  // report uncaught exceptions
+    gai.logger.logLevel = kGAILogLevelVerbose;  // remove before app release
+    // [END tracker_objc]
+    
+    // Set a white background so that patterns are showcased.
+    _window.backgroundColor = [UIColor whiteColor];
+    
     [[UITabBar appearance] setTintColor:[Utilities colorFromHexString:themeColor]];
     
     return YES;

@@ -47,30 +47,35 @@ NSNumberFormatter *calFormatter;
 }
 
 - (IBAction)btnTip1Tapped:(id)sender {
+    [Utilities trackEvent:@"Shortcut button pressed" inCategory:@"Button" withLabel:@"Calculate Tip Button 1" withValue:nil];
     [self.txtTotal endEditing:YES];
     [self.sldTipRate setValue:0.08];
     [self tipChanged:sender];
 }
 
 - (IBAction)btnTip2Tapped:(id)sender {
+    [Utilities trackEvent:@"Shortcut button pressed" inCategory:@"Button" withLabel:@"Calculate Tip Button 2" withValue:nil];
     [self.txtTotal endEditing:YES];
     [self.sldTipRate setValue:0.10];
     [self tipChanged:sender];
 }
 
 - (IBAction)btnTip3Tapped:(id)sender {
+    [Utilities trackEvent:@"Shortcut button pressed" inCategory:@"Button" withLabel:@"Calculate Tip Button 3" withValue:nil];
     [self.txtTotal endEditing:YES];
     [self.sldTipRate setValue:0.12];
     [self tipChanged:sender];
 }
 
 - (IBAction)btnTip4Tapped:(id)sender {
+    [Utilities trackEvent:@"Shortcut button pressed" inCategory:@"Button" withLabel:@"Calculate Tip Button 4" withValue:nil];
     [self.txtTotal endEditing:YES];
     [self.sldTipRate setValue:0.15];
     [self tipChanged:sender];
 }
 
 - (IBAction)btnTip5Tapped:(id)sender {
+    [Utilities trackEvent:@"Shortcut button pressed" inCategory:@"Button" withLabel:@"Calculate Tip Button 5" withValue:nil];
     [self.txtTotal endEditing:YES];
     [self.sldTipRate setValue:0.18];
     [self tipChanged:sender];
@@ -81,11 +86,14 @@ NSNumberFormatter *calFormatter;
 }
 
 - (IBAction)totalChanged:(id)sender {
+    [Utilities trackEvent:@"Input value changed" inCategory:@"Input Entry" withLabel:@"Calculate Input Amount" withValue:nil];
+
     total = [self.txtTotal.text floatValue];
     [self calTotalAndTip];
 }
 
 - (IBAction)tipChanged:(id)sender {
+    [Utilities trackEvent:@"Slider changed" inCategory:@"Slider" withLabel:@"Calculate Tip Slider" withValue:nil];
     tipRate = self.sldTipRate.value;
     [self calTotalAndTip];
 }
@@ -117,6 +125,7 @@ NSNumberFormatter *calFormatter;
 }
 
 - (IBAction)groupSizeChanged:(id)sender {
+    [Utilities trackEvent:@"Shortcut button pressed" inCategory:@"Button" withLabel:@"Calculate Group Size" withValue:nil];
     [self calGroupAmount];
 }
 
@@ -170,5 +179,11 @@ NSNumberFormatter *calFormatter;
 - (void)scrollViewSingleTapGestureCaptured:(UITapGestureRecognizer *)gesture
 {
     [self.view endEditing:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Utilities trackScreen:@"Calculate Tool"];
 }
 @end

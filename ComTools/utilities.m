@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Google/Analytics.h>
 #import "reachable.h"
 #import "utilities.h"
 #import "currency.h"
@@ -102,5 +103,28 @@
     reachable *reachability = [reachable reachabilityForInternetConnection];
     NetworkStatus networkStatus = [reachability currentReachabilityStatus];
     return networkStatus != NotReachable;
+}
+
++ (void)trackScreen:(NSString *)screenName {
+    // The UA-XXXXX-Y tracker ID is loaded automatically from the
+    // GoogleService-Info.plist by the `GGLContext` in the AppDelegate.
+    // If you're copying this to an app just using Analytics, you'll
+    // need to configure your tracking ID here.
+    // [START screen_view_hit_objc]
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:screenName];
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+    // [END screen_view_hit_objc]
+    
+}
+
++ (void)trackEvent:(NSString *)eventName inCategory:(NSString *)catName withLabel:(NSString *)label withValue:(NSNumber *)value {
+    // May return nil if a tracker has not already been initialized with a property ID.
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker send:[[GAIDictionaryBuilder
+                    createEventWithCategory:catName     // Event category (required)
+                    action:eventName  // Event action (required)
+                    label:label          // Event label
+                    value:value] build]];    // Event value
 }
 @end

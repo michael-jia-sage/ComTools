@@ -49,6 +49,7 @@ bool currencyUpdated = false;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [Utilities trackEvent:@"PickerView selected" inCategory:@"PickerView" withLabel:@"Currency Picker" withValue:[NSNumber numberWithInteger: indexPath.row]];
     selCurrency = [supportedCurrencies objectAtIndex: indexPath.row];
 
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
@@ -125,11 +126,13 @@ bool currencyUpdated = false;
 }
 
 - (IBAction)inputValueChanged:(id)sender {
+    [Utilities trackEvent:@"Input value changed" inCategory:@"Input Entry" withLabel:@"Currency Input Amount" withValue:nil];
     self.btnReset.hidden = ([self.inputField.text floatValue] == 100);
     [self doCalCurrencies];
 }
 
 - (IBAction)btnResetTapped:(id)sender {
+    [Utilities trackEvent:@"Reset button pressed" inCategory:@"Button" withLabel:@"Currency Reset Button" withValue:nil];
     self.inputField.text = @"100";
     self.btnReset.hidden = YES;
     [self doCalCurrencies];
@@ -184,5 +187,11 @@ bool currencyUpdated = false;
         [alert addAction:ok];
         [self presentViewController:alert animated:YES completion:nil];
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Utilities trackScreen:@"Currency Tool"];
 }
 @end

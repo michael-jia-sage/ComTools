@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E132F541C17F2E9005A896F /* reachable.h in Resources */ = {isa = PBXBuildFile; fileRef = 0E132F531C17F2E8005A896F /* reachable.h */; };
 		0E132F561C17F322005A896F /* reachable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132F551C17F322005A896F /* reachable.m */; };
+		0E49123D1C1A8E4900EEF857 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E49123C1C1A8E4900EEF857 /* GoogleService-Info.plist */; };
 		0E54F85F1BF1AE700059E277 /* currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E54F85E1BF1AE700059E277 /* currency.m */; };
 		0E57822F1BF303B500935AFC /* unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E57822E1BF303B500935AFC /* unit.m */; };
 		0E6AC6C61BE5E57D00DA0FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AC6C51BE5E57D00DA0FA6 /* main.m */; };
@@ -26,11 +27,12 @@
 /* Begin PBXFileReference section */
 		0E132F531C17F2E8005A896F /* reachable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reachable.h; sourceTree = "<group>"; };
 		0E132F551C17F322005A896F /* reachable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reachable.m; sourceTree = "<group>"; };
+		0E49123C1C1A8E4900EEF857 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E54F85D1BF1AE700059E277 /* currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = currency.h; sourceTree = "<group>"; };
 		0E54F85E1BF1AE700059E277 /* currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = currency.m; sourceTree = "<group>"; };
 		0E57822D1BF303B500935AFC /* unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unit.h; sourceTree = "<group>"; };
 		0E57822E1BF303B500935AFC /* unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = unit.m; sourceTree = "<group>"; };
-		0E6AC6C11BE5E57D00DA0FA6 /* ComTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E6AC6C11BE5E57D00DA0FA6 /* CTooies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTooies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E6AC6C51BE5E57D00DA0FA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0E6AC6C71BE5E57D00DA0FA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0E6AC6C81BE5E57D00DA0FA6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -78,7 +80,7 @@
 		0E6AC6C21BE5E57D00DA0FA6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0E6AC6C11BE5E57D00DA0FA6 /* ComTools.app */,
+				0E6AC6C11BE5E57D00DA0FA6 /* CTooies.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +88,7 @@
 		0E6AC6C31BE5E57D00DA0FA6 /* ComTools */ = {
 			isa = PBXGroup;
 			children = (
+				0E49123C1C1A8E4900EEF857 /* GoogleService-Info.plist */,
 				0E6AC6C71BE5E57D00DA0FA6 /* AppDelegate.h */,
 				0E6AC6C81BE5E57D00DA0FA6 /* AppDelegate.m */,
 				0E6AC6CA1BE5E57D00DA0FA6 /* ConvertViewController.h */,
@@ -157,7 +160,7 @@
 			);
 			name = ComTools;
 			productName = ComTools;
-			productReference = 0E6AC6C11BE5E57D00DA0FA6 /* ComTools.app */;
+			productReference = 0E6AC6C11BE5E57D00DA0FA6 /* CTooies.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E132F541C17F2E9005A896F /* reachable.h in Resources */,
+				0E49123D1C1A8E4900EEF857 /* GoogleService-Info.plist in Resources */,
 				0E6AC6D41BE5E57D00DA0FA6 /* Assets.xcassets in Resources */,
 				0E6AC6D21BE5E57D00DA0FA6 /* Main.storyboard in Resources */,
 			);
@@ -361,8 +365,8 @@
 				INFOPLIST_FILE = ComTools/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.michaelsoft.ComTools;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.michaelsoft.CTooies;
+				PRODUCT_NAME = CTooies;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -376,8 +380,8 @@
 				INFOPLIST_FILE = ComTools/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.michaelsoft.ComTools;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.michaelsoft.CTooies;
+				PRODUCT_NAME = CTooies;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

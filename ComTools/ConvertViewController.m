@@ -51,6 +51,8 @@ NSSortDescriptor *sort;
 }
 
 - (IBAction)segCategoryValueChanged:(id)sender {
+    [Utilities trackEvent:@"Segment value changed" inCategory:@"Segment" withLabel:@"Convert Segment" withValue:[NSNumber numberWithInteger: self.segCategory.selectedSegmentIndex]];
+
     UnitCategory category = (UnitCategory)self.segCategory.selectedSegmentIndex;
 
     NSPredicate *p = [NSPredicate predicateWithFormat:@"category = %d", (int)category];
@@ -76,10 +78,12 @@ NSSortDescriptor *sort;
 }
 
 - (IBAction)inputUnit1Changed:(id)sender {
+    [Utilities trackEvent:@"Input value changed" inCategory:@"Input Entry" withLabel:@"Convert Input Unit 1" withValue:nil];
     [self doCalculate];
 }
 
 - (IBAction)inputUnit2Changed:(id)sender {
+    [Utilities trackEvent:@"Input value changed" inCategory:@"Input Entry" withLabel:@"Convert Input Unit 2" withValue:nil];
     reverseCal = true;
     [self doCalculate];
     reverseCal = false;
@@ -154,6 +158,8 @@ NSSortDescriptor *sort;
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    [Utilities trackEvent:@"PickerView selected" inCategory:@"PickerView" withLabel:@"Convert Unit Picker" withValue:nil];
+
     self.pickerUnits.hidden = YES;
     unit *selUnit = [units objectAtIndex: row];
     unit *tmpUnit;
@@ -192,6 +198,7 @@ NSSortDescriptor *sort;
 }
 
 - (IBAction)btnSwitchTapped:(id)sender {
+    [Utilities trackEvent:@"Switch button pressed" inCategory:@"Button" withLabel:@"Convert Switch" withValue:nil];
     unit *tmpUnit = unit1;
     unit1 = unit2;
     unit2 = tmpUnit;
@@ -202,17 +209,23 @@ NSSortDescriptor *sort;
 }
 
 - (IBAction)btnResetUnit1Tapped:(id)sender {
+    [Utilities trackEvent:@"Reset button pressed" inCategory:@"Button" withLabel:@"Convert Reset Unit 1" withValue:nil];
+    
     self.inputUnit1.text = @"1";
     [self doCalculate];
 }
 
 - (IBAction)btnResetUnit2Tapped:(id)sender {
+    [Utilities trackEvent:@"Reset button pressed" inCategory:@"Button" withLabel:@"Convert Reset Unit 2" withValue:nil];
     self.inputUnit2.text = @"1";
     reverseCal = true;
     [self doCalculate];
     reverseCal = false;
 }
 
-
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [Utilities trackScreen:@"Convert Tool"];
+}
 @end
