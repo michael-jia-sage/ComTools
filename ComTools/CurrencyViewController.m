@@ -58,7 +58,7 @@ bool currencyUpdated = false;
     self.inputField.text = cell.detailTextLabel.text;
     self.btnReset.hidden = ([self.inputField.text floatValue] == 100);
     
-    //[self doCalCurrencies];
+    [self showCurrencyRate];
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -142,12 +142,16 @@ bool currencyUpdated = false;
     [sender selectAll:nil];
 }
 
-- (void)doCalCurrencies {
+-(void)showCurrencyRate {
     usdValue = [self.inputField.text floatValue];
     if (![selCurrency.name isEqualToString:@"US Dollar"]) {
         usdValue = usdValue / selCurrency.rate;
         self.lblUSD.text = [NSString stringWithFormat:@"Rate: 1 USD = %.2f %@", selCurrency.rate, selCurrency.code];
     }
+}
+
+- (void)doCalCurrencies {
+    [self showCurrencyRate];
     
     NSIndexPath *selIndex = self.lstCurrency.indexPathForSelectedRow;
     [self.lstCurrency reloadData];

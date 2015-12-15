@@ -35,6 +35,7 @@ int activeUnit;
 bool reverseCal;
 float convertRate;
 NSSortDescriptor *sort;
+UIViewController *rootVC;
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
