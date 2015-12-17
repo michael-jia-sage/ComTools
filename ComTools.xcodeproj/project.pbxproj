@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0FD4B21C22695000813384 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E0FD4B11C22695000813384 /* GoogleService-Info.plist */; };
 		0E132F541C17F2E9005A896F /* reachable.h in Resources */ = {isa = PBXBuildFile; fileRef = 0E132F531C17F2E8005A896F /* reachable.h */; };
 		0E132F561C17F322005A896F /* reachable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132F551C17F322005A896F /* reachable.m */; };
-		0E49123D1C1A8E4900EEF857 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E49123C1C1A8E4900EEF857 /* GoogleService-Info.plist */; };
 		0E54F85F1BF1AE700059E277 /* currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E54F85E1BF1AE700059E277 /* currency.m */; };
 		0E57822F1BF303B500935AFC /* unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E57822E1BF303B500935AFC /* unit.m */; };
 		0E6AC6C61BE5E57D00DA0FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AC6C51BE5E57D00DA0FA6 /* main.m */; };
@@ -25,9 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E0FD4B11C22695000813384 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E132F531C17F2E8005A896F /* reachable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reachable.h; sourceTree = "<group>"; };
 		0E132F551C17F322005A896F /* reachable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reachable.m; sourceTree = "<group>"; };
-		0E49123C1C1A8E4900EEF857 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E54F85D1BF1AE700059E277 /* currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = currency.h; sourceTree = "<group>"; };
 		0E54F85E1BF1AE700059E277 /* currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = currency.m; sourceTree = "<group>"; };
 		0E57822D1BF303B500935AFC /* unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unit.h; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 		0E6AC6C31BE5E57D00DA0FA6 /* ComTools */ = {
 			isa = PBXGroup;
 			children = (
-				0E49123C1C1A8E4900EEF857 /* GoogleService-Info.plist */,
+				0E0FD4B11C22695000813384 /* GoogleService-Info.plist */,
 				0E6AC6C71BE5E57D00DA0FA6 /* AppDelegate.h */,
 				0E6AC6C81BE5E57D00DA0FA6 /* AppDelegate.m */,
 				0E6AC6CA1BE5E57D00DA0FA6 /* ConvertViewController.h */,
@@ -202,9 +202,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E132F541C17F2E9005A896F /* reachable.h in Resources */,
-				0E49123D1C1A8E4900EEF857 /* GoogleService-Info.plist in Resources */,
 				0E6AC6D41BE5E57D00DA0FA6 /* Assets.xcassets in Resources */,
 				0E6AC6D21BE5E57D00DA0FA6 /* Main.storyboard in Resources */,
+				0E0FD4B21C22695000813384 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,14 +365,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Zonggao Jia (6XHNZ75B8N)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ComTools/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = biz.groupmaster.ctooies;
+				PRODUCT_BUNDLE_IDENTIFIER = biz.groupmaster.ctooies.app;
 				PRODUCT_NAME = CTooies;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -382,14 +382,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Zonggao Jia (L53NJ68Q29)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ComTools/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = biz.groupmaster.ctooies;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = biz.groupmaster.ctooies.app;
 				PRODUCT_NAME = CTooies;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>TRACKING_ID</key>
-	<string>UA-71253740-1</string>
+	<string>UA-71253740-2</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.michaelsoft.CTooies</string>
+	<string>biz.groupmaster.ctooies.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -19,6 +19,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<false/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:513763750600:ios:627189d86639234f</string>
+	<string>1:513763750600:ios:2c52512f22e57462</string>
 </dict>
 </plist>
