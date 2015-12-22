@@ -526,7 +526,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z1G-yX-blO">
-                                <rect key="frame" x="20" y="179" width="560" height="351"/>
+                                <rect key="frame" x="20" y="179" width="560" height="331"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="0.5" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" white="0.66666666669999997" alpha="0.25" colorSpace="calibratedWhite"/>
@@ -565,6 +565,12 @@
                                     <outlet property="delegate" destination="Krh-w2-DhU" id="jsw-Gi-4XV"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rates provided by European Central Bank" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XbV-vO-Yb5">
+                                <rect key="frame" x="20" y="527" width="560" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.99607843139999996" green="0.79215686269999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -576,15 +582,24 @@
                             <constraint firstItem="svl-js-lNK" firstAttribute="height" secondItem="WXy-RE-3e7" secondAttribute="height" id="RXm-KG-xkj"/>
                             <constraint firstItem="Z1G-yX-blO" firstAttribute="top" secondItem="WXy-RE-3e7" secondAttribute="bottom" constant="54" id="Snu-fS-3hE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="svl-js-lNK" secondAttribute="trailing" id="VUt-n4-CD2"/>
+                            <constraint firstItem="XbV-vO-Yb5" firstAttribute="centerX" secondItem="Z1G-yX-blO" secondAttribute="centerX" id="VWW-XH-hxH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WXy-RE-3e7" secondAttribute="trailing" id="WF4-p3-ZnK"/>
                             <constraint firstItem="G6D-zJ-4Xq" firstAttribute="leading" secondItem="FgL-Tv-aNU" secondAttribute="leadingMargin" id="WuY-BX-11y"/>
+                            <constraint firstItem="XbV-vO-Yb5" firstAttribute="width" secondItem="Z1G-yX-blO" secondAttribute="width" id="Ypu-4p-NHV"/>
+                            <constraint firstItem="xxG-TE-gwz" firstAttribute="top" secondItem="XbV-vO-Yb5" secondAttribute="bottom" constant="8" id="Zng-uR-B9o"/>
                             <constraint firstItem="U1c-0C-tLs" firstAttribute="leading" secondItem="FgL-Tv-aNU" secondAttribute="leadingMargin" id="cx2-7a-mSz"/>
                             <constraint firstItem="WXy-RE-3e7" firstAttribute="top" secondItem="svl-js-lNK" secondAttribute="bottom" constant="8" id="dYz-5L-cjR"/>
-                            <constraint firstItem="xxG-TE-gwz" firstAttribute="top" secondItem="Z1G-yX-blO" secondAttribute="bottom" constant="21" id="g8G-5i-jXq"/>
+                            <constraint firstItem="xxG-TE-gwz" firstAttribute="top" secondItem="Z1G-yX-blO" secondAttribute="bottom" constant="41" id="g8G-5i-jXq"/>
+                            <constraint firstItem="XbV-vO-Yb5" firstAttribute="top" secondItem="Z1G-yX-blO" secondAttribute="bottom" constant="17" id="kge-Lc-IAt"/>
                             <constraint firstItem="U1c-0C-tLs" firstAttribute="centerY" secondItem="WXy-RE-3e7" secondAttribute="centerY" id="lSN-5v-93I"/>
                             <constraint firstItem="svl-js-lNK" firstAttribute="width" secondItem="FgL-Tv-aNU" secondAttribute="width" multiplier="0.35" id="rrK-2J-xHD"/>
                             <constraint firstItem="Z1G-yX-blO" firstAttribute="centerX" secondItem="FgL-Tv-aNU" secondAttribute="centerX" id="yhA-KN-CBZ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="g8G-5i-jXq"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Currency" image="currency-tab-active" id="ozA-Ds-lfX"/>
                     <connections>
@@ -597,7 +612,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7A-Zu-bMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1440" y="340.14084507042253"/>
+            <point key="canvasLocation" x="1440" y="340"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
