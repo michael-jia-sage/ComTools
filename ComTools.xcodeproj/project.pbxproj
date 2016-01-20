@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0D3DEB1C4F40D7007707F1 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E0D3DE91C4F40D7007707F1 /* AboutViewController.m */; };
 		0E0FD4B21C22695000813384 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E0FD4B11C22695000813384 /* GoogleService-Info.plist */; };
 		0E132F541C17F2E9005A896F /* reachable.h in Resources */ = {isa = PBXBuildFile; fileRef = 0E132F531C17F2E8005A896F /* reachable.h */; };
 		0E132F561C17F322005A896F /* reachable.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E132F551C17F322005A896F /* reachable.m */; };
+		0E179FD91C3E465900AE6CBB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E179FD81C3E465900AE6CBB /* CoreData.framework */; };
+		0E179FDB1C3E49FF00AE6CBB /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E179FDA1C3E49FF00AE6CBB /* CoreDataHelper.m */; };
 		0E54F85F1BF1AE700059E277 /* currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E54F85E1BF1AE700059E277 /* currency.m */; };
 		0E57822F1BF303B500935AFC /* unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E57822E1BF303B500935AFC /* unit.m */; };
 		0E6AC6C61BE5E57D00DA0FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AC6C51BE5E57D00DA0FA6 /* main.m */; };
@@ -25,9 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E0D3DE91C4F40D7007707F1 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		0E0D3DEA1C4F40D7007707F1 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		0E0FD4B11C22695000813384 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E132F531C17F2E8005A896F /* reachable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reachable.h; sourceTree = "<group>"; };
 		0E132F551C17F322005A896F /* reachable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = reachable.m; sourceTree = "<group>"; };
+		0E179FD71C3E3F9800AE6CBB /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		0E179FD81C3E465900AE6CBB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0E179FDA1C3E49FF00AE6CBB /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		0E54F85D1BF1AE700059E277 /* currency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = currency.h; sourceTree = "<group>"; };
 		0E54F85E1BF1AE700059E277 /* currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = currency.m; sourceTree = "<group>"; };
 		0E57822D1BF303B500935AFC /* unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unit.h; sourceTree = "<group>"; };
@@ -60,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E179FD91C3E465900AE6CBB /* CoreData.framework in Frameworks */,
 				6352A4AA54147B79D5C7C0CA /* libPods-ComTools.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -91,6 +100,8 @@
 				0E0FD4B11C22695000813384 /* GoogleService-Info.plist */,
 				0E6AC6C71BE5E57D00DA0FA6 /* AppDelegate.h */,
 				0E6AC6C81BE5E57D00DA0FA6 /* AppDelegate.m */,
+				0E0D3DEA1C4F40D7007707F1 /* AboutViewController.h */,
+				0E0D3DE91C4F40D7007707F1 /* AboutViewController.m */,
 				0E6AC6CA1BE5E57D00DA0FA6 /* ConvertViewController.h */,
 				0E6AC6CB1BE5E57D00DA0FA6 /* ConvertViewController.m */,
 				0E6AC6CD1BE5E57D00DA0FA6 /* CalculateViewController.h */,
@@ -120,6 +131,8 @@
 				0E57822E1BF303B500935AFC /* unit.m */,
 				0E132F531C17F2E8005A896F /* reachable.h */,
 				0E132F551C17F322005A896F /* reachable.m */,
+				0E179FD71C3E3F9800AE6CBB /* CoreDataHelper.h */,
+				0E179FDA1C3E49FF00AE6CBB /* CoreDataHelper.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -136,6 +149,7 @@
 		FCAAE13150DE6ECC1B836A90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E179FD81C3E465900AE6CBB /* CoreData.framework */,
 				7A26ECE346AF94A221965592 /* libPods-ComTools.a */,
 			);
 			name = Frameworks;
@@ -248,12 +262,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E0D3DEB1C4F40D7007707F1 /* AboutViewController.m in Sources */,
 				0E54F85F1BF1AE700059E277 /* currency.m in Sources */,
 				0E6AC6CF1BE5E57D00DA0FA6 /* CalculateViewController.m in Sources */,
 				0E57822F1BF303B500935AFC /* unit.m in Sources */,
 				0EAA74101BE737E4009D951C /* CompareViewController.m in Sources */,
 				0E132F561C17F322005A896F /* reachable.m in Sources */,
 				0E6AC6C91BE5E57D00DA0FA6 /* AppDelegate.m in Sources */,
+				0E179FDB1C3E49FF00AE6CBB /* CoreDataHelper.m in Sources */,
 				0EAA74131BE7381C009D951C /* CurrencyViewController.m in Sources */,
 				0E6AC6CC1BE5E57D00DA0FA6 /* ConvertViewController.m in Sources */,
 				0E6B9AE91BE6F65400B49D2E /* utilities.m in Sources */,

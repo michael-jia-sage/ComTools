@@ -141,6 +141,10 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hS-rN-EIT">
                                 <rect key="frame" x="563" y="521" width="22" height="22"/>
+                                <connections>
+                                    <action selector="showInfo:" destination="9pv-A4-QxB" eventType="touchUpInside" id="EjN-7U-VJS"/>
+                                    <segue destination="chO-bS-NuK" kind="presentation" id="OqO-Zg-6l3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -280,12 +284,6 @@
                                     <action selector="groupSizeChanged:" destination="8rJ-Kc-sve" eventType="valueChanged" id="QMU-RA-8hs"/>
                                 </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AA by " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9g-7W-zA0">
-                                <rect key="frame" x="122" y="239" width="50" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LK3-DL-gwa">
                                 <rect key="frame" x="535" y="239" width="45" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -412,6 +410,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hab-3v-f5M">
                                 <rect key="frame" x="558" y="521" width="22" height="22"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="AA by " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9g-7W-zA0">
+                                <rect key="frame" x="219" y="239" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -650,6 +654,49 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--About-->
+        <scene sceneID="uXV-Mt-lEN">
+            <objects>
+                <viewController title="About" id="chO-bS-NuK" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D6D-t2-rOk"/>
+                        <viewControllerLayoutGuide type="bottom" id="0QI-jF-IV4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0A7-9B-nyd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About CTooies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Z1-qt-1Lw">
+                                <rect key="frame" x="20" y="34" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlZ-NC-0eo">
+                                <rect key="frame" x="277" y="74" width="46" height="30"/>
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closePopup:" destination="chO-bS-NuK" eventType="touchUpInside" id="TRD-pK-FX1"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="HEF-Rj-HDH">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HEF-Rj-HDH" firstAttribute="centerX" secondItem="0A7-9B-nyd" secondAttribute="centerX" id="13L-l6-DKR"/>
+                            <constraint firstItem="HEF-Rj-HDH" firstAttribute="height" secondItem="0A7-9B-nyd" secondAttribute="height" id="7tA-qK-WMY"/>
+                            <constraint firstItem="HEF-Rj-HDH" firstAttribute="centerY" secondItem="0A7-9B-nyd" secondAttribute="centerY" id="ELF-s6-2bJ"/>
+                            <constraint firstItem="HEF-Rj-HDH" firstAttribute="width" secondItem="0A7-9B-nyd" secondAttribute="width" id="ZpF-IX-EPY"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qlt-Aq-T7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="284"/>
+        </scene>
         <!--Compare-->
         <scene sceneID="4j5-tx-tTi">
             <objects>
@@ -778,6 +825,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg" width="320" height="568"/>
         <image name="calculate-tab-active" width="22" height="28"/>
         <image name="convert-tab-active" width="34" height="24"/>
         <image name="currency-tab-active" width="22" height="30"/>

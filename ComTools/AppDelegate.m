@@ -10,9 +10,11 @@
 #import <Google/Analytics.h>
 #import "CurrencyRequest/CRCurrencyRequest.h"
 #import "CurrencyRequest/CRCurrencyResults.h"
+#import "CoreDataHelper.h"
 
 @interface AppDelegate ()
 @property (nonatomic) CRCurrencyRequest *req;
+@property (nonatomic, strong, readonly) CoreDataHelper *coreDataHelper;
 @end
 
 @implementation AppDelegate
@@ -49,6 +51,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [[self cdh] saveContext];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -61,6 +64,18 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[self cdh] saveContext];
 }
 
+#define debug 1
+- (CoreDataHelper*)cdh {
+    if (debug==1) {
+        NSLog(@"Running %@ '%@'", self.class, NSStringFromSelector(_cmd));
+    }
+    if (!_coreDataHelper) {
+        _coreDataHelper = [CoreDataHelper new];
+        [_coreDataHelper setupCoreData];
+    }
+    return _coreDataHelper;
+}
 @end

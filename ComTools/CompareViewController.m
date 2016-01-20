@@ -61,7 +61,7 @@ bool cadUpdated = NO;
 
 - (IBAction)segValueChanged:(id)sender {
     inputIndex = 1;
-    option = self.segOptions.selectedSegmentIndex;
+    option = (int)self.segOptions.selectedSegmentIndex;
     
     [Utilities trackEvent:@"Segment value changed" inCategory:@"Segment" withLabel:@"Compare Segment" withValue:[NSNumber numberWithInteger: option]];
     
