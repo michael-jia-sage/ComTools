@@ -26,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IT4-UN-RIg">
-                                <rect key="frame" x="15" y="96" width="570" height="34"/>
+                                <rect key="frame" x="158" y="96" width="285" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Unit 1">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -82,7 +82,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDd-23-DY0">
-                                <rect key="frame" x="15" y="203" width="570" height="34"/>
+                                <rect key="frame" x="158" y="203" width="285" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="Unit 2">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -156,7 +156,7 @@
                             <constraint firstItem="yeN-eo-diL" firstAttribute="centerY" secondItem="LPU-lm-Qst" secondAttribute="centerY" id="5Ko-j5-ttW"/>
                             <constraint firstItem="LPU-lm-Qst" firstAttribute="top" secondItem="IT4-UN-RIg" secondAttribute="bottom" constant="18" id="620-v1-b80"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1hS-rN-EIT" secondAttribute="trailing" constant="-5" id="AC9-xB-6xV"/>
-                            <constraint firstItem="IT4-UN-RIg" firstAttribute="width" secondItem="SNt-d8-I3W" secondAttribute="width" id="BCR-Ua-w87"/>
+                            <constraint firstItem="IT4-UN-RIg" firstAttribute="width" secondItem="SNt-d8-I3W" secondAttribute="width" multiplier="0.5" id="BCR-Ua-w87"/>
                             <constraint firstItem="LPU-lm-Qst" firstAttribute="height" secondItem="yeN-eo-diL" secondAttribute="height" id="EjC-dg-0oO"/>
                             <constraint firstItem="GEs-th-S6y" firstAttribute="height" secondItem="q8B-1q-WBN" secondAttribute="height" id="Ey4-j2-y22"/>
                             <constraint firstItem="LPU-lm-Qst" firstAttribute="leading" secondItem="yeN-eo-diL" secondAttribute="trailing" constant="18" id="K2l-Q1-cf9"/>
@@ -490,7 +490,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="817.5" y="340.14084507042253"/>
+            <point key="canvasLocation" x="817" y="340"/>
         </scene>
         <!--Currency-->
         <scene sceneID="QLT-xp-Nzy">

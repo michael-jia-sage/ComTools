@@ -9,8 +9,9 @@
 #ifndef constants_h
 #define constants_h
 
-#define themeColor @"16c9d8"
-#define bgColor @"efeff4"
+#define themeColor @"#16c9d8"
+#define bgColor @"#efeff4"
+#define grayColor @"#d1d1d0"
 #define IS_IPHONE_4 (fabs((double)[[UIScreen mainScreen]bounds].size.height - (double)480) < DBL_EPSILON)
 #define IS_IPHONE_5 (fabs((double)[[UIScreen mainScreen]bounds].size.height - (double)568) < DBL_EPSILON)
 #define IS_IPHONE_6 (fabs((double)[[UIScreen mainScreen]bounds].size.height - (double)667) < DBL_EPSILON)

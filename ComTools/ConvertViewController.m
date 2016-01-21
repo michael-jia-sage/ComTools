@@ -108,6 +108,9 @@ UIViewController *rootVC;
     self.btnResetUnit1.clipsToBounds = self.btnResetUnit2.clipsToBounds = YES;
     self.btnResetUnit1.backgroundColor = self.btnResetUnit2.backgroundColor = [Utilities colorFromHexString:themeColor];
     
+    self.btnUnit1.backgroundColor = self.btnUnit2.backgroundColor = [Utilities colorFromHexString:grayColor];
+    self.btnUnit1.layer.cornerRadius = self.btnUnit2.layer.cornerRadius = 8;
+    
     //picker view style
     [self.view bringSubviewToFront:self.pickerUnits];
     allUnits = [Utilities initUnits];

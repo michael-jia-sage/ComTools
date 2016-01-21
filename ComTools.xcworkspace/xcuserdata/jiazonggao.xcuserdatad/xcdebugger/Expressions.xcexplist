@@ -3,6 +3,20 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[ConvertViewController viewDidLoad]:ConvertViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[Utilities colorFromHexString:themeColor].CGColor">
+            </PersistentString>
+            <PersistentString
+               value = "themeColor">
+            </PersistentString>
+            <PersistentString
+               value = "self.btnUnit1.layer.borderColor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[CalculateViewController viewDidLoad]:CalculateViewController.m">
          <PersistentStrings>
             <PersistentString
