@@ -7,15 +7,24 @@
 //
 
 #include "AboutViewController.h"
+#import "utilities.h"
+#import "constants.h"
 
 @interface AboutViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *btnClose;
 
 @end
 
 @implementation AboutViewController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.btnClose.backgroundColor = [Utilities colorFromHexString:grayColor];
+    self.btnClose.layer.cornerRadius = 8;
+}
 
 - (IBAction)closePopup:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:Nil];
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

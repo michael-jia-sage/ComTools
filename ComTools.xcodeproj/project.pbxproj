@@ -15,6 +15,7 @@
 		0E179FDB1C3E49FF00AE6CBB /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E179FDA1C3E49FF00AE6CBB /* CoreDataHelper.m */; };
 		0E54F85F1BF1AE700059E277 /* currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E54F85E1BF1AE700059E277 /* currency.m */; };
 		0E57822F1BF303B500935AFC /* unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E57822E1BF303B500935AFC /* unit.m */; };
+		0E5D86271C54550100F4F28F /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5D86261C54550100F4F28F /* DismissSegue.m */; };
 		0E6AC6C61BE5E57D00DA0FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AC6C51BE5E57D00DA0FA6 /* main.m */; };
 		0E6AC6C91BE5E57D00DA0FA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AC6C81BE5E57D00DA0FA6 /* AppDelegate.m */; };
 		0E6AC6CC1BE5E57D00DA0FA6 /* ConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AC6CB1BE5E57D00DA0FA6 /* ConvertViewController.m */; };
@@ -40,6 +41,8 @@
 		0E54F85E1BF1AE700059E277 /* currency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = currency.m; sourceTree = "<group>"; };
 		0E57822D1BF303B500935AFC /* unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unit.h; sourceTree = "<group>"; };
 		0E57822E1BF303B500935AFC /* unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = unit.m; sourceTree = "<group>"; };
+		0E5D86251C5454CA00F4F28F /* DismissSegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DismissSegue.h; sourceTree = "<group>"; };
+		0E5D86261C54550100F4F28F /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissSegue.m; sourceTree = "<group>"; };
 		0E6AC6C11BE5E57D00DA0FA6 /* CTooies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTooies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E6AC6C51BE5E57D00DA0FA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0E6AC6C71BE5E57D00DA0FA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				0E132F551C17F322005A896F /* reachable.m */,
 				0E179FD71C3E3F9800AE6CBB /* CoreDataHelper.h */,
 				0E179FDA1C3E49FF00AE6CBB /* CoreDataHelper.m */,
+				0E5D86251C5454CA00F4F28F /* DismissSegue.h */,
+				0E5D86261C54550100F4F28F /* DismissSegue.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				0E132F561C17F322005A896F /* reachable.m in Sources */,
 				0E6AC6C91BE5E57D00DA0FA6 /* AppDelegate.m in Sources */,
 				0E179FDB1C3E49FF00AE6CBB /* CoreDataHelper.m in Sources */,
+				0E5D86271C54550100F4F28F /* DismissSegue.m in Sources */,
 				0EAA74131BE7381C009D951C /* CurrencyViewController.m in Sources */,
 				0E6AC6CC1BE5E57D00DA0FA6 /* ConvertViewController.m in Sources */,
 				0E6B9AE91BE6F65400B49D2E /* utilities.m in Sources */,

@@ -234,12 +234,4 @@ UIViewController *rootVC;
     
     [Utilities trackScreen:@"Convert Tool"];
 }
-
-//- (IBAction)showInfo:(id)sender {
-//    UIView *tmpView = [[UIView alloc] initWithFrame:CGRectMake(50, 50, 100, 100)];
-//    UIImage *tmpImg = [UIImage imageNamed:@"YourImageName.png"];
-//    UIImageView *tmpImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, tmpImg.size.width, tmpImg.size.height)];
-//    tmpImgView.image = tmpImg;
-//    [self.view addSubview:tmpView];
-//}
 @end
