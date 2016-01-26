@@ -13,11 +13,15 @@
 @interface AboutViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btnClose;
 
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+
 @end
 
 @implementation AboutViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.webView loadHTMLString:aboutMessage baseURL:nil];
     
     self.btnClose.backgroundColor = [Utilities colorFromHexString:grayColor];
     self.btnClose.layer.cornerRadius = 8;
@@ -27,4 +31,11 @@
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+-(BOOL) webView:(UIWebView *)inWeb shouldStartLoadWithRequest:(NSURLRequest *)inRequest navigationType:(UIWebViewNavigationType)inType {
+    if ( inType == UIWebViewNavigationTypeLinkClicked ) {
+        [[UIApplication sharedApplication] openURL:[inRequest URL]];
+        return NO;
+    }
+    return YES;
+}
 @end

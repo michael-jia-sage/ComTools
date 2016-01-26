@@ -689,16 +689,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="HEF-Rj-HDH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="HEF-Rj-HDH">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About CTooies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Z1-qt-1Lw">
-                                <rect key="frame" x="244" y="34" width="112" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OlZ-NC-0eo">
                                 <rect key="frame" x="267" y="541" width="66" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -709,21 +703,47 @@
                                     <action selector="closePopup:" destination="chO-bS-NuK" eventType="touchUpInside" id="mtD-DF-8uW"/>
                                 </connections>
                             </button>
+                            <webView opaque="NO" contentMode="scaleToFill" allowsInlineMediaPlayback="NO" mediaPlaybackRequiresUserAction="NO" mediaPlaybackAllowsAirPlay="NO" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vom-ZT-SFp">
+                                <rect key="frame" x="60" y="93" width="480" height="395"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="chO-bS-NuK" id="liI-nh-Xkh"/>
+                                </connections>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About CTooies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Z1-qt-1Lw">
+                                <rect key="frame" x="217" y="41" width="167" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="0.99607843139999996" green="0.79215686269999996" blue="0.086274509799999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HEF-Rj-HDH" firstAttribute="centerX" secondItem="0A7-9B-nyd" secondAttribute="centerX" id="13L-l6-DKR"/>
                             <constraint firstItem="OlZ-NC-0eo" firstAttribute="top" secondItem="HEF-Rj-HDH" secondAttribute="bottom" constant="-59" id="6gC-dL-5vg"/>
                             <constraint firstItem="HEF-Rj-HDH" firstAttribute="height" secondItem="0A7-9B-nyd" secondAttribute="height" id="7tA-qK-WMY"/>
+                            <constraint firstItem="OlZ-NC-0eo" firstAttribute="top" secondItem="Vom-ZT-SFp" secondAttribute="bottom" constant="53" id="8aa-xI-eqp"/>
                             <constraint firstItem="HEF-Rj-HDH" firstAttribute="centerY" secondItem="0A7-9B-nyd" secondAttribute="centerY" id="ELF-s6-2bJ"/>
                             <constraint firstItem="OlZ-NC-0eo" firstAttribute="centerX" secondItem="HEF-Rj-HDH" secondAttribute="centerX" id="Jr8-t4-t1s"/>
+                            <constraint firstItem="HEF-Rj-HDH" firstAttribute="top" secondItem="5Z1-qt-1Lw" secondAttribute="bottom" constant="-70" id="KnC-ng-4RT"/>
+                            <constraint firstItem="Vom-ZT-SFp" firstAttribute="top" secondItem="5Z1-qt-1Lw" secondAttribute="bottom" constant="23" id="UcG-r0-dcU"/>
+                            <constraint firstItem="Vom-ZT-SFp" firstAttribute="centerX" secondItem="HEF-Rj-HDH" secondAttribute="centerX" id="ZoI-DP-j1B"/>
                             <constraint firstItem="HEF-Rj-HDH" firstAttribute="width" secondItem="0A7-9B-nyd" secondAttribute="width" id="ZpF-IX-EPY"/>
                             <constraint firstItem="5Z1-qt-1Lw" firstAttribute="centerX" secondItem="HEF-Rj-HDH" secondAttribute="centerX" id="adC-zP-kNs"/>
                             <constraint firstItem="HEF-Rj-HDH" firstAttribute="top" secondItem="5Z1-qt-1Lw" secondAttribute="bottom" constant="-55" id="cQX-sj-WTn"/>
+                            <constraint firstItem="Vom-ZT-SFp" firstAttribute="width" secondItem="HEF-Rj-HDH" secondAttribute="width" multiplier="0.8" id="siM-g1-TMc"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="cQX-sj-WTn"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="btnClose" destination="OlZ-NC-0eo" id="Y7F-ld-6J1"/>
+                        <outlet property="webView" destination="Vom-ZT-SFp" id="Vq4-Ah-yc9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlt-Aq-T7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
