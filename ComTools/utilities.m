@@ -12,6 +12,8 @@
 #import "utilities.h"
 #import "currency.h"
 #import "unit.h"
+#import "DBManager.h"
+#import "CurrencyRequest/CRCurrencyResults.h"
 
 @implementation Utilities
 
@@ -126,5 +128,24 @@
                     action:eventName  // Event action (required)
                     label:label          // Event label
                     value:value] build]];    // Event value
+}
+
++ (void)updateDBCurrencies:(CRCurrencyResults *)currencies dbManager:(DBManager *)dbManager
+{
+    // Initialize the dbManager object.
+    dbManager = [[DBManager alloc] initWithDatabaseFilename:@"ctooies_db.sql"];
+    // Prepare the query string.
+    NSString *query = [NSString stringWithFormat:@"insert into currencies values(null, 'US Dollar', 'USD', %d, %d)", 1, 1];
+    
+    // Execute the query.
+    [dbManager executeQuery:query];
+    
+    // If the query was successfully executed then pop the view controller.
+    if (dbManager.affectedRows != 0) {
+        NSLog(@"Query was executed successfully. Affected rows = %d", dbManager.affectedRows);
+    }
+    else{
+        NSLog(@"Could not execute the query.");
+    }
 }
 @end

@@ -12,6 +12,7 @@
 #import "currency.h"
 #import "utilities.h"
 #import "constants.h"
+#import "DBManager.h"
 
 @interface CurrencyViewController () <CRCurrencyRequestDelegate>
 @property (nonatomic) CRCurrencyRequest *req;
@@ -20,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblCurrencyName;
 @property (weak, nonatomic) IBOutlet UILabel *lblUSD;
 @property (weak, nonatomic) IBOutlet UIButton *btnReset;
+@property (nonatomic, strong) DBManager *_dbManager;
 
 @end
 
@@ -113,6 +115,9 @@ bool currencyUpdated = false;
     self.inputField.text = @"100";
     usdValue = 100;
     
+    // Initialize the dbManager object.
+    self._dbManager = [[DBManager alloc] initWithDatabaseFilename:@"ctooies_db.sql"];
+    
     [self UpdateCurrencies];
 }
 
@@ -163,6 +168,7 @@ bool currencyUpdated = false;
 - (void)currencyRequest:(CRCurrencyRequest *)req
     retrievedCurrencies:(CRCurrencyResults *)currencies {
     res = currencies;
+    [Utilities updateDBCurrencies:res dbManager:self._dbManager];
     currencyUpdated = true;
     [self.lstCurrency reloadData];
 }
@@ -198,4 +204,5 @@ bool currencyUpdated = false;
     
     [Utilities trackScreen:@"Currency Tool"];
 }
+
 @end
