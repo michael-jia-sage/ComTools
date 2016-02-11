@@ -12,6 +12,7 @@
 #import "utilities.h"
 #import "currency.h"
 #import "unit.h"
+#import "constants.h"
 #import "DBManager.h"
 #import "CurrencyRequest/CRCurrencyResults.h"
 
@@ -133,19 +134,23 @@
 + (void)updateDBCurrencies:(CRCurrencyResults *)currencies dbManager:(DBManager *)dbManager
 {
     // Initialize the dbManager object.
-    dbManager = [[DBManager alloc] initWithDatabaseFilename:@"ctooies_db.sql"];
-    // Prepare the query string.
-    NSString *query = [NSString stringWithFormat:@"insert into currencies values(null, 'US Dollar', 'USD', %d, %d)", 1, 1];
+    dbManager = [[DBManager alloc] initWithDatabaseFilename:dbFileName];
     
-    // Execute the query.
-    [dbManager executeQuery:query];
+    // Clean the existing currency table.
+    [dbManager executeQuery:@"delete from currencies"];
     
-    // If the query was successfully executed then pop the view controller.
-    if (dbManager.affectedRows != 0) {
-        NSLog(@"Query was executed successfully. Affected rows = %d", dbManager.affectedRows);
+    for (NSString *cur in CRCurrencyResults.supportedCurrencies) {
+        NSString *query = [NSString stringWithFormat:@"insert into currencies values(null, '%@', '%@', 0, %f)",
+                           [CRCurrencyResults _nameForCurrency: cur], cur, [currencies _rateForCurrency:cur]];
+        [dbManager executeQuery:query];
+        
+        if (dbManager.affectedRows != 0) {
+            NSLog(@"Query was executed successfully -- %@", query);
+        }
+        else{
+            NSLog(@"Could not execute the query -- %@", query);
+        }
     }
-    else{
-        NSLog(@"Could not execute the query.");
-    }
+    
 }
 @end

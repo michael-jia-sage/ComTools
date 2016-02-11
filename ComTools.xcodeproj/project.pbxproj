@@ -16,6 +16,7 @@
 		0E54F85F1BF1AE700059E277 /* currency.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E54F85E1BF1AE700059E277 /* currency.m */; };
 		0E57822F1BF303B500935AFC /* unit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E57822E1BF303B500935AFC /* unit.m */; };
 		0E5D86271C54550100F4F28F /* DismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5D86261C54550100F4F28F /* DismissSegue.m */; };
+		0E60BBF41C67D26A00326B4A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E60BBF31C67D26A00326B4A /* libsqlite3.tbd */; };
 		0E6AC6C61BE5E57D00DA0FA6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AC6C51BE5E57D00DA0FA6 /* main.m */; };
 		0E6AC6C91BE5E57D00DA0FA6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AC6C81BE5E57D00DA0FA6 /* AppDelegate.m */; };
 		0E6AC6CC1BE5E57D00DA0FA6 /* ConvertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6AC6CB1BE5E57D00DA0FA6 /* ConvertViewController.m */; };
@@ -25,6 +26,8 @@
 		0E6B9AE91BE6F65400B49D2E /* utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E6B9AE81BE6F65400B49D2E /* utilities.m */; };
 		0EAA74101BE737E4009D951C /* CompareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAA740F1BE737E4009D951C /* CompareViewController.m */; };
 		0EAA74131BE7381C009D951C /* CurrencyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EAA74121BE7381C009D951C /* CurrencyViewController.m */; };
+		0EF7B99A1C6B063B00798DC3 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF7B9991C6B063B00798DC3 /* DBManager.m */; };
+		0EF7B99D1C6B16D500798DC3 /* ctooies_db.sql in Resources */ = {isa = PBXBuildFile; fileRef = 0EF7B99C1C6B16D500798DC3 /* ctooies_db.sql */; };
 		6352A4AA54147B79D5C7C0CA /* libPods-ComTools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A26ECE346AF94A221965592 /* libPods-ComTools.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +46,7 @@
 		0E57822E1BF303B500935AFC /* unit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = unit.m; sourceTree = "<group>"; };
 		0E5D86251C5454CA00F4F28F /* DismissSegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DismissSegue.h; sourceTree = "<group>"; };
 		0E5D86261C54550100F4F28F /* DismissSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissSegue.m; sourceTree = "<group>"; };
+		0E60BBF31C67D26A00326B4A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		0E6AC6C11BE5E57D00DA0FA6 /* CTooies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTooies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E6AC6C51BE5E57D00DA0FA6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0E6AC6C71BE5E57D00DA0FA6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,6 +65,9 @@
 		0EAA740F1BE737E4009D951C /* CompareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompareViewController.m; sourceTree = "<group>"; };
 		0EAA74111BE7381C009D951C /* CurrencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrencyViewController.h; sourceTree = "<group>"; };
 		0EAA74121BE7381C009D951C /* CurrencyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrencyViewController.m; sourceTree = "<group>"; };
+		0EF7B9981C6B063B00798DC3 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		0EF7B9991C6B063B00798DC3 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		0EF7B99C1C6B16D500798DC3 /* ctooies_db.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = ctooies_db.sql; sourceTree = "<group>"; };
 		2AB651D4273D0599964E31D3 /* Pods-ComTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComTools/Pods-ComTools.debug.xcconfig"; sourceTree = "<group>"; };
 		7A26ECE346AF94A221965592 /* libPods-ComTools.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ComTools.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD40618E57BC80F51BA0B75A /* Pods-ComTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComTools/Pods-ComTools.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E60BBF41C67D26A00326B4A /* libsqlite3.tbd in Frameworks */,
 				0E179FD91C3E465900AE6CBB /* CoreData.framework in Frameworks */,
 				6352A4AA54147B79D5C7C0CA /* libPods-ComTools.a in Frameworks */,
 			);
@@ -124,6 +132,7 @@
 		0E6AC6C41BE5E57D00DA0FA6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0EF7B99C1C6B16D500798DC3 /* ctooies_db.sql */,
 				0E6AC6C51BE5E57D00DA0FA6 /* main.m */,
 				0E6B9AE71BE6F4EC00B49D2E /* constants.h */,
 				0E6B9AE81BE6F65400B49D2E /* utilities.m */,
@@ -138,6 +147,8 @@
 				0E179FDA1C3E49FF00AE6CBB /* CoreDataHelper.m */,
 				0E5D86251C5454CA00F4F28F /* DismissSegue.h */,
 				0E5D86261C54550100F4F28F /* DismissSegue.m */,
+				0EF7B9981C6B063B00798DC3 /* DBManager.h */,
+				0EF7B9991C6B063B00798DC3 /* DBManager.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -154,6 +165,7 @@
 		FCAAE13150DE6ECC1B836A90 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E60BBF31C67D26A00326B4A /* libsqlite3.tbd */,
 				0E179FD81C3E465900AE6CBB /* CoreData.framework */,
 				7A26ECE346AF94A221965592 /* libPods-ComTools.a */,
 			);
@@ -224,6 +236,7 @@
 				0E6AC6D41BE5E57D00DA0FA6 /* Assets.xcassets in Resources */,
 				0E6AC6D21BE5E57D00DA0FA6 /* Main.storyboard in Resources */,
 				0E0FD4B21C22695000813384 /* GoogleService-Info.plist in Resources */,
+				0EF7B99D1C6B16D500798DC3 /* ctooies_db.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +287,7 @@
 				0EAA74101BE737E4009D951C /* CompareViewController.m in Sources */,
 				0E132F561C17F322005A896F /* reachable.m in Sources */,
 				0E6AC6C91BE5E57D00DA0FA6 /* AppDelegate.m in Sources */,
+				0EF7B99A1C6B063B00798DC3 /* DBManager.m in Sources */,
 				0E179FDB1C3E49FF00AE6CBB /* CoreDataHelper.m in Sources */,
 				0E5D86271C54550100F4F28F /* DismissSegue.m in Sources */,
 				0EAA74131BE7381C009D951C /* CurrencyViewController.m in Sources */,
@@ -388,7 +402,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Zonggao Jia (6XHNZ75B8N)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ComTools/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -407,7 +421,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Zonggao Jia (L53NJ68Q29)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ComTools/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
