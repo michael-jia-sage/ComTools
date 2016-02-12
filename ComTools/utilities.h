@@ -19,5 +19,6 @@
 + (BOOL)InternetConnected;
 + (void)trackScreen:(NSString *)screenName;
 + (void)trackEvent:(NSString *)eventName inCategory:(NSString *)catName withLabel:(NSString *)label withValue:(NSNumber *)value ;
-+ (void)updateDBCurrencies:(CRCurrencyResults *)currencies dbManager:(DBManager *)dbManager;
++ (void)updateDBCurrencies:(CRCurrencyResults *)currencies supportedCurrencies:(NSMutableArray *)supportedCurrencies;
++ (NSMutableArray *)loadCurrencyRatesFromLocal:(NSMutableArray *)supportedCurrencies;
 @end

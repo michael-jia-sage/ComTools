@@ -131,17 +131,17 @@
                     value:value] build]];    // Event value
 }
 
-+ (void)updateDBCurrencies:(CRCurrencyResults *)currencies dbManager:(DBManager *)dbManager
++ (void)updateDBCurrencies:(CRCurrencyResults *)currencies supportedCurrencies:(NSMutableArray *)supportedCurrencies
 {
     // Initialize the dbManager object.
-    dbManager = [[DBManager alloc] initWithDatabaseFilename:dbFileName];
+    DBManager *dbManager = [[DBManager alloc] initWithDatabaseFilename:dbFileName];
     
     // Clean the existing currency table.
     [dbManager executeQuery:@"delete from currencies"];
     
-    for (NSString *cur in CRCurrencyResults.supportedCurrencies) {
-        NSString *query = [NSString stringWithFormat:@"insert into currencies values(null, '%@', '%@', 0, %f)",
-                           [CRCurrencyResults _nameForCurrency: cur], cur, [currencies _rateForCurrency:cur]];
+    for (currency *cur in supportedCurrencies) {
+        NSString *query = [NSString stringWithFormat:@"insert into currencies values(null, '%@', '%@', %d, %f)",
+                           cur.name, cur.code, cur.sortOrder, [currencies _rateForCurrency:cur.code]];
         [dbManager executeQuery:query];
         
         if (dbManager.affectedRows != 0) {
@@ -152,5 +152,20 @@
         }
     }
     
+}
+
++ (NSMutableArray *)loadCurrencyRatesFromLocal:(NSMutableArray *)supportedCurrencies
+{
+    // Initialize the dbManager object.
+    DBManager *dbManager = [[DBManager alloc] initWithDatabaseFilename:dbFileName];
+    
+    for (currency *cur in supportedCurrencies) {
+        NSString *query = [NSString stringWithFormat:@"select real from currencies where code = '%@'", cur.code];
+        NSArray *results = [dbManager loadDataFromDB:query];
+        if ([results count] > 0) {
+            cur.rate = [[[results objectAtIndex:0] objectAtIndex:0] doubleValue];
+        }
+    }
+    return supportedCurrencies;
 }
 @end

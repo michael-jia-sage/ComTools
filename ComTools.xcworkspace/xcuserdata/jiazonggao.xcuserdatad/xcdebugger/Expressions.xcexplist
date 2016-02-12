@@ -3,16 +3,13 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[ConvertViewController viewDidLoad]:ConvertViewController.m">
+         contextName = "-[CurrencyViewController currencyRequest:retrievedCurrencies:]:CurrencyViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[Utilities updateDBCurrencies:]:utilities.m">
          <PersistentStrings>
             <PersistentString
-               value = "[Utilities colorFromHexString:themeColor].CGColor">
-            </PersistentString>
-            <PersistentString
-               value = "themeColor">
-            </PersistentString>
-            <PersistentString
-               value = "self.btnUnit1.layer.borderColor">
+               value = "CRCurrencyResults.supportedCurrencies">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -21,6 +18,23 @@
          <PersistentStrings>
             <PersistentString
                value = "self.view">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[CurrencyViewController LoadLocalCurrencies]:CurrencyViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ConvertViewController viewDidLoad]:ConvertViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "themeColor">
+            </PersistentString>
+            <PersistentString
+               value = "self.btnUnit1.layer.borderColor">
+            </PersistentString>
+            <PersistentString
+               value = "[Utilities colorFromHexString:themeColor].CGColor">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -11,6 +11,7 @@
 #import "CurrencyRequest/CRCurrencyResults.h"
 #import "constants.h"
 #import "utilities.h"
+#import "currency.h"
 
 @interface CompareViewController ()<CRCurrencyRequestDelegate>
 @property (nonatomic) CRCurrencyRequest *cReq;
@@ -33,6 +34,7 @@ float usd_rate = 1;
 float convert_rate = 3.78541;
 NSString *format = @"%0.2f";
 bool cadUpdated = NO;
+NSMutableArray *cSupportedCurrencies;
 
 -(void)viewDidAppear:(BOOL)animated{
     [self UpdateCurrencies];
@@ -47,6 +49,8 @@ bool cadUpdated = NO;
     [self.view addSubview:bgImageView];
     [self.view sendSubviewToBack:bgImageView];
     
+    //load supported currencies
+    cSupportedCurrencies = [Utilities initCurrencies];
     [self UpdateCurrencies];
     [self segValueChanged: nil];
 }
@@ -172,9 +176,9 @@ bool cadUpdated = NO;
 
 - (void)currencyRequest:(CRCurrencyRequest *)req
     retrievedCurrencies:(CRCurrencyResults *)currencies {
-    usd_rate = [currencies _rateForCurrency:@"CAD"];
+    [Utilities updateDBCurrencies:currencies supportedCurrencies:cSupportedCurrencies];
     cadUpdated = YES;
-    [self segValueChanged: nil];
+    [self LoadLocalCurrencies];
 }
 
 -(void)UpdateCurrencies {
@@ -189,7 +193,7 @@ bool cadUpdated = NO;
         cadUpdated = NO;
         UIAlertController * alert=   [UIAlertController
                                       alertControllerWithTitle:@"No Internet"
-                                      message:@"No Internet, the CAD currency rate is set to 1"
+                                      message:@"No Internet, the CAD currency rate is loaded from local"
                                       preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction* ok = [UIAlertAction
                              actionWithTitle:@"OK"
@@ -200,7 +204,18 @@ bool cadUpdated = NO;
                              }];
         [alert addAction:ok];
         [self presentViewController:alert animated:YES completion:nil];
+        
+        [self LoadLocalCurrencies];
     }
+}
+
+-(void)LoadLocalCurrencies {
+    cSupportedCurrencies = [Utilities loadCurrencyRatesFromLocal:cSupportedCurrencies];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"code == %@", @"CAD"];
+    NSArray *filteredArray = [cSupportedCurrencies filteredArrayUsingPredicate:predicate];
+    currency *cur = [filteredArray objectAtIndex:0];
+    usd_rate = cur.rate;
+    [self segValueChanged: nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -21,12 +21,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblCurrencyName;
 @property (weak, nonatomic) IBOutlet UILabel *lblUSD;
 @property (weak, nonatomic) IBOutlet UIButton *btnReset;
-@property (nonatomic, strong) DBManager *_dbManager;
 
 @end
 
 @implementation CurrencyViewController
-CRCurrencyResults *res;
 double usdValue = 0;
 NSMutableArray *supportedCurrencies;
 currency *selCurrency;
@@ -41,7 +39,6 @@ bool currencyUpdated = false;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     currency *cur = [supportedCurrencies objectAtIndex: indexPath.row];
     cell.textLabel.text = cur.name;
-    cur.rate = [res _rateForCurrency:cur.code];
     double curValue = usdValue * cur.rate;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", curValue];
     cell.textLabel.font = [UIFont fontWithName:[NSString stringWithFormat:@"%@-Bold",cell.textLabel.font.fontName] size:cell.textLabel.font.pointSize];
@@ -115,9 +112,6 @@ bool currencyUpdated = false;
     self.inputField.text = @"100";
     usdValue = 100;
     
-    // Initialize the dbManager object.
-    self._dbManager = [[DBManager alloc] initWithDatabaseFilename:@"ctooies_db.sql"];
-    
     [self UpdateCurrencies];
 }
 
@@ -167,10 +161,9 @@ bool currencyUpdated = false;
 
 - (void)currencyRequest:(CRCurrencyRequest *)req
     retrievedCurrencies:(CRCurrencyResults *)currencies {
-    res = currencies;
-    [Utilities updateDBCurrencies:res dbManager:self._dbManager];
+    [Utilities updateDBCurrencies:currencies supportedCurrencies:supportedCurrencies];
     currencyUpdated = true;
-    [self.lstCurrency reloadData];
+    [self LoadLocalCurrencies];
 }
 
 -(void)UpdateCurrencies {
@@ -185,7 +178,7 @@ bool currencyUpdated = false;
         currencyUpdated = false;
         UIAlertController * alert=   [UIAlertController
                                       alertControllerWithTitle:@"No Internet"
-                                      message:@"No Internet, cannot get any currency rates. Please check your network connection."
+                                      message:@"No Internet, cannot get any currency rates. Will load currencies from local."
                                       preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction* ok = [UIAlertAction
                              actionWithTitle:@"OK"
@@ -196,7 +189,14 @@ bool currencyUpdated = false;
                              }];
         [alert addAction:ok];
         [self presentViewController:alert animated:YES completion:nil];
+        
+        [self LoadLocalCurrencies];
     }
+}
+
+-(void)LoadLocalCurrencies {
+    supportedCurrencies = [Utilities loadCurrencyRatesFromLocal:supportedCurrencies];
+    [self.lstCurrency reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
