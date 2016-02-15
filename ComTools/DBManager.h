@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray *arrColumnNames;
 @property (nonatomic) int affectedRows;
-@property (nonatomic) long long lastInsertedRowID;
+@property (nonatomic) long lastInsertedRowID;
 
 -(instancetype)initWithDatabaseFilename:(NSString *)dbFilename;
 -(NSArray *)loadDataFromDB:(NSString *)query;
