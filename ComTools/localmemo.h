@@ -16,7 +16,6 @@
 @property unit *unit1;
 @property float unit1Value;
 @property unit *unit2;
-@property float unit2Value;
 
 //calculator
 @property float totalAmount;
