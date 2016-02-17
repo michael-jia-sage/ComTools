@@ -9,6 +9,8 @@
 #import "CalculateViewController.h"
 #import "utilities.h"
 #import "constants.h"
+//#import "MemoManager.h"
+#import "AppDelegate.h"
 
 @interface CalculateViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *txtTotal;
@@ -33,10 +35,11 @@
 
 @end
 
-@implementation CalculateViewController
-
-float total, tip, tipRate, totalAmount;
-NSNumberFormatter *calFormatter;
+@implementation CalculateViewController {
+    float total, tip, tipRate, totalAmount;
+    NSNumberFormatter *calFormatter;
+    AppDelegate *appDelegate;
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
@@ -51,6 +54,9 @@ NSNumberFormatter *calFormatter;
     [self.txtTotal endEditing:YES];
     [self.sldTipRate setValue:0.08];
     [self tipChanged:sender];
+    
+    //Update LocalMemo
+    appDelegate.LocalMemo.tipPercentage = 0.08;
 }
 
 - (IBAction)btnTip2Tapped:(id)sender {
@@ -58,6 +64,9 @@ NSNumberFormatter *calFormatter;
     [self.txtTotal endEditing:YES];
     [self.sldTipRate setValue:0.10];
     [self tipChanged:sender];
+    
+    //Update LocalMemo
+    appDelegate.LocalMemo.tipPercentage = 0.10;
 }
 
 - (IBAction)btnTip3Tapped:(id)sender {
@@ -65,6 +74,9 @@ NSNumberFormatter *calFormatter;
     [self.txtTotal endEditing:YES];
     [self.sldTipRate setValue:0.12];
     [self tipChanged:sender];
+    
+    //Update LocalMemo
+    appDelegate.LocalMemo.tipPercentage = 0.12;
 }
 
 - (IBAction)btnTip4Tapped:(id)sender {
@@ -72,6 +84,9 @@ NSNumberFormatter *calFormatter;
     [self.txtTotal endEditing:YES];
     [self.sldTipRate setValue:0.15];
     [self tipChanged:sender];
+    
+    //Update LocalMemo
+    appDelegate.LocalMemo.tipPercentage = 0.15;
 }
 
 - (IBAction)btnTip5Tapped:(id)sender {
@@ -79,6 +94,9 @@ NSNumberFormatter *calFormatter;
     [self.txtTotal endEditing:YES];
     [self.sldTipRate setValue:0.18];
     [self tipChanged:sender];
+    
+    //Update LocalMemo
+    appDelegate.LocalMemo.tipPercentage = 0.18;
 }
 
 - (IBAction)inputEnter:(id)sender {
@@ -90,12 +108,18 @@ NSNumberFormatter *calFormatter;
 
     total = [self.txtTotal.text floatValue];
     [self calTotalAndTip];
+    
+    //Update LocalMemo
+    appDelegate.LocalMemo.totalAmount = total;
 }
 
 - (IBAction)tipChanged:(id)sender {
     [Utilities trackEvent:@"Slider changed" inCategory:@"Slider" withLabel:@"Calculate Tip Slider" withValue:nil];
     tipRate = self.sldTipRate.value;
     [self calTotalAndTip];
+    
+    //Update LocalMemo
+    appDelegate.LocalMemo.tipPercentage = tipRate;
 }
 
 - (IBAction)endEditing:(id)sender {
@@ -127,6 +151,9 @@ NSNumberFormatter *calFormatter;
 - (IBAction)groupSizeChanged:(id)sender {
     [Utilities trackEvent:@"Shortcut button pressed" inCategory:@"Button" withLabel:@"Calculate Group Size" withValue:nil];
     [self calGroupAmount];
+    
+    //Update LocalMemo
+    appDelegate.LocalMemo.groupSize = self.stepGroupSize.value;
 }
 
 - (void)calGroupAmount {
@@ -138,7 +165,6 @@ NSNumberFormatter *calFormatter;
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    tipRate = 0.1;
     
     calFormatter = [[NSNumberFormatter alloc] init];
     [calFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
@@ -174,6 +200,25 @@ NSNumberFormatter *calFormatter;
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollViewSingleTapGestureCaptured:)];
     [self.scrollView addGestureRecognizer:singleTap];
+    
+    //Load from LocalMemo
+    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (appDelegate.LocalMemo.tipPercentage) {
+        tipRate = appDelegate.LocalMemo.tipPercentage;
+        [self.sldTipRate setValue:tipRate];
+        [self tipChanged:nil];
+    } else
+        tipRate = 0.1;
+    
+    if (appDelegate.LocalMemo.groupSize) {
+        [self.stepGroupSize setValue:appDelegate.LocalMemo.groupSize];
+        [self groupSizeChanged:nil];
+    }
+    
+    if (appDelegate.LocalMemo.totalAmount) {
+        self.txtTotal.text = [NSString stringWithFormat:@"%f", appDelegate.LocalMemo.totalAmount];
+        [self totalChanged:nil];
+    }
 }
 
 - (void)scrollViewSingleTapGestureCaptured:(UITapGestureRecognizer *)gesture

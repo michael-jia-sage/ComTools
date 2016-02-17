@@ -89,29 +89,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ComTools/AppDelegate.m"
-            timestampString = "477209779.735023"
+            filePath = "ComTools/CompareViewController.m"
+            timestampString = "477387777.847274"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-applicationDidEnterBackground:"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "-segValueChanged:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ComTools/AppDelegate.m"
-            timestampString = "477210480.003414"
+            filePath = "ComTools/CalculateViewController.m"
+            timestampString = "477387911.730055"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "-applicationDidBecomeActive:"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "-calTip"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ComTools/CalculateViewController.m"
+            timestampString = "477387963.866308"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "-totalChanged:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #include "constants.h"
 #include "utilities.h"
+#import "localmemo.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property localmemo *LocalMemo;
 
 @end
 

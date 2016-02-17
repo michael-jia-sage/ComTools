@@ -24,7 +24,6 @@
 
     [aCoder encodeObject:[NSNumber numberWithInt:self.compareType] forKey:@"COMPARETYPE"];
     [aCoder encodeObject:[NSNumber numberWithFloat:self.compareValue1] forKey:@"COMPAREVALUE1"];
-    [aCoder encodeObject:[NSNumber numberWithFloat:self.compareValue2] forKey:@"COMPAREVALUE2"];
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder{
@@ -42,8 +41,6 @@
         
         self.compareType = [[aDecoder decodeObjectForKey:@"COMPARETYPE"] floatValue];
         self.compareValue1 = [[aDecoder decodeObjectForKey:@"COMPAREVALUE1"] floatValue];
-        self.compareValue2 = [[aDecoder decodeObjectForKey:@"COMPAREVALUE2"] floatValue];
-
     }
     return self;
 }

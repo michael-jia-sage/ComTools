@@ -29,6 +29,5 @@
 //compare
 @property int compareType;
 @property float compareValue1;
-@property float compareValue2;
 
 @end

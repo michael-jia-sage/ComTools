@@ -10,14 +10,6 @@
 #import "localmemo.h"
 
 @implementation MemoManager
-static localmemo *localMemo;
-
-+(localmemo *)LocalMemo {
-    if (localMemo == nil) {
-        localMemo = [[localmemo alloc] init];
-    }
-    return localMemo;
-}
 
 +(localmemo *)loadMemoFromFile:(NSString *)xmlFilename {
     NSFileManager *fileManager = [NSFileManager defaultManager];

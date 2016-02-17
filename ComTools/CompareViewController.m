@@ -12,6 +12,8 @@
 #import "constants.h"
 #import "utilities.h"
 #import "currency.h"
+//#import "MemoManager.h"
+#import "AppDelegate.h"
 
 @interface CompareViewController ()<CRCurrencyRequestDelegate>
 @property (nonatomic) CRCurrencyRequest *cReq;
@@ -26,15 +28,15 @@
 
 @end
 
-@implementation CompareViewController
+@implementation CompareViewController {
+    int option, inputIndex;
+    float usd_rate, convert_rate;
+    NSString *format;
+    bool cadUpdated;
+    NSMutableArray *cSupportedCurrencies;
+    AppDelegate *appDelegate;
+}
 
-int option = 0;
-int inputIndex = 1;
-float usd_rate = 1;
-float convert_rate = 3.78541;
-NSString *format = @"%0.2f";
-bool cadUpdated = NO;
-NSMutableArray *cSupportedCurrencies;
 
 -(void)viewDidAppear:(BOOL)animated{
     [self UpdateCurrencies];
@@ -48,6 +50,21 @@ NSMutableArray *cSupportedCurrencies;
     bgImageView.frame = self.view.bounds;
     [self.view addSubview:bgImageView];
     [self.view sendSubviewToBack:bgImageView];
+    
+    //initialize
+    option = 0;
+    inputIndex = 1;
+    usd_rate = 1;
+    convert_rate = 3.78541;
+    format = @"%0.2f";
+    cadUpdated = NO;
+    
+    //Load LocalMemo
+    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (appDelegate.LocalMemo.compareType)
+        self.segOptions.selectedSegmentIndex = appDelegate.LocalMemo.compareType;
+    if (appDelegate.LocalMemo.compareValue1)
+        self.inputUnit1.text = [NSString stringWithFormat:@"%f", appDelegate.LocalMemo.compareValue1];
     
     //load supported currencies
     cSupportedCurrencies = [Utilities initCurrencies];
@@ -78,7 +95,7 @@ NSMutableArray *cSupportedCurrencies;
         [self.slideUnit1 setMaximumValue:50];
         [self.slideUnit2 setMinimumValue:-4];
         [self.slideUnit2 setMaximumValue:122];
-        self.inputUnit1.text = @"0";
+        //self.inputUnit1.text = @"0";
         [self doCompare];
         [self setSlider];
     } else {
@@ -90,10 +107,13 @@ NSMutableArray *cSupportedCurrencies;
         [self.slideUnit1 setMaximumValue:2.00];
         [self.slideUnit2 setMinimumValue:0];
         [self.slideUnit2 setMaximumValue:2.00*convert_rate/usd_rate];
-        self.inputUnit1.text = @"1.00";
+        //self.inputUnit1.text = @"1.00";
         [self doCompare];
         [self setSlider];
     }
+    
+    //Update LocalMemo
+    appDelegate.LocalMemo.compareType = option;
 }
 
 - (IBAction)input1Changed:(id)sender {
@@ -156,7 +176,10 @@ NSMutableArray *cSupportedCurrencies;
             self.inputUnit1.text = [NSString stringWithFormat:format, input1];
         }
     }
-        
+    
+    //Update LocalMemo
+    appDelegate.LocalMemo.compareValue1 = [self.inputUnit1.text floatValue];
+    
 }
 
 - (void)setSlider {
