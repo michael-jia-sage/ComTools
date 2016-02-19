@@ -10,6 +10,7 @@
 #import "utilities.h"
 #import "constants.h"
 #import "unit.h"
+#import "AppDelegate.h"
 
 @interface ConvertViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segCategory;
@@ -26,16 +27,17 @@
 
 @end
 
-@implementation ConvertViewController
-
-NSArray *allUnits;
-NSMutableArray *units;
-unit *unit1, *unit2;
-int activeUnit;
-bool reverseCal;
-float convertRate;
-NSSortDescriptor *sort;
-UIViewController *rootVC;
+@implementation ConvertViewController {
+    NSArray *allUnits;
+    NSMutableArray *units;
+    unit *unit1, *unit2;
+    int activeUnit;
+    bool reverseCal;
+    float convertRate;
+    NSSortDescriptor *sort;
+    UIViewController *rootVC;
+    AppDelegate *appDelegate;
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [[event allTouches] anyObject];
@@ -120,6 +122,11 @@ UIViewController *rootVC;
     sort = [NSSortDescriptor sortDescriptorWithKey:@"sortOrder" ascending:YES];
     self.inputUnit1.text = @"1";
     [self.segCategory sendActionsForControlEvents:UIControlEventValueChanged];
+
+    
+    //Load LocalMemo
+    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //To-Do...
     
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
 }

@@ -13,6 +13,7 @@
 #import "utilities.h"
 #import "constants.h"
 #import "DBManager.h"
+#import "AppDelegate.h"
 
 @interface CurrencyViewController () <CRCurrencyRequestDelegate>
 @property (nonatomic) CRCurrencyRequest *req;
@@ -24,12 +25,14 @@
 
 @end
 
-@implementation CurrencyViewController
-double usdValue = 0;
-NSMutableArray *supportedCurrencies;
-currency *selCurrency;
-NSNumberFormatter *curFormatter;
-bool currencyUpdated = false;
+@implementation CurrencyViewController {
+    double usdValue;
+    NSMutableArray *supportedCurrencies;
+    currency *selCurrency;
+    NSNumberFormatter *curFormatter;
+    bool currencyUpdated;
+    AppDelegate *appDelegate;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [supportedCurrencies count];
@@ -58,6 +61,9 @@ bool currencyUpdated = false;
     self.btnReset.hidden = ([self.inputField.text floatValue] == 100);
     
     [self showCurrencyRate];
+    
+    //Update LocalMemo
+    appDelegate.LocalMemo.curr = selCurrency;
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -68,26 +74,15 @@ bool currencyUpdated = false;
     return indexPath;
 }
 
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.bounds.size.width, 22)];
-//    [sectionView setBackgroundColor:[Utilities colorFromHexString:themeColor]];
-//    UILabel *tempLabel=[[UILabel alloc]initWithFrame:CGRectMake(15,0,300,22)];
-////    tempLabel.shadowColor = [UIColor blackColor];
-////    tempLabel.shadowOffset = CGSizeMake(0,2);
-//    tempLabel.textColor = [UIColor whiteColor];
-//    tempLabel.font = [UIFont boldSystemFontOfSize:16];
-//    tempLabel.text=@"Tap to change";
-//    
-//    [sectionView addSubview:tempLabel];
-//    return sectionView;
-//}
-
 - (void)viewDidAppear:(BOOL)animated {
     [self UpdateCurrencies];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    usdValue = 0;
+    currencyUpdated = false;
     
     curFormatter = [[NSNumberFormatter alloc] init];
     [curFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
@@ -107,10 +102,21 @@ bool currencyUpdated = false;
     
     //load supported currencies
     supportedCurrencies = [Utilities initCurrencies];
-    selCurrency = [supportedCurrencies objectAtIndex:0];
     
-    self.inputField.text = @"100";
-    usdValue = 100;
+    //Load LocalMemo
+    appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if (appDelegate.LocalMemo.curr) {
+        selCurrency = appDelegate.LocalMemo.curr;
+    } else {
+        selCurrency = [supportedCurrencies objectAtIndex:0];
+    }
+    if (appDelegate.LocalMemo.currAmount) {
+        usdValue = appDelegate.LocalMemo.currAmount;
+        self.inputField.text = [NSString stringWithFormat:@"%f", usdValue];
+    } else {
+        usdValue = 100;
+        self.inputField.text = @"100";
+    }
     
     [self UpdateCurrencies];
 }
@@ -126,8 +132,12 @@ bool currencyUpdated = false;
 
 - (IBAction)inputValueChanged:(id)sender {
     [Utilities trackEvent:@"Input value changed" inCategory:@"Input Entry" withLabel:@"Currency Input Amount" withValue:nil];
-    self.btnReset.hidden = ([self.inputField.text floatValue] == 100);
+    float currAmount = [self.inputField.text floatValue];
+    self.btnReset.hidden = (currAmount == 100);
     [self doCalCurrencies];
+    
+    //Update LocalMemo
+    appDelegate.LocalMemo.currAmount = currAmount;
 }
 
 - (IBAction)btnResetTapped:(id)sender {
@@ -135,6 +145,9 @@ bool currencyUpdated = false;
     self.inputField.text = @"100";
     self.btnReset.hidden = YES;
     [self doCalCurrencies];
+    
+    //Update LocalMemo
+    appDelegate.LocalMemo.currAmount = 100;
 }
 
 - (IBAction)inputEnter:(id)sender {

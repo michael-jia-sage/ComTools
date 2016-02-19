@@ -23,4 +23,21 @@
     return c;
 }
 
+- (void)encodeWithCoder:(NSCoder *)aCoder{
+    [aCoder encodeObject:self.name forKey:@"CURRENCY_NAME"];
+    [aCoder encodeObject:self.code forKey:@"CURRENCY_CODE"];
+    [aCoder encodeObject:[NSNumber numberWithInt:self.sortOrder] forKey:@"CURRENCY_SORTORDER"];
+    [aCoder encodeObject:[NSNumber numberWithFloat:self.rate] forKey:@"CURRENCY_RATE"];
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    if(self = [super init]){
+        self.name = [aDecoder decodeObjectForKey:@"CURRENCY_NAME"];
+        self.code = [aDecoder decodeObjectForKey:@"CURRENCY_CODE"];
+        self.sortOrder = [[aDecoder decodeObjectForKey:@"CURRENCY_SORTORDER"] intValue];
+        self.rate = [[aDecoder decodeObjectForKey:@"CURRENCY_RATE"] floatValue];
+    }
+    return self;
+}
+
 @end

@@ -12,7 +12,6 @@
 #import "constants.h"
 #import "utilities.h"
 #import "currency.h"
-//#import "MemoManager.h"
 #import "AppDelegate.h"
 
 @interface CompareViewController ()<CRCurrencyRequestDelegate>
