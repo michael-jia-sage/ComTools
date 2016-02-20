@@ -43,6 +43,9 @@
     currency *cur = [supportedCurrencies objectAtIndex: indexPath.row];
     cell.textLabel.text = cur.name;
     double curValue = usdValue * cur.rate;
+    if ([selCurrency.code isEqualToString:cur.code]) {
+        curValue = [self.inputField.text floatValue];
+    }
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2f", curValue];
     cell.textLabel.font = [UIFont fontWithName:[NSString stringWithFormat:@"%@-Bold",cell.textLabel.font.fontName] size:cell.textLabel.font.pointSize];
     cell.textLabel.textColor = cell.detailTextLabel.textColor = [UIColor whiteColor];
@@ -64,6 +67,7 @@
     
     //Update LocalMemo
     appDelegate.LocalMemo.curr = selCurrency;
+    appDelegate.LocalMemo.currAmount = [self.inputField.text floatValue];
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -103,22 +107,26 @@
     //load supported currencies
     supportedCurrencies = [Utilities initCurrencies];
     
+    [self UpdateCurrencies];
+    
     //Load LocalMemo
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     if (appDelegate.LocalMemo.curr) {
         selCurrency = appDelegate.LocalMemo.curr;
+        self.lblCurrencyName.text = selCurrency.name;
+        self.lblUSD.hidden = [selCurrency.name isEqualToString:@"US Dollar"];
     } else {
         selCurrency = [supportedCurrencies objectAtIndex:0];
     }
     if (appDelegate.LocalMemo.currAmount) {
         usdValue = appDelegate.LocalMemo.currAmount;
-        self.inputField.text = [NSString stringWithFormat:@"%f", usdValue];
+        self.inputField.text = [NSString stringWithFormat:@"%.02f", usdValue];
     } else {
         usdValue = 100;
         self.inputField.text = @"100";
     }
-    
-    [self UpdateCurrencies];
+    self.btnReset.hidden = ([self.inputField.text floatValue] == 100);
+    [self showCurrencyRate];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
