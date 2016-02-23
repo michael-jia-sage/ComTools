@@ -62,8 +62,14 @@
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     if (appDelegate.LocalMemo.compareType)
         self.segOptions.selectedSegmentIndex = appDelegate.LocalMemo.compareType;
+    else
+        self.segOptions.selectedSegmentIndex = 0;
     if (appDelegate.LocalMemo.compareValue1)
-        self.inputUnit1.text = [NSString stringWithFormat:@"%f", appDelegate.LocalMemo.compareValue1];
+        self.inputUnit1.text = [NSString stringWithFormat:format, appDelegate.LocalMemo.compareValue1];
+    else if (self.segOptions.selectedSegmentIndex == 0)
+        self.inputUnit1.text = @"1.00";
+    else
+        self.inputUnit1.text = @"0";
     
     //load supported currencies
     cSupportedCurrencies = [Utilities initCurrencies];
@@ -94,7 +100,8 @@
         [self.slideUnit1 setMaximumValue:50];
         [self.slideUnit2 setMinimumValue:-4];
         [self.slideUnit2 setMaximumValue:122];
-        //self.inputUnit1.text = @"0";
+        if (sender != nil)
+            self.inputUnit1.text = @"0";
         [self doCompare];
         [self setSlider];
     } else {
@@ -106,7 +113,8 @@
         [self.slideUnit1 setMaximumValue:2.00];
         [self.slideUnit2 setMinimumValue:0];
         [self.slideUnit2 setMaximumValue:2.00*convert_rate/usd_rate];
-        //self.inputUnit1.text = @"1.00";
+        if (sender != nil)
+            self.inputUnit1.text = @"1.00";
         [self doCompare];
         [self setSlider];
     }

@@ -74,6 +74,9 @@
     [self.pickerUnits reloadAllComponents];
     [self doRefresh];
     [self doCalculate];
+    //Update LocalMemo
+    appDelegate.LocalMemo.unit1 = unit1;
+    appDelegate.LocalMemo.unit2 = unit2;
 }
 
 - (IBAction)editBegin:(id)sender {
@@ -122,12 +125,39 @@
     sort = [NSSortDescriptor sortDescriptorWithKey:@"sortOrder" ascending:YES];
     self.inputUnit1.text = @"1";
     [self.segCategory sendActionsForControlEvents:UIControlEventValueChanged];
-
     
     //Load LocalMemo
     appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    //To-Do...
-    
+    if (appDelegate.LocalMemo.unit1) {
+        unit1 = appDelegate.LocalMemo.unit1;
+        self.segCategory.selectedSegmentIndex = unit1.category;
+        if (appDelegate.LocalMemo.unit2) {
+            unit2 = appDelegate.LocalMemo.unit2;
+        }
+        NSPredicate *p = [NSPredicate predicateWithFormat:@"category = %d", self.segCategory.selectedSegmentIndex];
+        units = [[NSMutableArray alloc] initWithArray: [allUnits filteredArrayUsingPredicate:p]];
+        
+        for (unit *u in units) {
+            u.selectedAs = 0;
+            if ([u.abbr isEqualToString:unit1.abbr]) {
+                u.selectedAs = 1;
+                unit1 = u;
+            } else if ([u.abbr isEqualToString:unit2.abbr]) {
+                u.selectedAs = 2;
+                unit2 = u;
+            }
+        }
+        [units removeObject: unit1];
+        [units removeObject: unit2];
+        [units sortUsingDescriptors:@[sort]];
+        
+        [self.pickerUnits reloadAllComponents];
+        [self doRefresh];
+        if (appDelegate.LocalMemo.unit1Value) {
+            self.inputUnit1.text = [NSString stringWithFormat:@"%.02f", appDelegate.LocalMemo.unit1Value];
+        }
+        [self doCalculate];
+    }
     [self setModalPresentationStyle:UIModalPresentationCurrentContext];
 }
 
@@ -149,13 +179,17 @@
 }
 
 - (void)doCalculate {
+    float amount1;
     if (!reverseCal) {
-        float amount1 = [self.inputUnit1.text floatValue];
+        amount1 = [self.inputUnit1.text floatValue];
         self.inputUnit2.text = [NSString stringWithFormat:@"%g", amount1 * convertRate];
     } else {
         float amount2 = [self.inputUnit2.text floatValue];
-        self.inputUnit1.text = [NSString stringWithFormat:@"%g", amount2 / convertRate];
+        amount1 = amount2 / convertRate;
+        self.inputUnit1.text = [NSString stringWithFormat:@"%g", amount1];
     }
+    //Update LocalMemo
+    appDelegate.LocalMemo.unit1Value = amount1;
 }
 
 - (IBAction)btnUnit1Tapped:(id)sender {
@@ -179,9 +213,13 @@
     if (activeUnit == 1) {
         tmpUnit = [[unit alloc] initWithName:unit1.name category:unit1.category abbr:unit1.abbr sortOrder:unit1.sortOrder rate:unit1.rate selectedAs:0];
         unit1 = [[unit alloc] initWithName:selUnit.name category:selUnit.category abbr:selUnit.abbr sortOrder:selUnit.sortOrder rate:selUnit.rate selectedAs:1];
+        //Update LocalMemo
+        appDelegate.LocalMemo.unit1 = unit1;
     } else {
         tmpUnit = [[unit alloc] initWithName:unit2.name category:unit2.category abbr:unit2.abbr sortOrder:unit2.sortOrder rate:unit2.rate selectedAs:0];
         unit2 = [[unit alloc] initWithName:selUnit.name category:selUnit.category abbr:selUnit.abbr sortOrder:selUnit.sortOrder rate:selUnit.rate selectedAs:2];
+        //Update LocalMemo
+        appDelegate.LocalMemo.unit2 = unit2;
     }
     selUnit.name = tmpUnit.name;
     selUnit.category = tmpUnit.category;
@@ -219,6 +257,10 @@
     NSString *tmpStr = self.inputUnit1.text;
     self.inputUnit1.text = self.inputUnit2.text;
     self.inputUnit2.text = tmpStr;
+    //Update LocalMemo
+    appDelegate.LocalMemo.unit1 = unit1;
+    appDelegate.LocalMemo.unit1Value = [self.inputUnit1.text floatValue];
+    appDelegate.LocalMemo.unit2 = unit2;
 }
 
 - (IBAction)btnResetUnit1Tapped:(id)sender {

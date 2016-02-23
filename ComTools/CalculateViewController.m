@@ -216,7 +216,7 @@
     }
     
     if (appDelegate.LocalMemo.totalAmount) {
-        self.txtTotal.text = [NSString stringWithFormat:@"%f", appDelegate.LocalMemo.totalAmount];
+        self.txtTotal.text = [NSString stringWithFormat:@"%.02f", appDelegate.LocalMemo.totalAmount];
         [self totalChanged:nil];
     }
 }

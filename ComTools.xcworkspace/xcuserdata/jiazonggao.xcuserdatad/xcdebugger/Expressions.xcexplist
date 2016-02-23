@@ -6,15 +6,30 @@
          contextName = "-[CurrencyViewController currencyRequest:retrievedCurrencies:]:CurrencyViewController.m">
       </ContextState>
       <ContextState
-         contextName = "-[CurrencyViewController tableView:cellForRowAtIndexPath:]:CurrencyViewController.m">
+         contextName = "-[ConvertViewController viewDidLoad]:ConvertViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "selCurrency.code">
+               value = "[Utilities colorFromHexString:themeColor].CGColor">
+            </PersistentString>
+            <PersistentString
+               value = "appDelegate.LocalMemo">
+            </PersistentString>
+            <PersistentString
+               value = "themeColor">
+            </PersistentString>
+            <PersistentString
+               value = "self.btnUnit1.layer.borderColor">
+            </PersistentString>
+            <PersistentString
+               value = "units">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "+[MemoManager loadMemoFromFile:]:MemoManager.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[MemoManager writeMemoToFile:memo:]:MemoManager.m">
       </ContextState>
       <ContextState
          contextName = "+[Utilities updateDBCurrencies:]:utilities.m">
@@ -36,16 +51,10 @@
          contextName = "-[CurrencyViewController LoadLocalCurrencies]:CurrencyViewController.m">
       </ContextState>
       <ContextState
-         contextName = "-[ConvertViewController viewDidLoad]:ConvertViewController.m">
+         contextName = "-[CurrencyViewController tableView:cellForRowAtIndexPath:]:CurrencyViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.btnUnit1.layer.borderColor">
-            </PersistentString>
-            <PersistentString
-               value = "[Utilities colorFromHexString:themeColor].CGColor">
-            </PersistentString>
-            <PersistentString
-               value = "themeColor">
+               value = "selCurrency.code">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
