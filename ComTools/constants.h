@@ -9,6 +9,9 @@
 #ifndef constants_h
 #define constants_h
 
+#define APPSTORE_ID @"1068737058"
+#define APP_NAME @"CTooies"
+
 #define themeColor @"#16c9d8"
 #define bgColor @"#efeff4"
 #define grayColor @"#d1d1d0"

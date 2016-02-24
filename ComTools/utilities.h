@@ -11,7 +11,7 @@
 #import "CurrencyRequest/CRCurrencyResults.h"
 #import "DBManager.h"
 
-@interface Utilities : NSObject {}
+@interface Utilities : UIViewController<UIAlertViewDelegate>
 
 + (UIColor *)colorFromHexString:(NSString *)hexString;
 + (NSMutableArray *)initUnits;
@@ -21,4 +21,5 @@
 + (void)trackEvent:(NSString *)eventName inCategory:(NSString *)catName withLabel:(NSString *)label withValue:(NSNumber *)value ;
 + (void)updateDBCurrencies:(CRCurrencyResults *)currencies supportedCurrencies:(NSMutableArray *)supportedCurrencies;
 + (NSMutableArray *)loadCurrencyRatesFromLocal:(NSMutableArray *)supportedCurrencies;
++ (void)CheckAppVersion;
 @end
