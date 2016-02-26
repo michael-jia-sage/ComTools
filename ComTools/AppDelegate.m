@@ -63,7 +63,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    [Utilities CheckAppVersion];
+    [self CheckAppVersion];
     self.LocalMemo = [MemoManager loadMemoFromFile:memoFileName];
     if (self.LocalMemo == nil)
         self.LocalMemo = [[localmemo alloc] init];
@@ -71,5 +71,47 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        NSString *iTunesLink = [NSString stringWithFormat:@"itms://itunes.apple.com/us/app/apple-store/id%@?mt=8",APPSTORE_ID];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:iTunesLink]];
+    }
+}
+
+- (void)CheckAppVersion
+{
+    NSURL *url = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://itunes.apple.com/lookup?id=%@", APPSTORE_ID]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    [NSURLConnection sendAsynchronousRequest:request
+                                       queue:[NSOperationQueue mainQueue]
+                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                               if (!error) {
+                                   NSError* parseError;
+                                   NSDictionary *appMetadataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&parseError];
+                                   NSArray *resultsArray = (appMetadataDictionary)?[appMetadataDictionary objectForKey:@"results"]:nil;
+                                   NSDictionary *resultsDic = [resultsArray firstObject];
+                                   if (resultsDic) {
+                                       // compare version with your apps local version
+                                       NSString *iTunesVersion = [resultsDic objectForKey:@"version"];
+                                       
+                                       NSString *appVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString*)@"CFBundleShortVersionString"];
+                                       if (iTunesVersion && [appVersion compare:iTunesVersion] != NSOrderedSame) { // new version exists
+                                           // inform user new version exists, give option that links to the app store to update your app - see AliSoftware's answer for the app update link
+                                           UIAlertView *alert = [[UIAlertView alloc] initWithTitle:APP_NAME
+                                                                                           message:[NSString stringWithFormat:@"New version %@ available. Update required.",iTunesVersion]
+                                                                                          delegate:self cancelButtonTitle:@"Later" otherButtonTitles:@"Update", nil];
+                                           [alert show];
+                                       }
+                                   }
+                               } else {
+                                   // error occurred with http(s) request
+                                   NSLog(@"error occurred communicating with iTunes");
+                               }
+                           }];
 }
 @end
